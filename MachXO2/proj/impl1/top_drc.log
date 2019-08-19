@@ -12,7 +12,7 @@ WARNING - synthesis: input pad net 'FT601_RXF_N' has no legal load.
 WARNING - synthesis: DRC complete with 2 warnings.
 
 Design Results:
-    830 blocks expanded
+   1003 blocks expanded
 completed the first expansion
 All blocks are expanded and NGD expansion is successful.
 Writing NGD file data_transfer_impl1.ngd.

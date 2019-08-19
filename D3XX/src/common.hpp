@@ -80,7 +80,7 @@ static bool get_device_lists(int timeout_ms)
 	return true;
 }
 
-static void show_throughput(FT_HANDLE handle)
+/* static void show_throughput(FT_HANDLE handle)
 {
 	auto next = chrono::steady_clock::now() + chrono::seconds(1);;
 	(void)handle;
@@ -92,11 +92,12 @@ static void show_throughput(FT_HANDLE handle)
 		int tx = tx_count.exchange(0);
 		int rx = rx_count.exchange(0);
 
-		printf("TX:%.2fMiB/s RX:%.2fMiB/s, total:%.2fMiB\r\n",
+		printf("TX:%.2fMB/s RX:%.2fMB/s, total:%.2fMB\r\n",
 			(float)tx/1000/1000, (float)rx/1000/1000,
 			(float)(tx+ rx)/1000/1000);
 	}
 }
+*/
 
 
 static void set_ft600_optional_features(USHORT *features)

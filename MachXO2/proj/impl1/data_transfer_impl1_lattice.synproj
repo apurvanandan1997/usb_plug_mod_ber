@@ -38,6 +38,7 @@
 "/home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/prng_recv.vhd"
 "/home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/rx_sync.vhd"
 "/home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/top.vhd"
+"/home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/calc_ber.vhd"
 -top top
 
 

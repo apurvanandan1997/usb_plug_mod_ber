@@ -7,7 +7,6 @@ static thread measure_thread;
 static thread write_thread;
 static thread read_thread;
 static const int BUFFER_LEN = 32*1024;
-static unsigned int check=0;
 
 static char hex_val[16] = { '0', '1', '2', '3', '4', '5','6','7','8','9','A','B', 'C', 'D', 'E', 'F'};
 
@@ -56,19 +55,12 @@ static void read_test(FT_HANDLE handle)
 				do_exit = true;
 				break;
 			}
-			// Addition, comment for viewing data rates
+			// Addition
 			else 
 			{	
 			 	for (int k=0; k< BUFFER_LEN; k=k+4) {
 			 		buffer_value = (unsigned int)buf[k+3]+(unsigned int)buf[k+2]*256+(unsigned int)buf[k+1]*65536+(unsigned int)buf[k]*16777216;
-			//  	 	if((check+1) != buffer_value)
-			// 		{    printf("Error at %u ie %llu %llu %llu %llu \n", check, dec2bin(buf[k]), dec2bin(buf[k+1]), dec2bin(buf[k+2]), dec2bin(buf[k+3]));
-			// 			//for( int y =0; y< BUFFER_LEN ; y=y+4)printf("%llu %llu %llu %llu     ", dec2bin(buf[y]), dec2bin(buf[y+1]), dec2bin(buf[y+2]), dec2bin(buf[y+3]));
-			// }
-			 		if((check + 1)!= buffer_value && buffer_value != 0)printf("Buffer Value : ie %u %u %c%c%c%c%c%c%c%c \n", check, buffer_value, hex_val[buf[k]/16], hex_val[buf[k]%16], hex_val[buf[k+1]/16], hex_val[buf[k+1]%16], hex_val[buf[k+2]/16], hex_val[buf[k+2]%16], hex_val[buf[k+3]/16], hex_val[buf[k+3]%16]);
-			 		//
-			 		//if(((buf[k+3] - buf[k+2]) != 68) && ((buf[k+2] - buf[k+3]) != 1880))
-			 		 check = buffer_value;
+			 		cout << "\r" << "Bit Error Rate: " << buffer_value/ 42949672960.0 << " (" << hex_val[buf[k]/16] << hex_val[buf[k]%16] << hex_val[buf[k+1]/16] << hex_val[buf[k+1]%16] << hex_val[buf[k+2]/16] << hex_val[buf[k+2]%16] << hex_val[buf[k+3]/16] << hex_val[buf[k+3]%16] << "/9FFFFFFFF)          ";
 			 	}
 			 }
 			//Addition
@@ -169,15 +161,15 @@ int main(int argc, char *argv[])
 		write_thread = thread(write_test, handle);
 	if (in_ch_cnt)
 		read_thread = thread(read_test, handle);
-	measure_thread = thread(show_throughput, handle);
+	// measure_thread = thread(show_throughput, handle);
 	register_signals();
-
+	printf("Bit Error Rate Testing! Updates in nearly every 20 seconds. \n");
 	if (write_thread.joinable())
 		write_thread.join();
 	if (read_thread.joinable())
 		read_thread.join();
-	if (measure_thread.joinable())
-		measure_thread.join();
+	// if (measure_thread.joinable())
+	// 	measure_thread.join();
 	get_queue_status(handle);
 	return 0;
 }

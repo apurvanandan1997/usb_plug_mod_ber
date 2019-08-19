@@ -1,14 +1,4 @@
-/home/apurvan/GSoC/BER_measurement_5_Lane/Virtex-5/src/prng_send.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/apurvan/GSoC/BER_measurement_5_Lane/Virtex-5/src/prng_send.vhd
-Model Technology ModelSim Microsemi vcom 10.5c Compiler 2016.07 Jul 21 2016
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Loading package std_logic_arith
--- Loading package STD_LOGIC_UNSIGNED
--- Compiling entity prng_send
--- Compiling architecture rtl of prng_send
-
-} {} {}} /home/apurvan/GSoC/usb-plug-mod-working/data_transfer_gearwork/src/MachXO2/top_tb.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/apurvan/GSoC/usb-plug-mod-working/data_transfer_gearwork/src/MachXO2/top_tb.vhd
+/home/apurvan/GSoC/usb-plug-mod-working/data_transfer_gearwork/src/MachXO2/top_tb.vhd {1 {vcom -work work -2002 -explicit -stats=none /home/apurvan/GSoC/usb-plug-mod-working/data_transfer_gearwork/src/MachXO2/top_tb.vhd
 Model Technology ModelSim Microsemi vcom 10.5c Compiler 2016.07 Jul 21 2016
 -- Loading package STANDARD
 -- Loading package TEXTIO

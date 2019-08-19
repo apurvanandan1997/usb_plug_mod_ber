@@ -14,7 +14,7 @@ Copyright (c) 1995 AT&T Corp.   All rights reserved.
 Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
 Copyright (c) 2001 Agere Systems   All rights reserved.
 Copyright (c) 2002-2017 Lattice Semiconductor Corporation,  All rights reserved.
-Mon Aug 19 12:35:37 2019
+Mon Aug 19 20:18:25 2019
 
 
 Command Line:  synthesis -f data_transfer_impl1_lattice.synproj -gui -msgset /home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/proj/promote.xml 
@@ -82,6 +82,7 @@ VHDL design file = /home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/ft601.v
 VHDL design file = /home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/prng_recv.vhd
 VHDL design file = /home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/rx_sync.vhd
 VHDL design file = /home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/top.vhd
+VHDL design file = /home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/calc_ber.vhd
 NGD file = data_transfer_impl1.ngd
 -sdc option: SDC file input not used.
 -lpf option: Output file option is ON.
@@ -120,6 +121,10 @@ unit top is not yet analyzed. VHDL-1485
 Analyzing VHDL file /home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/rx_sync.vhd. VHDL-1481
 INFO - synthesis: /home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/rx_sync.vhd(8): analyzing entity rx_sync. VHDL-1012
 INFO - synthesis: /home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/rx_sync.vhd(21): analyzing architecture rtl. VHDL-1010
+unit top is not yet analyzed. VHDL-1485
+Analyzing VHDL file /home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/calc_ber.vhd. VHDL-1481
+INFO - synthesis: /home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/calc_ber.vhd(19): analyzing entity calc_ber. VHDL-1012
+INFO - synthesis: /home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/calc_ber.vhd(30): analyzing architecture rtl. VHDL-1010
 unit top is not yet analyzed. VHDL-1485
 Analyzing VHDL file /home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/top.vhd. VHDL-1481
 INFO - synthesis: /home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/top.vhd(26): analyzing entity top. VHDL-1012
@@ -182,7 +187,40 @@ WARNING - synthesis: Initial value found on net q40_buf[1] will be ignored due t
 WARNING - synthesis: Initial value found on net q40_buf[0] will be ignored due to unrecognized driver type
 WARNING - synthesis: Initial value found on net locked will be ignored due to unrecognized driver type
 WARNING - synthesis: Initial value found on net rx_rdy will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net error_bits[7] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net error_bits[6] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net error_bits[5] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net error_bits[4] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net error_bits[3] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net error_bits[2] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net error_bits[1] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net error_bits[0] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net err_per_byte[5] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net err_per_byte[4] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net err_per_byte[3] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net err_per_byte[2] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net err_per_byte[1] will be ignored due to unrecognized driver type
+WARNING - synthesis: Initial value found on net err_per_byte[0] will be ignored due to unrecognized driver type
 WARNING - synthesis: Initial value found on net fifo_rd_en will be ignored due to unrecognized driver type
+WARNING - synthesis: net n45 does not have a driver. VDB-1002
+WARNING - synthesis: net n46 does not have a driver. VDB-1002
+WARNING - synthesis: net n47 does not have a driver. VDB-1002
+WARNING - synthesis: net n48 does not have a driver. VDB-1002
+WARNING - synthesis: net n49 does not have a driver. VDB-1002
+WARNING - synthesis: net n50 does not have a driver. VDB-1002
+WARNING - synthesis: net n61 does not have a driver. VDB-1002
+WARNING - synthesis: net n62 does not have a driver. VDB-1002
+WARNING - synthesis: net n63 does not have a driver. VDB-1002
+WARNING - synthesis: net n64 does not have a driver. VDB-1002
+WARNING - synthesis: net n65 does not have a driver. VDB-1002
+WARNING - synthesis: net n66 does not have a driver. VDB-1002
+WARNING - synthesis: net n77 does not have a driver. VDB-1002
+WARNING - synthesis: net n78 does not have a driver. VDB-1002
+WARNING - synthesis: net n79 does not have a driver. VDB-1002
+WARNING - synthesis: net n80 does not have a driver. VDB-1002
+WARNING - synthesis: net n81 does not have a driver. VDB-1002
+WARNING - synthesis: net n82 does not have a driver. VDB-1002
+WARNING - synthesis: /home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/calc_ber.vhd(33): net err_per_byte_5__N_654[5] does not have a driver. VDB-1002
 ######## Converting I/O port FT601_DATA[31] to output.
 ######## Converting I/O port FT601_DATA[30] to output.
 ######## Converting I/O port FT601_DATA[29] to output.
@@ -280,32 +318,32 @@ All blocks are expanded and NGD expansion is successful.
 Writing NGD file data_transfer_impl1.ngd.
 
 ################### Begin Area Report (top)######################
-Number of register bits => 286 of 2352 (12 % )
+Number of register bits => 387 of 2352 (16 % )
 AND2 => 1
-CCU2D => 34
+CCU2D => 33
 CLKDIVC => 1
 DELAYE => 5
 DLLDELC => 1
 DQSDLLC => 1
 ECLKSYNCA => 1
-FD1P3AX => 45
+FD1P3AX => 77
 FD1P3DX => 2
-FD1P3IX => 52
+FD1P3IX => 129
+FD1P3JX => 25
 FD1S3AX => 82
 FD1S3BX => 2
 FD1S3DX => 14
-FD1S3IX => 68
-FD1S3JX => 21
+FD1S3IX => 56
 FIFO8KB => 8
 GSR => 1
 IB => 8
 IDDRX4B => 5
 INV => 3
-LUT4 => 389
+LUT4 => 458
 OB => 42
 OR2 => 1
 OSCH => 1
-PFUMX => 39
+PFUMX => 43
 ################### End Area Report ##################
 
 ################### Begin BlackBox Report ######################
@@ -315,36 +353,35 @@ TSALL => 1
 ################### Begin Clock Report ######################
 Clock Nets
 Number of Clocks: 6
-  Net : deser_inst/ddrx4_inst/sclk, loads : 241
+  Net : deser_inst/ddrx4_inst/sclk, loads : 342
   Net : clk_int, loads : 18
   Net : deser_inst/ddrx4_inst/eclko, loads : 7
   Net : FT601_CLK_c, loads : 9
   Net : buf_clk, loads : 1
   Net : deser_inst/ddrx4_inst/eclki, loads : 1
 Clock Enable Nets
-Number of Clock Enables: 9
-Top 9 highest fanout Clock Enables:
-  Net : deser_inst/sclk_enable_84, loads : 13
-  Net : deser_inst/sclk_enable_88, loads : 10
-  Net : deser_inst/sclk_enable_90, loads : 10
-  Net : deser_inst/sclk_enable_86, loads : 10
-  Net : deser_inst/sclk_enable_93, loads : 5
+Number of Clock Enables: 11
+Top 10 highest fanout Clock Enables:
+  Net : deser_inst/sclk_enable_190, loads : 10
+  Net : sclk_enable_230, loads : 7
+  Net : deser_inst/sclk_enable_193, loads : 5
+  Net : deser_inst/sclk_enable_106, loads : 2
   Net : deser_inst/ddrx4_inst/Inst5_rx_sync/N_161_I, loads : 2
-  Net : deser_inst/sclk_enable_95, loads : 2
-  Net : sclk_enable_97, loads : 1
-  Net : deser_inst/sclk_enable_96, loads : 1
+  Net : sclk_enable_104, loads : 1
+  Net : deser_inst/sclk_enable_107, loads : 1
+  Net : sclk_enable_231, loads : 1
 Highest fanout non-clock nets
 Top 10 highest fanout non-clock nets:
-  Net : sclk_enable_97, loads : 50
-  Net : deser_inst/n2857, loads : 50
-  Net : deser_inst/ddrx4_inst/Inst5_rx_sync/n5823, loads : 48
-  Net : deser_inst/n482, loads : 45
+  Net : sclk_enable_230, loads : 114
+  Net : sclk_enable_231, loads : 50
+  Net : n6790, loads : 50
+  Net : n6789, loads : 50
+  Net : deser_inst/n3109, loads : 50
+  Net : deser_inst/ddrx4_inst/Inst5_rx_sync/n6573, loads : 48
+  Net : deser_inst/n527, loads : 45
   Net : deser_inst/ddrx4_inst/rbyteclk_N_428, loads : 38
-  Net : deser_inst/n484, loads : 35
-  Net : sync_prng, loads : 33
+  Net : deser_inst/n529, loads : 35
   Net : deser_inst/bit_slip_N_312, loads : 33
-  Net : deser_inst/n483, loads : 26
-  Net : deser_inst/n5456, loads : 20
 ################### End Clock Report ##################
 
 <A name="lse_trs"></A><B><U><big>Timing Report Summary</big></U></B>
@@ -354,10 +391,10 @@ Constraint                              |   Constraint|       Actual|Levels
 --------------------------------------------------------------------------------
                                         |             |             |
 create_clock -period 5.000000 -name     |             |             |
-clk2 [get_nets FT601_CLK_c]             |  200.000 MHz|  244.798 MHz|     3  
+clk2 [get_nets clk_int]                 |  200.000 MHz|  195.312 MHz|     4 *
                                         |             |             |
 create_clock -period 5.000000 -name     |             |             |
-clk1 [get_nets clk_int]                 |  200.000 MHz|  187.301 MHz|     4 *
+clk1 [get_nets FT601_CLK_c]             |  200.000 MHz|  244.798 MHz|     3  
                                         |             |             |
 create_clock -period 5.000000 -name     |             |             |
 clk0 [get_nets sclk]                    |            -|            -|     0  
@@ -368,10 +405,10 @@ clk0 [get_nets sclk]                    |            -|            -|     0
 1 constraints not met.
 
 
-Peak Memory Usage: 218.629  MB
+Peak Memory Usage: 220.531  MB
 
 --------------------------------------------------------------
-Elapsed CPU time for LSE flow : 1.541  secs
+Elapsed CPU time for LSE flow : 1.871  secs
 --------------------------------------------------------------
 
 

@@ -120,20 +120,22 @@ architecture rtl_top of top is
     signal fifo_full       : std_logic;
     signal fifo_almst_emp  : std_logic;
     signal fifo_almst_full : std_logic;
-    signal rst             : std_logic;
-    signal req_data        : std_logic;
-    signal send_data       : std_logic_vector(31 downto 0);
-    signal eclk            : std_logic;
-    signal sclk            : std_logic;
-    --signal ce              : std_logic := '0';
-    signal mode            : std_logic_vector(5 downto 0):= (others => '0');
-    signal link_rdy        : std_logic;
-    signal clk_int : std_logic;
+    
+    signal rst        : std_logic;
+    signal req_data   : std_logic;
+    signal send_data  : std_logic_vector(31 downto 0);
+    signal eclk       : std_logic;
+    signal sclk       : std_logic;
+    signal mode       : std_logic_vector(5 downto 0):= (others => '0');
+    signal link_rdy   : std_logic;
+    signal clk_int    : std_logic;
     signal data_valid : std_logic;
-    signal dec_data : std_logic_vector (39 downto 0);
-    signal enc_data : std_logic_vector (49 downto 0);
-    signal rng_num : std_logic_vector(39 downto 0);
-    signal sync_prng : std_logic;
+    signal dec_data   : std_logic_vector (39 downto 0);
+    signal enc_data   : std_logic_vector (49 downto 0);
+    signal rng_num    : std_logic_vector(39 downto 0);
+    signal ber        : std_logic_vector(31 downto 0);
+    signal sync_prng  : std_logic;
+    signal ber_rdy    : std_logic;
 
 begin
 
@@ -141,14 +143,13 @@ begin
     LED <= link_rdy;
     rst <= '0';
     mode(5) <= mode(4) and mode(3) and mode(2) and mode(1) and mode(0);
-  --  ce <= link_rdy when falling_edge(mode(5));
+
     fifo_rst <= not link_rdy;
     fifo_wr_en <= link_rdy and data_valid;
-    --send_data(31 downto 8) <= (others => '0');
-    send_data <= rng_num(31 downto 0) - dec_data(31 downto 0);
-    --FT601_DATA <= send_data;
-    --FT601_SIWU_N <= ce;
-    sync_prng <= fifo_wr_en when dec_data = "1011110010111100101111001011110010111100"  else '0' ;
+
+    send_data <= ber;--rng_num(31 downto 0) - dec_data(31 downto 0);
+
+    sync_prng <= fifo_wr_en when dec_data = "0000000000000000000000000000000000000000" else '0' ;
 
     oscinst0: osch
     generic map (
@@ -220,7 +221,7 @@ begin
    
     prng_inst : prng_recv
         generic map (
-            SEED => "1011110010111100101111001011110010111011"
+            SEED => "1011110010111100101111001011110010111100"
         )
         port map (
             clk   => sclk,
@@ -229,6 +230,16 @@ begin
             rng   => rng_num
         );
 
+    ber_proc : entity work.calc_ber
+        port map (
+            byte_recvd  => dec_data,
+            din_clk     => sclk,
+            byte_actual => rng_num,
+            en          => fifo_wr_en,
+            reset       => sync_prng,
+            ber         => ber
+        );
+        
     cdc_fifo_inst : async_fifo
         port map (
             data     => send_data,
@@ -239,10 +250,7 @@ begin
             reset    => rst,
             rpreset  => rst,
             q        => fifo_out,
-            empty    => fifo_emp,
-            full     => fifo_full,
-            almost_empty => fifo_almst_emp,
-            almost_full  => fifo_almst_full
+            empty    => fifo_emp
         );
 
     ft601_comp : entity work.ft601 port map (

@@ -52,9 +52,9 @@ begin
             
             else
                 if ce = '1' then
-    		        --sr <= sr(30 downto 0) & fb;
+    		        sr <= sr(38 downto 0) & fb;
                     --sr(31 downto 24) <= sr(30 downto 24) & fb;
-                    sr <= sr + '1';
+                    --sr <= sr + '1';
 
                 else
                     sr <= sr;
@@ -65,6 +65,6 @@ begin
     end process;
 
     rng <= sr;
-    fb <= sr(31) xor sr(28) xor sr(25) xor sr(24);--sr(31) xor sr(21) xor sr(1) xor sr(0);
+    fb <= sr(39) xor sr(31) xor sr(21) xor sr(1) xor sr(0);
 
 end rtl;

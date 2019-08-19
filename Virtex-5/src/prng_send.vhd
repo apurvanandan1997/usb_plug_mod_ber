@@ -60,7 +60,7 @@ begin
                         sr <= SEED;
 
                     else
-                        --sr <= sr(30 downto 0) & fb;
+                        sr <= sr(38 downto 0) & fb;
                         --sr(31 downto 24) <= sr( 30 downto 24) & fb;
                         --case (test_counter(2 downto 0)) is
                         --    when "000" => sr(31 downto 24) <= "11010011"; --D19.6 = D3 = 0D3
@@ -74,7 +74,7 @@ begin
                             
                         --    when others => sr(31 downto 24) <= "00000000";
                         --end case;
-                        sr <= sr + '1';--"01110011";
+                        --sr <= sr + '1';
 
                     end if;
 
@@ -121,8 +121,8 @@ begin
         end if;
     end process;
 
-    fb <= sr(31) xor sr(28) xor sr(25) xor sr(24);--sr(31) xor sr(21) xor sr(1) xor sr(0);
-    rng <= sr;
+    fb <= sr(39) xor sr(31) xor sr(21) xor sr(1) xor sr(0);--sr(31) xor sr(21) xor sr(1) xor sr(0);
+    rng <= sr when hold_prng /= "11111111111111111111111111110" else (others =>'0');
     mode <= mode_i;
 
 end rtl;

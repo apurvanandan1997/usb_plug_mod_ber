@@ -1,6 +1,6 @@
 --------------------------------------------------------------------------------
 Lattice Synthesis Timing Report, Version  
-Mon Aug 19 12:35:38 2019
+Mon Aug 19 20:18:27 2019
 
 Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
 Copyright (c) 1995 AT&T Corp.   All rights reserved.
@@ -18,7 +18,106 @@ Report level:    verbose report, limited to 3 items per constraint
 
 
 ================================================================================
-Constraint: create_clock -period 5.000000 -name clk2 [get_nets FT601_CLK_c]
+Constraint: create_clock -period 5.000000 -name clk2 [get_nets clk_int]
+            94 items scored, 2 timing errors detected.
+--------------------------------------------------------------------------------
+
+
+Error:  The following path violates requirements by 0.120ns
+
+ Logical Details:  Cell type  Pin type       Cell name  (clock net +/-)
+
+   Source:         FD1P3DX    CK             \deser_inst/ddrx4_inst/Inst5_rx_sync/CTRL_CNT0_REG_Z134  (from clk_int +)
+   Destination:    FD1S3DX    D              \deser_inst/ddrx4_inst/Inst5_rx_sync/STATE1_REG_Z108  (to clk_int +)
+
+   Delay:                   4.987ns  (31.9% logic, 68.1% route), 4 logic levels.
+
+ Constraint Details:
+
+      4.987ns data_path \deser_inst/ddrx4_inst/Inst5_rx_sync/CTRL_CNT0_REG_Z134 to \deser_inst/ddrx4_inst/Inst5_rx_sync/STATE1_REG_Z108 violates
+      5.000ns delay constraint less
+      0.133ns L_S requirement (totaling 4.867ns) by 0.120ns
+
+ Path Details: \deser_inst/ddrx4_inst/Inst5_rx_sync/CTRL_CNT0_REG_Z134 to \deser_inst/ddrx4_inst/Inst5_rx_sync/STATE1_REG_Z108
+
+   Name    Fanout   Delay (ns)          Pins               Resource(Cell.Net)
+L_CO        ---     0.367             CK to Q              \deser_inst/ddrx4_inst/Inst5_rx_sync/CTRL_CNT0_REG_Z134 (from clk_int)
+Route         9   e 1.139                                  \deser_inst/ddrx4_inst/Inst5_rx_sync/CTRL_CNT[0]
+LUT4        ---     0.408              A to Z              \deser_inst/ddrx4_inst/Inst5_rx_sync/STATE_NS_I_0_191_2_lut_3_lut
+Route         4   e 0.937                                  \deser_inst/ddrx4_inst/Inst5_rx_sync/N_118_LI
+LUT4        ---     0.408              C to Z              \deser_inst/ddrx4_inst/Inst5_rx_sync/i1_4_lut_4_lut
+Route         1   e 0.660                                  \deser_inst/ddrx4_inst/Inst5_rx_sync/n5823
+LUT4        ---     0.408              C to Z              \deser_inst/ddrx4_inst/Inst5_rx_sync/i1_4_lut_adj_105
+Route         1   e 0.660                                  \deser_inst/ddrx4_inst/Inst5_rx_sync/STATE_NS[1]
+                  --------
+                    4.987  (31.9% logic, 68.1% route), 4 logic levels.
+
+
+Error:  The following path violates requirements by 0.096ns
+
+ Logical Details:  Cell type  Pin type       Cell name  (clock net +/-)
+
+   Source:         FD1P3DX    CK             \deser_inst/ddrx4_inst/Inst5_rx_sync/CTRL_CNT1_REG_Z136  (from clk_int +)
+   Destination:    FD1S3DX    D              \deser_inst/ddrx4_inst/Inst5_rx_sync/STATE1_REG_Z108  (to clk_int +)
+
+   Delay:                   4.963ns  (32.1% logic, 67.9% route), 4 logic levels.
+
+ Constraint Details:
+
+      4.963ns data_path \deser_inst/ddrx4_inst/Inst5_rx_sync/CTRL_CNT1_REG_Z136 to \deser_inst/ddrx4_inst/Inst5_rx_sync/STATE1_REG_Z108 violates
+      5.000ns delay constraint less
+      0.133ns L_S requirement (totaling 4.867ns) by 0.096ns
+
+ Path Details: \deser_inst/ddrx4_inst/Inst5_rx_sync/CTRL_CNT1_REG_Z136 to \deser_inst/ddrx4_inst/Inst5_rx_sync/STATE1_REG_Z108
+
+   Name    Fanout   Delay (ns)          Pins               Resource(Cell.Net)
+L_CO        ---     0.367             CK to Q              \deser_inst/ddrx4_inst/Inst5_rx_sync/CTRL_CNT1_REG_Z136 (from clk_int)
+Route         8   e 1.115                                  \deser_inst/ddrx4_inst/Inst5_rx_sync/CTRL_CNT[1]
+LUT4        ---     0.408              B to Z              \deser_inst/ddrx4_inst/Inst5_rx_sync/STATE_NS_I_0_191_2_lut_3_lut
+Route         4   e 0.937                                  \deser_inst/ddrx4_inst/Inst5_rx_sync/N_118_LI
+LUT4        ---     0.408              C to Z              \deser_inst/ddrx4_inst/Inst5_rx_sync/i1_4_lut_4_lut
+Route         1   e 0.660                                  \deser_inst/ddrx4_inst/Inst5_rx_sync/n5823
+LUT4        ---     0.408              C to Z              \deser_inst/ddrx4_inst/Inst5_rx_sync/i1_4_lut_adj_105
+Route         1   e 0.660                                  \deser_inst/ddrx4_inst/Inst5_rx_sync/STATE_NS[1]
+                  --------
+                    4.963  (32.1% logic, 67.9% route), 4 logic levels.
+
+
+Passed:  The following path meets requirements by 0.019ns
+
+ Logical Details:  Cell type  Pin type       Cell name  (clock net +/-)
+
+   Source:         FD1P3DX    CK             \deser_inst/ddrx4_inst/Inst5_rx_sync/CTRL_CNT0_REG_Z134  (from clk_int +)
+   Destination:    FD1S3BX    D              \deser_inst/ddrx4_inst/Inst5_rx_sync/STATE0_REG_Z106  (to clk_int +)
+
+   Delay:                   4.848ns  (32.8% logic, 67.2% route), 4 logic levels.
+
+ Constraint Details:
+
+      4.848ns data_path \deser_inst/ddrx4_inst/Inst5_rx_sync/CTRL_CNT0_REG_Z134 to \deser_inst/ddrx4_inst/Inst5_rx_sync/STATE0_REG_Z106 meets
+      5.000ns delay constraint less
+      0.133ns L_S requirement (totaling 4.867ns) by 0.019ns
+
+ Path Details: \deser_inst/ddrx4_inst/Inst5_rx_sync/CTRL_CNT0_REG_Z134 to \deser_inst/ddrx4_inst/Inst5_rx_sync/STATE0_REG_Z106
+
+   Name    Fanout   Delay (ns)          Pins               Resource(Cell.Net)
+L_CO        ---     0.367             CK to Q              \deser_inst/ddrx4_inst/Inst5_rx_sync/CTRL_CNT0_REG_Z134 (from clk_int)
+Route         9   e 1.139                                  \deser_inst/ddrx4_inst/Inst5_rx_sync/CTRL_CNT[0]
+LUT4        ---     0.408              A to Z              \deser_inst/ddrx4_inst/Inst5_rx_sync/STATE_NS_I_MB_1_0__I_17_2_lut_rep_106
+Route         2   e 0.798                                  \deser_inst/ddrx4_inst/Inst5_rx_sync/n6575
+LUT4        ---     0.408              B to Z              \deser_inst/ddrx4_inst/Inst5_rx_sync/i1_4_lut
+Route         1   e 0.660                                  \deser_inst/ddrx4_inst/Inst5_rx_sync/n11
+LUT4        ---     0.408              C to Z              \deser_inst/ddrx4_inst/Inst5_rx_sync/i4630_4_lut
+Route         1   e 0.660                                  \deser_inst/ddrx4_inst/Inst5_rx_sync/STATE_NS[0]
+                  --------
+                    4.848  (32.8% logic, 67.2% route), 4 logic levels.
+
+Warning: 5.120 ns is the maximum delay for this constraint.
+
+
+
+================================================================================
+Constraint: create_clock -period 5.000000 -name clk1 [get_nets FT601_CLK_c]
             2 items scored, 0 timing errors detected.
 --------------------------------------------------------------------------------
 
@@ -44,9 +143,9 @@ Passed:  The following path meets requirements by 0.915ns
 L_CO        ---     0.367             CK to Q              \ft601_comp/tx_active_24 (from FT601_CLK_c)
 Route         2   e 0.838                                  \ft601_comp/tx_active
 LUT4        ---     0.408              C to Z              \ft601_comp/i1_2_lut_3_lut
-Route        18   e 1.271                                  tx_active_N_629
-LUT4        ---     0.408              D to Z              \ft601_comp/tx_active_I_77_3_lut_4_lut
-Route         1   e 0.660                                  \ft601_comp/tx_active_N_628
+Route        18   e 1.271                                  tx_active_N_832
+LUT4        ---     0.408              D to Z              \ft601_comp/tx_active_I_80_3_lut_4_lut
+Route         1   e 0.660                                  \ft601_comp/tx_active_N_831
                   --------
                     3.952  (29.9% logic, 70.1% route), 3 logic levels.
 
@@ -71,111 +170,12 @@ Passed:  The following path meets requirements by 2.594ns
    Name    Fanout   Delay (ns)          Pins               Resource(Cell.Net)
 L_CO        ---     0.367             CK to Q              \ft601_comp/tx_active_24 (from FT601_CLK_c)
 Route         2   e 0.838                                  \ft601_comp/tx_active
-LUT4        ---     0.408              C to Z              \ft601_comp/tx_active_I_77_3_lut_4_lut
-Route         1   e 0.660                                  \ft601_comp/tx_active_N_628
+LUT4        ---     0.408              C to Z              \ft601_comp/tx_active_I_80_3_lut_4_lut
+Route         1   e 0.660                                  \ft601_comp/tx_active_N_831
                   --------
                     2.273  (34.1% logic, 65.9% route), 2 logic levels.
 
 Report: 4.085 ns is the maximum delay for this constraint.
-
-
-
-================================================================================
-Constraint: create_clock -period 5.000000 -name clk1 [get_nets clk_int]
-            103 items scored, 14 timing errors detected.
---------------------------------------------------------------------------------
-
-
-Error:  The following path violates requirements by 0.339ns
-
- Logical Details:  Cell type  Pin type       Cell name  (clock net +/-)
-
-   Source:         FD1P3DX    CK             \deser_inst/ddrx4_inst/Inst5_rx_sync/CTRL_CNT0_REG_Z134  (from clk_int +)
-   Destination:    FD1S3DX    D              \deser_inst/ddrx4_inst/Inst5_rx_sync/STAT2_REG_Z110  (to clk_int +)
-
-   Delay:                   5.206ns  (30.6% logic, 69.4% route), 4 logic levels.
-
- Constraint Details:
-
-      5.206ns data_path \deser_inst/ddrx4_inst/Inst5_rx_sync/CTRL_CNT0_REG_Z134 to \deser_inst/ddrx4_inst/Inst5_rx_sync/STAT2_REG_Z110 violates
-      5.000ns delay constraint less
-      0.133ns L_S requirement (totaling 4.867ns) by 0.339ns
-
- Path Details: \deser_inst/ddrx4_inst/Inst5_rx_sync/CTRL_CNT0_REG_Z134 to \deser_inst/ddrx4_inst/Inst5_rx_sync/STAT2_REG_Z110
-
-   Name    Fanout   Delay (ns)          Pins               Resource(Cell.Net)
-L_CO        ---     0.367             CK to Q              \deser_inst/ddrx4_inst/Inst5_rx_sync/CTRL_CNT0_REG_Z134 (from clk_int)
-Route         9   e 1.139                                  \deser_inst/ddrx4_inst/Inst5_rx_sync/CTRL_CNT[0]
-LUT4        ---     0.408              A to Z              \deser_inst/ddrx4_inst/Inst5_rx_sync/STATE_NS_I_MB_1_0__I_17_2_lut_rep_80
-Route         4   e 0.937                                  \deser_inst/ddrx4_inst/Inst5_rx_sync/n5822
-LUT4        ---     0.408              A to Z              \deser_inst/ddrx4_inst/Inst5_rx_sync/i2353_3_lut_4_lut
-Route         3   e 0.879                                  \deser_inst/ddrx4_inst/Inst5_rx_sync/n3839
-LUT4        ---     0.408              B to Z              \deser_inst/ddrx4_inst/Inst5_rx_sync/N_172_I_I_0_4_lut
-Route         1   e 0.660                                  \deser_inst/ddrx4_inst/Inst5_rx_sync/N_172_I
-                  --------
-                    5.206  (30.6% logic, 69.4% route), 4 logic levels.
-
-
-Error:  The following path violates requirements by 0.339ns
-
- Logical Details:  Cell type  Pin type       Cell name  (clock net +/-)
-
-   Source:         FD1P3DX    CK             \deser_inst/ddrx4_inst/Inst5_rx_sync/CTRL_CNT0_REG_Z134  (from clk_int +)
-   Destination:    FD1S3DX    D              \deser_inst/ddrx4_inst/Inst5_rx_sync/STAT3_REG_Z112  (to clk_int +)
-
-   Delay:                   5.206ns  (30.6% logic, 69.4% route), 4 logic levels.
-
- Constraint Details:
-
-      5.206ns data_path \deser_inst/ddrx4_inst/Inst5_rx_sync/CTRL_CNT0_REG_Z134 to \deser_inst/ddrx4_inst/Inst5_rx_sync/STAT3_REG_Z112 violates
-      5.000ns delay constraint less
-      0.133ns L_S requirement (totaling 4.867ns) by 0.339ns
-
- Path Details: \deser_inst/ddrx4_inst/Inst5_rx_sync/CTRL_CNT0_REG_Z134 to \deser_inst/ddrx4_inst/Inst5_rx_sync/STAT3_REG_Z112
-
-   Name    Fanout   Delay (ns)          Pins               Resource(Cell.Net)
-L_CO        ---     0.367             CK to Q              \deser_inst/ddrx4_inst/Inst5_rx_sync/CTRL_CNT0_REG_Z134 (from clk_int)
-Route         9   e 1.139                                  \deser_inst/ddrx4_inst/Inst5_rx_sync/CTRL_CNT[0]
-LUT4        ---     0.408              A to Z              \deser_inst/ddrx4_inst/Inst5_rx_sync/STATE_NS_I_MB_1_0__I_17_2_lut_rep_80
-Route         4   e 0.937                                  \deser_inst/ddrx4_inst/Inst5_rx_sync/n5822
-LUT4        ---     0.408              A to Z              \deser_inst/ddrx4_inst/Inst5_rx_sync/i2353_3_lut_4_lut
-Route         3   e 0.879                                  \deser_inst/ddrx4_inst/Inst5_rx_sync/n3839
-LUT4        ---     0.408              B to Z              \deser_inst/ddrx4_inst/Inst5_rx_sync/N_171_I_I_0_4_lut
-Route         1   e 0.660                                  \deser_inst/ddrx4_inst/Inst5_rx_sync/N_171_I
-                  --------
-                    5.206  (30.6% logic, 69.4% route), 4 logic levels.
-
-
-Error:  The following path violates requirements by 0.339ns
-
- Logical Details:  Cell type  Pin type       Cell name  (clock net +/-)
-
-   Source:         FD1P3DX    CK             \deser_inst/ddrx4_inst/Inst5_rx_sync/CTRL_CNT0_REG_Z134  (from clk_int +)
-   Destination:    FD1S3DX    D              \deser_inst/ddrx4_inst/Inst5_rx_sync/STAT4_REG_Z114  (to clk_int +)
-
-   Delay:                   5.206ns  (30.6% logic, 69.4% route), 4 logic levels.
-
- Constraint Details:
-
-      5.206ns data_path \deser_inst/ddrx4_inst/Inst5_rx_sync/CTRL_CNT0_REG_Z134 to \deser_inst/ddrx4_inst/Inst5_rx_sync/STAT4_REG_Z114 violates
-      5.000ns delay constraint less
-      0.133ns L_S requirement (totaling 4.867ns) by 0.339ns
-
- Path Details: \deser_inst/ddrx4_inst/Inst5_rx_sync/CTRL_CNT0_REG_Z134 to \deser_inst/ddrx4_inst/Inst5_rx_sync/STAT4_REG_Z114
-
-   Name    Fanout   Delay (ns)          Pins               Resource(Cell.Net)
-L_CO        ---     0.367             CK to Q              \deser_inst/ddrx4_inst/Inst5_rx_sync/CTRL_CNT0_REG_Z134 (from clk_int)
-Route         9   e 1.139                                  \deser_inst/ddrx4_inst/Inst5_rx_sync/CTRL_CNT[0]
-LUT4        ---     0.408              A to Z              \deser_inst/ddrx4_inst/Inst5_rx_sync/STATE_NS_I_MB_1_0__I_17_2_lut_rep_80
-Route         4   e 0.937                                  \deser_inst/ddrx4_inst/Inst5_rx_sync/n5822
-LUT4        ---     0.408              A to Z              \deser_inst/ddrx4_inst/Inst5_rx_sync/i2353_3_lut_4_lut
-Route         3   e 0.879                                  \deser_inst/ddrx4_inst/Inst5_rx_sync/n3839
-LUT4        ---     0.408              B to Z              \deser_inst/ddrx4_inst/Inst5_rx_sync/N_170_I_I_0_4_lut
-Route         1   e 0.660                                  \deser_inst/ddrx4_inst/Inst5_rx_sync/N_170_I
-                  --------
-                    5.206  (30.6% logic, 69.4% route), 4 logic levels.
-
-Warning: 5.339 ns is the maximum delay for this constraint.
 
 
 
@@ -191,10 +191,10 @@ Constraint                              |   Constraint|       Actual|Levels
 --------------------------------------------------------------------------------
                                         |             |             |
 create_clock -period 5.000000 -name     |             |             |
-clk2 [get_nets FT601_CLK_c]             |     5.000 ns|     4.085 ns|     3  
+clk2 [get_nets clk_int]                 |     5.000 ns|     5.120 ns|     4 *
                                         |             |             |
 create_clock -period 5.000000 -name     |             |             |
-clk1 [get_nets clk_int]                 |     5.000 ns|     5.339 ns|     4 *
+clk1 [get_nets FT601_CLK_c]             |     5.000 ns|     4.085 ns|     3  
                                         |             |             |
 create_clock -period 5.000000 -name     |             |             |
 clk0 [get_nets sclk]                    |            -|            -|     0  
@@ -207,46 +207,20 @@ clk0 [get_nets sclk]                    |            -|            -|     0
 --------------------------------------------------------------------------------
 Critical Nets                           |   Loads|  Errors| % of total
 --------------------------------------------------------------------------------
-\deser_inst/ddrx4_inst/Inst5_rx_sync/n38|        |        |
-39                                      |       3|       9|     64.29%
-                                        |        |        |
-\deser_inst/ddrx4_inst/Inst5_rx_sync/n58|        |        |
-22                                      |       4|       8|     57.14%
-                                        |        |        |
-\deser_inst/ddrx4_inst/Inst5_rx_sync/CTR|        |        |
-L_CNT[0]                                |       9|       5|     35.71%
-                                        |        |        |
-\deser_inst/ddrx4_inst/Inst5_rx_sync/CTR|        |        |
-L_CNT[1]                                |       8|       5|     35.71%
-                                        |        |        |
-\deser_inst/ddrx4_inst/Inst5_rx_sync/LOC|        |        |
-K_P2                                    |       5|       3|     21.43%
-                                        |        |        |
 \deser_inst/ddrx4_inst/Inst5_rx_sync/N_1|        |        |
-70_I                                    |       1|       3|     21.43%
-                                        |        |        |
-\deser_inst/ddrx4_inst/Inst5_rx_sync/N_1|        |        |
-71_I                                    |       1|       3|     21.43%
-                                        |        |        |
-\deser_inst/ddrx4_inst/Inst5_rx_sync/N_1|        |        |
-72_I                                    |       1|       3|     21.43%
+18_LI                                   |       4|       2|     99.00%
                                         |        |        |
 \deser_inst/ddrx4_inst/Inst5_rx_sync/STA|        |        |
-TE_NS[1]                                |       1|       3|     21.43%
-                                        |        |        |
-\deser_inst/ddrx4_inst/Inst5_rx_sync/n38|        |        |
-37                                      |       2|       3|     21.43%
-                                        |        |        |
-\deser_inst/ddrx4_inst/Inst5_rx_sync/n51|        |        |
-12                                      |       1|       3|     21.43%
+TE_NS[1]                                |       1|       2|     99.00%
                                         |        |        |
 \deser_inst/ddrx4_inst/Inst5_rx_sync/n58|        |        |
-06                                      |       4|       3|     21.43%
+23                                      |       1|       2|     99.00%
                                         |        |        |
-\deser_inst/ddrx4_inst/Inst5_rx_sync/STA|        |        |
-TE_NS[0]                                |       1|       2|     14.29%
+\deser_inst/ddrx4_inst/Inst5_rx_sync/CTR|        |        |
+L_CNT[0]                                |       9|       1|     50.00%
                                         |        |        |
-\deser_inst/ddrx4_inst/Inst5_rx_sync/n11|       1|       2|     14.29%
+\deser_inst/ddrx4_inst/Inst5_rx_sync/CTR|        |        |
+L_CNT[1]                                |       8|       1|     50.00%
                                         |        |        |
 --------------------------------------------------------------------------------
 
@@ -254,10 +228,10 @@ TE_NS[0]                                |       1|       2|     14.29%
 Timing summary:
 ---------------
 
-Timing errors: 14  Score: 2642
+Timing errors: 2  Score: 216
 
-Constraints cover  105 paths, 51 nets, and 175 connections (7.7% coverage)
+Constraints cover  96 paths, 49 nets, and 169 connections (6.2% coverage)
 
 
-Peak memory: 227143680 bytes, TRCE: 946176 bytes, DLYMAN: 163840 bytes
+Peak memory: 229138432 bytes, TRCE: 950272 bytes, DLYMAN: 163840 bytes
 CPU_TIME_REPORT: 0 secs 

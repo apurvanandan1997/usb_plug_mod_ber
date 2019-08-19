@@ -1,36 +1,37 @@
 ----------------------------------------------------------------------
 Report for cell top.TECH
-Register bits:  286 of 2352 (12.160%)
+Register bits:  387 of 2352 (16.454%)
 I/O cells:      50
                                   Cell usage:
                                cell     count   Res Usage(%)
                                AND2         1          100.0
-                              CCU2D        34          100.0
+                              CCU2D        33          100.0
                             CLKDIVC         1          100.0
                              DELAYE         5          100.0
                             DLLDELC         1          100.0
                             DQSDLLC         1          100.0
                           ECLKSYNCA         1          100.0
-                            FD1P3AX        45          100.0
+                            FD1P3AX        77          100.0
                             FD1P3DX         2          100.0
-                            FD1P3IX        52          100.0
+                            FD1P3IX       129          100.0
+                            FD1P3JX        25          100.0
                             FD1S3AX        82          100.0
                             FD1S3BX         2          100.0
                             FD1S3DX        14          100.0
-                            FD1S3IX        68          100.0
-                            FD1S3JX        21          100.0
+                            FD1S3IX        56          100.0
                             FIFO8KB         8          100.0
                                 GSR         1          100.0
                                  IB         8          100.0
                             IDDRX4B         5          100.0
                                 INV         3          100.0
-                               LUT4       389          100.0
+                               LUT4       458          100.0
                                  OB        42          100.0
                                 OR2         1          100.0
                                OSCH         1          100.0
-                              PFUMX        39          100.0
+                              PFUMX        43          100.0
 SUB MODULES
                          async_fifo         1
+                           calc_ber         1
                               ddrx4         1
                           dec_8b10b         1
                        dec_8b10b_U0         1
@@ -39,9 +40,36 @@ SUB MODULES
                        dec_8b10b_U3         1
                        deserializer         1
                               ft601         1
-prng_recv("1011110010111100101111001011110010111011")         1
+prng_recv("1011110010111100101111001011110010111100")         1
                             rx_sync         1
-                              TOTAL       838
+                              TOTAL      1012
+----------------------------------------------------------------------
+Report for cell calc_ber.v1
+Instance Path : ber_proc
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                              CCU2D        33          100.0
+                            FD1P3AX        32           41.6
+                            FD1P3IX        62           48.1
+                               LUT4        64           14.0
+                              TOTAL       191
+----------------------------------------------------------------------
+Report for cell ft601.v1
+Instance Path : ft601_comp
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                            FD1S3AX         1            1.2
+                               LUT4         3            0.7
+                              TOTAL         4
+----------------------------------------------------------------------
+Report for cell dec_8b10b.v1
+Instance Path : decoder_inst4
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                            FD1S3AX        16           19.5
+                               LUT4        38            8.3
+                              PFUMX         2            4.7
+                              TOTAL        56
 ----------------------------------------------------------------------
 Report for cell deserializer.v1
 Instance Path : deser_inst
@@ -53,22 +81,22 @@ Instance Path : deser_inst
                             DLLDELC         1          100.0
                             DQSDLLC         1          100.0
                           ECLKSYNCA         1          100.0
-                            FD1P3AX        45          100.0
+                            FD1P3AX        45           58.4
                             FD1P3DX         2          100.0
-                            FD1P3IX        52          100.0
+                            FD1P3IX        52           40.3
                             FD1S3AX         1            1.2
                             FD1S3BX         2          100.0
                             FD1S3DX        14          100.0
-                            FD1S3IX        56           82.4
+                            FD1S3IX        56          100.0
                             IDDRX4B         5          100.0
                                 INV         3          100.0
-                               LUT4       179           46.0
+                               LUT4       177           38.6
                                 OR2         1          100.0
-                              PFUMX        32           82.1
+                              PFUMX        32           74.4
 SUB MODULES
                               ddrx4         1
                             rx_sync         1
-                              TOTAL       404
+                              TOTAL       402
 ----------------------------------------------------------------------
 Report for cell ddrx4.v1
 Instance Path : deser_inst.ddrx4_inst
@@ -85,12 +113,12 @@ Instance Path : deser_inst.ddrx4_inst
                             FD1S3DX        14          100.0
                             IDDRX4B         5          100.0
                                 INV         3          100.0
-                               LUT4        29            7.5
+                               LUT4        31            6.8
                                 OR2         1          100.0
-                              PFUMX         1            2.6
+                              PFUMX         1            2.3
 SUB MODULES
                             rx_sync         1
-                              TOTAL        68
+                              TOTAL        70
 ----------------------------------------------------------------------
 Report for cell rx_sync.v1
 Instance Path : deser_inst.ddrx4_inst.Inst5_rx_sync
@@ -100,69 +128,9 @@ Instance Path : deser_inst.ddrx4_inst.Inst5_rx_sync
                             FD1S3BX         2          100.0
                             FD1S3DX        14          100.0
                                 INV         1           33.3
-                               LUT4        29            7.5
-                              PFUMX         1            2.6
-                              TOTAL        49
-----------------------------------------------------------------------
-Report for cell ft601.v1
-Instance Path : ft601_comp
-                                  Cell usage:
-                               cell     count   Res Usage(%)
-                            FD1S3AX         1            1.2
-                               LUT4         3            0.8
-                              TOTAL         4
-----------------------------------------------------------------------
-Report for cell dec_8b10b.v1
-Instance Path : decoder_inst4
-                                  Cell usage:
-                               cell     count   Res Usage(%)
-                            FD1S3AX        16           19.5
-                               LUT4        39           10.0
-                              PFUMX         1            2.6
-                              TOTAL        56
-----------------------------------------------------------------------
-Report for cell dec_8b10b_U2.v1
-Instance Path : decoder_inst1
-                                  Cell usage:
-                               cell     count   Res Usage(%)
-                            FD1S3AX        16           19.5
-                               LUT4        38            9.8
-                              PFUMX         3            7.7
-                              TOTAL        57
-----------------------------------------------------------------------
-Report for cell dec_8b10b_U1.v1
-Instance Path : decoder_inst2
-                                  Cell usage:
-                               cell     count   Res Usage(%)
-                            FD1S3AX        16           19.5
-                               LUT4        38            9.8
-                              TOTAL        54
-----------------------------------------------------------------------
-Report for cell dec_8b10b_U3.v1
-Instance Path : decoder_inst0
-                                  Cell usage:
-                               cell     count   Res Usage(%)
-                            FD1S3AX        16           19.5
-                               LUT4        39           10.0
-                              TOTAL        55
-----------------------------------------------------------------------
-Report for cell dec_8b10b_U0.v1
-Instance Path : decoder_inst3
-                                  Cell usage:
-                               cell     count   Res Usage(%)
-                            FD1S3AX        16           19.5
-                               LUT4        35            9.0
-                              PFUMX         3            7.7
-                              TOTAL        54
-----------------------------------------------------------------------
-Report for cell prng_recv("1011110010111100101111001011110010111011").v1
-Instance Path : prng_inst
-                                  Cell usage:
-                               cell     count   Res Usage(%)
-                              CCU2D        17           50.0
-                            FD1S3IX        12           17.6
-                            FD1S3JX        21          100.0
-                              TOTAL        50
+                               LUT4        31            6.8
+                              PFUMX         1            2.3
+                              TOTAL        51
 ----------------------------------------------------------------------
 Report for cell async_fifo.v1
 Instance Path : cdc_fifo_inst
@@ -170,3 +138,48 @@ Instance Path : cdc_fifo_inst
                                cell     count   Res Usage(%)
                             FIFO8KB         8          100.0
                               TOTAL         8
+----------------------------------------------------------------------
+Report for cell dec_8b10b_U3.v1
+Instance Path : decoder_inst0
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                            FD1S3AX        16           19.5
+                               LUT4        38            8.3
+                              PFUMX         2            4.7
+                              TOTAL        56
+----------------------------------------------------------------------
+Report for cell dec_8b10b_U2.v1
+Instance Path : decoder_inst1
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                            FD1S3AX        16           19.5
+                               LUT4        39            8.5
+                              PFUMX         1            2.3
+                              TOTAL        56
+----------------------------------------------------------------------
+Report for cell dec_8b10b_U1.v1
+Instance Path : decoder_inst2
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                            FD1S3AX        16           19.5
+                               LUT4        35            7.6
+                              PFUMX         3            7.0
+                              TOTAL        54
+----------------------------------------------------------------------
+Report for cell dec_8b10b_U0.v1
+Instance Path : decoder_inst3
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                            FD1S3AX        16           19.5
+                               LUT4        38            8.3
+                              PFUMX         3            7.0
+                              TOTAL        57
+----------------------------------------------------------------------
+Report for cell prng_recv("1011110010111100101111001011110010111100").v1
+Instance Path : prng_inst
+                                  Cell usage:
+                               cell     count   Res Usage(%)
+                            FD1P3IX        15           11.6
+                            FD1P3JX        25          100.0
+                               LUT4         2            0.4
+                              TOTAL        42
