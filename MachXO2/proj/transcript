@@ -530,3 +530,5 @@ do sim.do
 # Error: Error loading design
 #        Pausing macro execution
 # MACRO ./sim.do PAUSED at line 3
+# End time: 01:17:44 on Aug 20,2019, Elapsed time: 13:52:15
+# Errors: 1, Warnings: 0

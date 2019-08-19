@@ -19,7 +19,7 @@ use ieee.std_logic_unsigned.all;
 
 entity prng_send is
     generic(
-        SEED : std_logic_vector(31 downto 0) := "10111100110011001111000001010011"
+        SEED : std_logic_vector(39 downto 0) := "1011110010111100101111001011110010111100"
         -- K28.5 Control Symbol for Word Alignment ( MSB 8 bits)
     );
     port(
@@ -27,7 +27,7 @@ entity prng_send is
         enb   : in  std_logic;  -- Enable data generation
         mode  : out  std_logic;  -- Mode select: '0 for PRNG, '1' for K28.5
         reset : in  std_logic;  -- Reset signal (To be Asserted for changing mode)
-        rng   : out std_logic_vector (31 downto 0) -- Output Generated Data
+        rng   : out std_logic_vector (39 downto 0) -- Output Generated Data
     );
     
 end prng_send;
@@ -35,11 +35,9 @@ end prng_send;
 architecture rtl of prng_send is
 
     signal fb : std_logic := '0';
-    signal sr : std_logic_vector (31 downto 0) := SEED;
+    signal sr : std_logic_vector (39 downto 0) := SEED;
     signal hold_prng : std_logic_vector(29 downto 0) := (others => '0');
     signal mode_i : std_logic := '1';
-
-    signal test_counter : std_logic_vector(2 downto 0):= (others => '0');
    
 begin
 
@@ -62,21 +60,21 @@ begin
                         sr <= SEED;
 
                     else
-                        --sr <= sr(30 downto 0) & fb;
+                        sr <= sr(38 downto 0) & fb;
                         --sr(31 downto 24) <= sr( 30 downto 24) & fb;
-                        case (test_counter(2 downto 0)) is
-                            when "000" => sr(31 downto 24) <= "11010011"; --D19.6 = D3 = 0D3
-                            when "001" => sr(31 downto 24) <= "10100101"; --D5.5  = A5 = 1A5
-                            when "010" => sr(31 downto 24) <= "00101100"; --D12.1 = 2C = 32C
-                            when "011" => sr(31 downto 24) <= "01000011"; --D3.2  = 43 = 343
-                            when "100" => sr(31 downto 24) <= "11001110"; --D14.6 = CE = 0CE
-                            when "101" => sr(31 downto 24) <= "01010010"; --D18.2 = 52 = 352
-                            when "110" => sr(31 downto 24) <= "10110100"; --D20.5 = B4 = 1B4
-                            when "111" => sr(31 downto 24) <= "00101010"; --D10.1 = 2A = 32A
+                        --case (test_counter(2 downto 0)) is
+                        --    when "000" => sr(31 downto 24) <= "11010011"; --D19.6 = D3 = 0D3
+                        --    when "001" => sr(31 downto 24) <= "10100101"; --D5.5  = A5 = 1A5
+                        --    when "010" => sr(31 downto 24) <= "00101100"; --D12.1 = 2C = 32C
+                        --    when "011" => sr(31 downto 24) <= "01000011"; --D3.2  = 43 = 343
+                        --    when "100" => sr(31 downto 24) <= "11001110"; --D14.6 = CE = 0CE
+                        --    when "101" => sr(31 downto 24) <= "01010010"; --D18.2 = 52 = 352
+                        --    when "110" => sr(31 downto 24) <= "10110100"; --D20.5 = B4 = 1B4
+                        --    when "111" => sr(31 downto 24) <= "00101010"; --D10.1 = 2A = 32A
                             
-                            when others => sr(31 downto 24) <= "00000000";
-                        end case;
-                        --sr(31 downto 24) <= sr(31 downto 24) + '1';--"01110011";
+                        --    when others => sr(31 downto 24) <= "00000000";
+                        --end case;
+                        --sr <= sr + '1';
 
                     end if;
 
@@ -123,15 +121,8 @@ begin
         end if;
     end process;
 
-    fb <= sr(31) xor sr(28) xor sr(25) xor sr(24);--sr(31) xor sr(21) xor sr(1) xor sr(0);
-    rng <= sr;
+    fb <= sr(39) xor sr(31) xor sr(21) xor sr(1) xor sr(0);--sr(31) xor sr(21) xor sr(1) xor sr(0);
+    rng <= sr when hold_prng /= "111111111111111111111111111110" else (others =>'0');
     mode <= mode_i;
-
-    process(clk)
-    begin
-        if rising_edge(clk) then
-            test_counter <= test_counter + '1';
-        end if;
-    end process;
 
 end rtl;
