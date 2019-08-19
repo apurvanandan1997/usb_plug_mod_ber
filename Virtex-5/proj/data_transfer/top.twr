@@ -1,0 +1,82 @@
+--------------------------------------------------------------------------------
+Release 14.7 Trace  (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+/opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/trce -intstyle ise -v 3 -s 1 -n
+3 -fastpaths -xml top.twx top.ncd -o top.twr top.pcf
+
+Design file:              top.ncd
+Physical constraint file: top.pcf
+Device,package,speed:     xc5vlx110t,ff1136,-1 (PRODUCTION 1.73 2013-10-13, STEPPING level 0)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:2698 - No timing constraints found, doing default enumeration.
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Setup/Hold to clock USER_CLK
+------------+------------+------------+------------------+--------+
+            |Max Setup to|Max Hold to |                  | Clock  |
+Source      | clk (edge) | clk (edge) |Internal Clock(s) | Phase  |
+------------+------------+------------+------------------+--------+
+RESET       |    3.759(R)|    1.532(R)|clk               |   0.000|
+SWITCH      |    2.516(R)|    3.285(R)|clk               |   0.000|
+------------+------------+------------+------------------+--------+
+
+Clock USER_CLK to Pad
+-------------+------------+------------------+--------+
+             | clk (edge) |                  | Clock  |
+Destination  |   to PAD   |Internal Clock(s) | Phase  |
+-------------+------------+------------------+--------+
+CLK_LANE_N   |    7.793(R)|sclk              |   0.000|
+CLK_LANE_P   |    7.793(R)|sclk              |   0.000|
+DATA_LANE_0_N|    7.806(R)|sclk              |   0.000|
+DATA_LANE_0_P|    7.806(R)|sclk              |   0.000|
+DATA_LANE_1_N|    7.824(R)|sclk              |   0.000|
+DATA_LANE_1_P|    7.824(R)|sclk              |   0.000|
+DATA_LANE_2_N|    7.804(R)|sclk              |   0.000|
+DATA_LANE_2_P|    7.804(R)|sclk              |   0.000|
+DATA_LANE_3_N|    7.789(R)|sclk              |   0.000|
+DATA_LANE_3_P|    7.789(R)|sclk              |   0.000|
+DATA_LANE_4_N|    7.800(R)|sclk              |   0.000|
+DATA_LANE_4_P|    7.800(R)|sclk              |   0.000|
+LED          |   14.345(R)|clk               |   0.000|
+-------------+------------+------------------+--------+
+
+Clock to Setup on destination clock USER_CLK
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+USER_CLK       |    3.404|    1.718|    1.626|    2.210|
+---------------+---------+---------+---------+---------+
+
+
+Analysis completed Mon Aug 19 11:19:33 2019 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 601 MB
+
+
+

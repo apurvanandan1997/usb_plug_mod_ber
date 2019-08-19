@@ -1,0 +1,17 @@
+if {![file exists "/home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/proj/par_sim/par_sim.mpf"]} { 
+	project new "/home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/proj/par_sim" par_sim
+	project addfile "/home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/top_tb.vhd"
+	project addfile "/home/apurvan/GSoC/BER_measurement_5_Lane/Virtex-5/src/prng_send.vhd"
+	project addfile "/home/apurvan/GSoC/BER_measurement_5_Lane/Virtex-5/src/enc_8b10b.vhd"
+	project addfile "/home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/proj/impl1/data_transfer_impl1_vho.vho"
+	vlib  work
+	vdel -lib work -all 
+	vlib work
+	vcom -work work "/home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/top_tb.vhd"
+	vcom -work work "/home/apurvan/GSoC/BER_measurement_5_Lane/Virtex-5/src/prng_send.vhd"
+	vcom -work work "/home/apurvan/GSoC/BER_measurement_5_Lane/Virtex-5/src/enc_8b10b.vhd"
+	vcom -work work "/home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/proj/impl1/data_transfer_impl1_vho.vho"
+} else {
+	project open "/home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/proj/par_sim/par_sim"
+}
+vsim -version

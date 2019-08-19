@@ -1,0 +1,17 @@
+<BaliSimProject version="1.3" path="." stage="0" language="-1" name="beh_sim" simType="ModelSim">
+    <Source worklib="work" path="../src/async_fifo.vhd" type="VHDL" include="none"/>
+    <Source worklib="work" path="../src/ddrx4.vhd" type="VHDL" include="none"/>
+    <Source worklib="work" path="../src/dec_8b10b.vhd" type="VHDL" include="none"/>
+    <Source worklib="work" path="../src/deserializer.vhd" type="VHDL" include="none"/>
+    <Source worklib="work" path="../src/ft601.vhd" type="VHDL" include="none"/>
+    <Source worklib="work" path="../src/prng_recv.vhd" type="VHDL" include="none"/>
+    <Source worklib="work" path="../src/rx_sync.vhd" type="VHDL" include="none"/>
+    <Source worklib="work" path="../src/top_tb.vhd" type="VHDL" include="none"/>
+    <Source worklib="work" path="../src/top.vhd" type="VHDL" include="none"/>
+    <Source worklib="work" path="../../Virtex-5/src/prng_send.vhd" type="VHDL" include="none"/>
+    <Source worklib="work" path="../../Virtex-5/src/enc_8b10b.vhd" type="VHDL" include="none"/>
+    <SimLib value="pmi_work ovi_machxo2"/>
+    <GlbInc value=""/>
+    <Macro value=""/>
+    <TopModule instance="" language="" name=""/>
+</BaliSimProject>

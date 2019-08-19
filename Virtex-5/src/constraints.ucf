@@ -1,0 +1,44 @@
+NET  DATA_LANE_0_N   LOC="K34" | IOSTANDARD = "LVDS_25" ;   # Bank 11, Vcco=2.5V or 3.3V user selectable by J20 (SYSMON External Input: VAUXN[15]) J4-2
+NET  DATA_LANE_0_P   LOC="L34" | IOSTANDARD = "LVDS_25" ;   # Bank 11, Vcco=2.5V or 3.3V user selectable by J20 (SYSMON External Input: VAUXP[15]) J4-4
+NET  DATA_LANE_1_N   LOC="K32" | IOSTANDARD = "LVDS_25" ;   # Bank 11, Vcco=2.5V or 3.3V user selectable by J20 (SYSMON External Input: VAUXN[14]) J4-6
+NET  DATA_LANE_1_P   LOC="K33" | IOSTANDARD = "LVDS_25" ;   # Bank 11, Vcco=2.5V or 3.3V user selectable by J20 (SYSMON External Input: VAUXP[14]) J4-8
+NET  DATA_LANE_2_N   LOC="N32" | IOSTANDARD = "LVDS_25" ;   # Bank 11, Vcco=2.5V or 3.3V user selectable by J20 (SYSMON External Input: VAUXN[13]) J4-10
+NET  DATA_LANE_2_P   LOC="P32" | IOSTANDARD = "LVDS_25" ;   # Bank 11, Vcco=2.5V or 3.3V user selectable by J20 (SYSMON External Input: VAUXP[13]) J4-12
+NET  DATA_LANE_3_N   LOC="R34" | IOSTANDARD = "LVDS_25" ;   # Bank 11, Vcco=2.5V or 3.3V user selectable by J20 (SYSMON External Input: VAUXN[12]) J4-14
+NET  DATA_LANE_3_P   LOC="T33" | IOSTANDARD = "LVDS_25" ;   # Bank 11, Vcco=2.5V or 3.3V user selectable by J20 (SYSMON External Input: VAUXP[12]) J4-16
+NET  DATA_LANE_4_N   LOC="R32" | IOSTANDARD = "LVDS_25" ;   # Bank 11, Vcco=2.5V or 3.3V user selectable by J20 (SYSMON External Input: VAUXN[11]) J4-18
+NET  DATA_LANE_4_P   LOC="R33" | IOSTANDARD = "LVDS_25" ;   # Bank 11, Vcco=2.5V or 3.3V user selectable by J20 (SYSMON External Input: VAUXP[11]) J4-20
+NET  CLK_LANE_N      LOC="T34" | IOSTANDARD = "LVDS_25" ;   # Bank 11, Vcco=2.5V or 3.3V user selectable by J20 (SYSMON External Input: VAUXN[10]) J4-22
+NET  CLK_LANE_P      LOC="U33" | IOSTANDARD = "LVDS_25" ;   # Bank 11, Vcco=2.5V or 3.3V user selectable by J20 (SYSMON External Input: VAUXP[10]) J4-24
+#NET  LVDS_6_N     LOC="U31";   # Bank 11, Vcco=2.5V or 3.3V user selectable by J20 (SYSMON External Input: VAUXN[9]) J4-26
+#NET  LVDS_6_P     LOC="U32";   # Bank 11, Vcco=2.5V or 3.3V user selectable by J20 (SYSMON External Input: VAUXP[9]) J4-28
+#NET  LVDS_7_N     LOC="V33";   # Bank 13, Vcco=2.5V or 3.3V user selectable by J20 (SYSMON External Input: VAUXN[8]) J4-30
+#NET  LVDS_7_P     LOC="V32";   # Bank 13, Vcco=2.5V or 3.3V user selectable by J20 (SYSMON External Input: VAUXP[8]) J4-32
+#NET  LVDS_8_N     LOC="V34";   # Bank 13, Vcco=2.5V or 3.3V user selectable by J20 (SYSMON External Input: VAUXN[7]) J4-34
+#NET  LVDS_8_P     LOC="W34";   # Bank 13, Vcco=2.5V or 3.3V user selectable by J20 (SYSMON External Input: VAUXP[7]) J4-36
+#NET  LVDS_9_N     LOC="AA33";  # Bank 13, Vcco=2.5V or 3.3V user selectable by J20 (SYSMON External Input: VAUXN[6]) J4-38
+#NET  LVDS_9_P     LOC="Y33";   # Bank 13, Vcco=2.5V or 3.3V user selectable by J20 (SYSMON External Input: VAUXP[6]) J4-40
+#NET  LVDS_10_N     LOC="AE34";  # Bank 13, Vcco=2.5V or 3.3V user selectable by J20 (SYSMON External Input: VAUXN[0]) J4-42
+#NET  LVDS_10_P     LOC="AF34";  # Bank 13, Vcco=2.5V or 3.3V user selectable by J20 (SYSMON External Input: VAUXP[0]) J4-44
+#NET  LVDS_11_N     LOC="AE33";  # Bank 13, Vcco=2.5V or 3.3V user selectable by J20 (SYSMON External Input: VAUXN[1]) J4-46
+#NET  LVDS_11_P     LOC="AF33";  # Bank 13, Vcco=2.5V or 3.3V user selectable by J20 (SYSMON External Input: VAUXP[1]) J4-48
+
+#NET  GPIO_SW<0>    LOC="U25";   # Bank 15, Vcco=1.8V, DCI using 49.9 ohm resistors
+#NET  GPIO_SW<1>    LOC="AG27";  # Bank 21, Vcco=1.8V, DCI using 49.9 ohm resistors
+#NET  GPIO_SW<2>    LOC="AF25";  # Bank 21, Vcco=1.8V, DCI using 49.9 ohm resistors
+#NET  GPIO_SW<3>    LOC="AF26";  # Bank 21, Vcco=1.8V, DCI using 49.9 ohm resistors
+#NET  GPIO_SW<4>    LOC="AE27";  # Bank 21, Vcco=1.8V, DCI using 49.9 ohm resistors
+#NET  GPIO_SW<5>    LOC="AE26";  # Bank 21, Vcco=1.8V, DCI using 49.9 ohm resistors
+#NET  GPIO_SW<6>    LOC="AC25";  # Bank 21, Vcco=1.8V, DCI using 49.9 ohm resistors
+#NET  GPIO_SW<7>    LOC="AC24";  # Bank 21, Vcco=1.8V, DCI using 49.9 ohm resistors
+
+#NET  LED           LOC="H18";   # Bank 3, Vcco=2.5V, No DCI
+NET  RESET         LOC="AJ6";   # Bank 15, Vcco=1.8V, DCI using 49.9 ohm resistors
+#NET  GPIO_LED<1>           LOC="L18";   # Bank 3, Vcco=2.5V, No DCI
+#NET  GPIO_LED<2>           LOC="G15";   # Bank 3, Vcco=2.5V, No DCI
+#NET  GPIO_LED<3>           LOC="AD26";  # Bank 21, Vcco=1.8V, DCI using 49.9 ohm resistors
+#NET  GPIO_LED<4>           LOC="G16";   # Bank 3, Vcco=2.5V, No DCI
+#NET  GPIO_LED<5>           LOC="AD25";  # Bank 21, Vcco=1.8V, DCI using 49.9 ohm resistors
+NET LED 				LOC="E8";
+NET  SWITCH         LOC="U25";
+NET  USER_CLK             LOC="AH15";

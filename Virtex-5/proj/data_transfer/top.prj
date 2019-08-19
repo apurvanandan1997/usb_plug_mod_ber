@@ -1,0 +1,4 @@
+vhdl work "../../src/serdes_10_1.vhd"
+vhdl work "../../src/prng_send.vhd"
+vhdl work "../../src/enc_8b10b.vhd"
+vhdl work "../../src/top.vhd"

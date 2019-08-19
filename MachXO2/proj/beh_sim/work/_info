@@ -1,0 +1,504 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/proj/beh_sim
+Easync_fifo
+Z1 w1565736056
+Z2 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+Z3 DPx7 machxo2 10 components 0 22 XO3PlA0G4T4RZJ?a0F9j;2
+Z4 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z5 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z6 8/home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/async_fifo.vhd
+Z7 F/home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/async_fifo.vhd
+l0
+L14
+Vk`1abH:oE1d3H_gIZo44S2
+!s100 :82X0bNG3@LeTAFeHfe>g3
+Z8 OW;C;10.5c;63
+32
+Z9 !s110 1566190771
+!i10b 1
+Z10 !s108 1566190771.000000
+Z11 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/async_fifo.vhd|
+Z12 !s107 /home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/async_fifo.vhd|
+!i113 1
+Z13 o-work work -2002 -explicit -O0
+Z14 tExplicit 1 CvgOpt 0
+Astructure
+R2
+R3
+R4
+R5
+Z15 DEx4 work 10 async_fifo 0 22 k`1abH:oE1d3H_gIZo44S2
+l81
+L30
+V;1Z@d]HVdRz@PUSM9L<XG2
+!s100 TjGHn]JUigW9VPl=DSVOa1
+R8
+32
+R9
+!i10b 1
+R10
+R11
+R12
+!i113 1
+R13
+R14
+Eddrx4
+Z16 w1566144183
+R4
+R5
+R0
+Z17 8/home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/ddrx4.vhd
+Z18 F/home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/ddrx4.vhd
+l0
+L6
+VR;O46Ba4Q3kM6AMT;;cJB0
+!s100 BH=:G6B`;bLQ40G4keU=O0
+R8
+32
+R9
+!i10b 1
+R10
+Z19 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/ddrx4.vhd|
+Z20 !s107 /home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/ddrx4.vhd|
+!i113 1
+R13
+R14
+Astructure
+R4
+R5
+DEx4 work 5 ddrx4 0 22 R;O46Ba4Q3kM6AMT;;cJB0
+l180
+L23
+VfKQHE]8^7<;oDCR<EbS783
+!s100 S47U7KPmh5I]69T@RmPXD1
+R8
+32
+R9
+!i10b 1
+R10
+R19
+R20
+!i113 1
+R13
+R14
+Edec_8b10b
+R1
+R4
+R5
+R0
+Z21 8/home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/dec_8b10b.vhd
+Z22 F/home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/dec_8b10b.vhd
+l0
+L57
+V]GSa4>1RKolS=SG0ee^>G3
+!s100 aYTX11kA?bTI:[dTmH<C52
+R8
+32
+R9
+!i10b 1
+R10
+Z23 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/dec_8b10b.vhd|
+Z24 !s107 /home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/dec_8b10b.vhd|
+!i113 1
+R13
+R14
+Abehavioral
+R4
+R5
+DEx4 work 9 dec_8b10b 0 22 ]GSa4>1RKolS=SG0ee^>G3
+l81
+L67
+VKOIe6Q2n2RICNJ0G:SP?F2
+!s100 >hdViY88cIASz7FYfko=O1
+R8
+32
+R9
+!i10b 1
+R10
+R23
+R24
+!i113 1
+R13
+R14
+Edeserializer
+Z25 w1566190748
+R2
+Z26 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
+R4
+R5
+R0
+Z27 8/home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/deserializer.vhd
+Z28 F/home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/deserializer.vhd
+l0
+L26
+VBmo1;<cb3<dR:bMQS?7G:1
+!s100 0kiV@I`zOIX76<E]XEV<_1
+R8
+32
+R9
+!i10b 1
+R10
+Z29 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/deserializer.vhd|
+Z30 !s107 /home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/deserializer.vhd|
+!i113 1
+R13
+R14
+Artl
+R2
+R26
+R4
+R5
+Z31 DEx4 work 12 deserializer 0 22 Bmo1;<cb3<dR:bMQS?7G:1
+l76
+L39
+VUSiXLlfNA=PJ8[fZc^:8A0
+!s100 ]TG15zFImDoR:m2BlV:W]0
+R8
+32
+R9
+!i10b 1
+R10
+R29
+R30
+!i113 1
+R13
+R14
+Eenc_8b10b
+R1
+R4
+R5
+R0
+Z32 8/home/apurvan/GSoC/BER_measurement_5_Lane/Virtex-5/src/enc_8b10b.vhd
+Z33 F/home/apurvan/GSoC/BER_measurement_5_Lane/Virtex-5/src/enc_8b10b.vhd
+l0
+L51
+VFaC7DhG5i`fOJ5nb19Cj_1
+!s100 XVZBfHC==A_gF>>nNKN9i2
+R8
+32
+Z34 !s110 1566190772
+!i10b 1
+R10
+Z35 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/apurvan/GSoC/BER_measurement_5_Lane/Virtex-5/src/enc_8b10b.vhd|
+Z36 !s107 /home/apurvan/GSoC/BER_measurement_5_Lane/Virtex-5/src/enc_8b10b.vhd|
+!i113 1
+R13
+R14
+Artl
+R4
+R5
+Z37 DEx4 work 9 enc_8b10b 0 22 FaC7DhG5i`fOJ5nb19Cj_1
+l78
+L62
+Z38 VQd^zF>mbJ58gj_ZLlZU5Y1
+Z39 !s100 B2@A^5m2_K7XIP5fgbQRH3
+R8
+32
+R34
+!i10b 1
+R10
+R35
+R36
+!i113 1
+R13
+R14
+Eft601
+R1
+R2
+R26
+R4
+R5
+R0
+Z40 8/home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/ft601.vhd
+Z41 F/home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/ft601.vhd
+l0
+L25
+VM@8OBlD23N>^L;EkhRz[M0
+!s100 B5K7L5obdEoceoVeOJHcf2
+R8
+32
+R9
+!i10b 1
+R10
+Z42 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/ft601.vhd|
+Z43 !s107 /home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/ft601.vhd|
+!i113 1
+R13
+R14
+Artl
+R2
+R26
+R4
+R5
+Z44 DEx4 work 5 ft601 0 22 M@8OBlD23N>^L;EkhRz[M0
+l55
+L50
+VK=9jO0SB6a9dIo^RVbnGE3
+!s100 XaH[PY9JS`MDifHbF=D]?1
+R8
+32
+R9
+!i10b 1
+R10
+R42
+R43
+!i113 1
+R13
+R14
+Eprng_recv
+R1
+R2
+R26
+Z45 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+R4
+R5
+R0
+Z46 8/home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/prng_recv.vhd
+Z47 F/home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/prng_recv.vhd
+l0
+L21
+V9Wc=_?g[SaN?BYeQDQa9h0
+!s100 ]Cc><gNDnO^I[>N^Xd4zi3
+R8
+32
+R9
+!i10b 1
+R10
+Z48 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/prng_recv.vhd|
+Z49 !s107 /home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/prng_recv.vhd|
+!i113 1
+R13
+R14
+Artl
+R2
+R26
+R45
+R4
+R5
+DEx4 work 9 prng_recv 0 22 9Wc=_?g[SaN?BYeQDQa9h0
+l45
+L40
+VL3660:Wc?4iCE@AjeFb>M2
+!s100 [WW>Q73664U0`VSeZm7^a0
+R8
+32
+R9
+!i10b 1
+R10
+R48
+R49
+!i113 1
+R13
+R14
+Eprng_send
+Z50 w1566143522
+R2
+R26
+R4
+R5
+R0
+Z51 8/home/apurvan/GSoC/BER_measurement_5_Lane/Virtex-5/src/prng_send.vhd
+Z52 F/home/apurvan/GSoC/BER_measurement_5_Lane/Virtex-5/src/prng_send.vhd
+l0
+L20
+V:@O5GzQ^:5GS3Uc=D>>L@1
+!s100 MBoe_TghGhFD^zKnH0nk91
+R8
+32
+R9
+!i10b 1
+R10
+Z53 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/apurvan/GSoC/BER_measurement_5_Lane/Virtex-5/src/prng_send.vhd|
+Z54 !s107 /home/apurvan/GSoC/BER_measurement_5_Lane/Virtex-5/src/prng_send.vhd|
+!i113 1
+R13
+R14
+Artl
+R2
+R26
+R4
+R5
+DEx4 work 9 prng_send 0 22 :@O5GzQ^:5GS3Uc=D>>L@1
+l42
+L35
+V1_lKaFQ1fY47oA<bfmzz>1
+!s100 bAaM9RKKMDz=Yo3U0gUhH3
+R8
+32
+R9
+!i10b 1
+R10
+R53
+R54
+!i113 1
+R13
+R14
+Erx_sync
+R1
+R45
+R4
+R5
+R0
+Z55 8/home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/rx_sync.vhd
+Z56 F/home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/rx_sync.vhd
+l0
+L8
+V=>SHDgEGQ^Y4j_K:>4jHA3
+!s100 l1nnPWk8BUY;>W@U0IXV^0
+R8
+32
+R9
+!i10b 1
+R10
+Z57 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/rx_sync.vhd|
+Z58 !s107 /home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/rx_sync.vhd|
+!i113 1
+R13
+R14
+Artl
+R45
+R4
+R5
+DEx4 work 7 rx_sync 0 22 =>SHDgEGQ^Y4j_K:>4jHA3
+l110
+L21
+VP^;P^D25aCn1?I6h^W>S31
+!s100 ^0lh;=RQR2fJ;noj<D?bg2
+R8
+32
+R9
+!i10b 1
+R10
+R57
+R58
+!i113 1
+R13
+R14
+Cstructure_con
+easync_fifo
+aStructure
+DPx7 machxo2 4 mem3 0 22 V<NmODbLdiUk7LU[1A8BV3
+DPx7 machxo2 6 global 0 22 EPni2];T?Mk^=aXNkd6@_3
+R26
+DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
+DEx7 machxo2 7 fifo8kb 0 22 ZY>h5[nfL@:88HaVz8h3d1
+DEx7 machxo2 3 vlo 0 22 BeN`G9JXLfEKe[f<1BnhI3
+DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
+DEx7 machxo2 3 vhi 0 22 ?SR[l0c_B96<5?0zSK@>n2
+DAx4 work 10 async_fifo 9 structure 22 ;1Z@d]HVdRz@PUSM9L<XG2
+R2
+R3
+R4
+R5
+R15
+R1
+R0
+R6
+R7
+l0
+L272
+VD6EGKP@b=KQ]894UmZ@A>1
+!s100 AMdoLhhWf5K^:RnnMVmaR3
+R8
+32
+R9
+!i10b 1
+R10
+R11
+R12
+!i113 1
+R13
+R14
+Etop
+Z59 w1566163155
+R2
+R26
+R4
+R5
+R0
+Z60 8/home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/top.vhd
+Z61 F/home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/top.vhd
+l0
+L26
+VZ[lE>9;gFEl]?Xc0k_]cE0
+!s100 P=6T3@JCB>z9jH`C4RF]A3
+R8
+32
+R9
+!i10b 1
+R10
+Z62 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/top.vhd|
+Z63 !s107 /home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/top.vhd|
+!i113 1
+R13
+R14
+Artl_top
+R44
+R31
+R2
+R26
+R4
+R5
+DEx4 work 3 top 0 22 Z[lE>9;gFEl]?Xc0k_]cE0
+l137
+L48
+V<>I7oNz=ooP3b2TK>6oc<2
+!s100 zN7NVfH=h0A;h8oQl5jK=3
+R8
+32
+R9
+!i10b 1
+R10
+R62
+R63
+!i113 1
+R13
+R14
+Etop_tb
+Z64 w1566162937
+R4
+R5
+R0
+Z65 8/home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/top_tb.vhd
+Z66 F/home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/top_tb.vhd
+l0
+L35
+VJVnNlbYFX^Wd8WZ56_O3c1
+!s100 @aC61`ARUD;4;cmTj@WLZ1
+R8
+32
+R9
+!i10b 1
+R10
+Z67 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/top_tb.vhd|
+Z68 !s107 /home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/top_tb.vhd|
+!i113 1
+R13
+R14
+Abehavior
+R4
+R5
+DEx4 work 6 top_tb 0 22 JVnNlbYFX^Wd8WZ56_O3c1
+l119
+L38
+VEV;X<]XXQ;?7PRdSKe`OU0
+!s100 R8a2eC7I;=Z7mOmiOX2<i2
+R8
+32
+R9
+!i10b 1
+R10
+R67
+R68
+!i113 1
+R13
+R14

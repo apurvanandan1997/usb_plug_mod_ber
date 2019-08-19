@@ -1,0 +1,5 @@
+
+
+-g RamCfg:Reset
+
+-path "/home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/proj"  

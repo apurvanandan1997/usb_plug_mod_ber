@@ -1,0 +1,173 @@
+<HTML>
+<HEAD><TITLE>Lattice TCL Log</TITLE>
+<STYLE TYPE="text/css">
+<!--
+ body,pre{    font-family:'Courier New', monospace;    color: #000000;    font-size:88%;    background-color: #ffffff;}h1 {    font-weight: bold;    margin-top: 24px;    margin-bottom: 10px;    border-bottom: 3px solid #000;    font-size: 1em;}h2 {    font-weight: bold;    margin-top: 18px;    margin-bottom: 5px;    font-size: 0.90em;}h3 {    font-weight: bold;    margin-top: 12px;    margin-bottom: 5px;    font-size: 0.80em;}p {    font-size:78%;}P.Table {    margin-top: 4px;    margin-bottom: 4px;    margin-right: 4px;    margin-left: 4px;}table{    border-width: 1px 1px 1px 1px;    border-style: solid solid solid solid;    border-color: black black black black;    border-collapse: collapse;}th {    font-weight:bold;    padding: 4px;    border-width: 1px 1px 1px 1px;    border-style: solid solid solid solid;    border-color: black black black black;    vertical-align:top;    text-align:left;    font-size:78%;}td {    padding: 4px;    border-width: 1px 1px 1px 1px;    border-style: solid solid solid solid;    border-color: black black black black;    vertical-align:top;    font-size:78%;}a {    color:#013C9A;    text-decoration:none;}a:visited {    color:#013C9A;}a:hover, a:active {    text-decoration:underline;    color:#5BAFD4;}.pass{background-color: #00ff00;}.fail{background-color: #ff0000;}.comment{    font-size: 90%;    font-style: italic;}
+-->
+</STYLE>
+</HEAD>
+<PRE><A name="pn190804182539"></A><B><U><big>pn190804182539</big></U></B>
+#Start recording tcl command: 8/4/2019 05:48:32
+#Project Location: /home/apurvan/GSoC/usb-plug-mod-working/data_transfer_gearwork/proj_folder/MachXO2; Project name: data_transfer
+prj_project new -name "data_transfer" -impl "impl1" -dev LCMXO2-2000HC-6TG100C -synthesis "lse"
+prj_src add "/home/apurvan/GSoC/usb-plug-mod-working/data_transfer_gearwork/src/MachXO2/async_fifo.vhd" "/home/apurvan/GSoC/usb-plug-mod-working/data_transfer_gearwork/src/MachXO2/ddrx4.vhd" "/home/apurvan/GSoC/usb-plug-mod-working/data_transfer_gearwork/src/MachXO2/dec_8b10b.vhd" "/home/apurvan/GSoC/usb-plug-mod-working/data_transfer_gearwork/src/MachXO2/deserializer.vhd" "/home/apurvan/GSoC/usb-plug-mod-working/data_transfer_gearwork/src/MachXO2/ft601.vhd" "/home/apurvan/GSoC/usb-plug-mod-working/data_transfer_gearwork/src/MachXO2/prng_recv.vhd" "/home/apurvan/GSoC/usb-plug-mod-working/data_transfer_gearwork/src/MachXO2/rx_sync.vhd" "/home/apurvan/GSoC/usb-plug-mod-working/data_transfer_gearwork/src/MachXO2/top_tb.vhd" "/home/apurvan/GSoC/usb-plug-mod-working/data_transfer_gearwork/src/MachXO2/top.vhd"
+prj_project save
+prj_src syn_sim -src "/home/apurvan/GSoC/usb-plug-mod-working/data_transfer_gearwork/src/MachXO2/top_tb.vhd" SimulateOnly
+prj_src syn_sim -src "/home/apurvan/GSoC/usb-plug-mod-working/data_transfer_gearwork/src/MachXO2/prng_recv.vhd" SimulateOnly
+prj_src remove "/home/apurvan/GSoC/usb-plug-mod-working/data_transfer_gearwork/src/MachXO2/prng_recv.vhd"
+prj_src add "/home/apurvan/GSoC/usb-plug-mod-working/data_transfer_gearwork/src/MachXO2/prng_recv.vhd"
+prj_src syn_sim -src "/home/apurvan/GSoC/usb-plug-mod-working/data_transfer_gearwork/src/MachXO2/prng_recv.vhd" SimulateOnly
+prj_src add -exclude "/home/apurvan/GSoC/usb-plug-mod-working/data_transfer_gearwork/src/MachXO2/ber_measure.lpf"
+prj_src enable "/home/apurvan/GSoC/usb-plug-mod-working/data_transfer_gearwork/src/MachXO2/ber_measure.lpf"
+prj_src remove "/home/apurvan/GSoC/usb-plug-mod-working/data_transfer_gearwork/proj_folder/MachXO2/data_transfer.lpf"
+prj_src add "/home/apurvan/GSoC/usb-plug-mod-working/data_transfer_gearwork/proj_folder/MachXO2/beh_sim/beh_sim.spf"
+prj_run Export -impl impl1 -task Bitgen
+prj_src add -exclude "/home/apurvan/GSoC/usb-plug-mod-working/data_transfer_gearwork/proj_folder/MachXO2/data_transfer.lpf"
+prj_src enable "/home/apurvan/GSoC/usb-plug-mod-working/data_transfer_gearwork/proj_folder/MachXO2/data_transfer.lpf"
+prj_src remove "/home/apurvan/GSoC/usb-plug-mod-working/data_transfer_gearwork/src/MachXO2/ber_measure.lpf"
+prj_run PAR -impl impl1
+prj_src remove "/home/apurvan/GSoC/usb-plug-mod-working/data_transfer_gearwork/src/MachXO2/rx_sync.vhd"
+prj_src add "/home/apurvan/GSoC/usb-plug-mod-working/data_transfer_gearwork/src/MachXO2/rx_sync.vhd"
+prj_run PAR -impl impl1
+prj_run PAR -impl impl1
+launch_synplify_prj impl1
+prj_project save
+prj_project close
+#Stop recording: 8/4/2019 18:25:39
+
+
+
+<A name="pn190814075733"></A><B><U><big>pn190814075733</big></U></B>
+#Start recording tcl command: 8/14/2019 07:53:56
+#Project Location: /home/apurvan/Project/GSoC/data_transfer_gearwork/proj_folder/MachXO2; Project name: data_transfer
+prj_project open "/home/apurvan/Project/GSoC/data_transfer_gearwork/proj_folder/MachXO2/data_transfer.ldf"
+#Stop recording: 8/14/2019 07:57:33
+
+
+
+<A name="pn190814081038"></A><B><U><big>pn190814081038</big></U></B>
+#Start recording tcl command: 8/14/2019 08:10:02
+#Project Location: /home/apurvan/Project/GSoC/data_transfer_gearwork/proj_folder/MachXO2; Project name: data_transfer
+prj_project open "/home/apurvan/Project/GSoC/data_transfer_gearwork/proj_folder/MachXO2/data_transfer.ldf"
+#Stop recording: 8/14/2019 08:10:38
+
+
+
+<A name="pn190814083027"></A><B><U><big>pn190814083027</big></U></B>
+#Start recording tcl command: 8/14/2019 08:29:55
+#Project Location: /home/apurvan/Project/GSoC/data_transfer_gearwork/proj_folder/MachXO2; Project name: data_transfer
+prj_project open "/home/apurvan/Project/GSoC/data_transfer_gearwork/proj_folder/MachXO2/data_transfer.ldf"
+#Stop recording: 8/14/2019 08:30:27
+
+
+
+<A name="pn190814083451"></A><B><U><big>pn190814083451</big></U></B>
+#Start recording tcl command: 8/14/2019 08:33:50
+#Project Location: /home/apurvan/Project/GSoC/data_transfer_gearwork/proj_folder/MachXO2; Project name: data_transfer
+prj_project open "/home/apurvan/Project/GSoC/data_transfer_gearwork/proj_folder/MachXO2/data_transfer.ldf"
+#Stop recording: 8/14/2019 08:34:51
+
+
+
+<A name="pn190814085633"></A><B><U><big>pn190814085633</big></U></B>
+#Start recording tcl command: 8/14/2019 08:45:43
+#Project Location: /home/apurvan/Project/GSoC/data_transfer_gearwork/proj_folder/MachXO2; Project name: data_transfer
+prj_project open "/home/apurvan/Project/GSoC/data_transfer_gearwork/proj_folder/MachXO2/data_transfer.ldf"
+prj_src remove "/home/apurvan/Project/GSoC/data_transfer_gearwork/proj_folder/MachXO2/beh_sim/beh_sim.spf"
+prj_src add "/home/apurvan/Project/GSoC/data_transfer_gearwork/proj_folder/MachXO2/beh_sim/beh_sim.spf"
+cmpl_libs -sim_path /usr/local/microsemi/Libero_SoC_v11.9/ModelSim/modeltech/linuxacoem -target_path /home/apurvan/modelsim -lang vhdl -device machxo2
+prj_src remove "/home/apurvan/Project/GSoC/data_transfer_gearwork/proj_folder/MachXO2/beh_sim/beh_sim.spf"
+prj_src add "/home/apurvan/Project/GSoC/data_transfer_gearwork/proj_folder/MachXO2/beh_sim/beh_sim.spf"
+#Stop recording: 8/14/2019 08:56:33
+
+
+
+<A name="pn190814085919"></A><B><U><big>pn190814085919</big></U></B>
+#Start recording tcl command: 8/14/2019 08:43:28
+#Project Location: /home/apurvan/Project/GSoC/data_transfer_gearwork/proj_folder/MachXO2; Project name: data_transfer
+prj_project open "/home/apurvan/Project/GSoC/data_transfer_gearwork/proj_folder/MachXO2/data_transfer.ldf"
+#Stop recording: 8/14/2019 08:59:19
+
+
+
+<A name="pn190814085922"></A><B><U><big>pn190814085922</big></U></B>
+#Start recording tcl command: 8/14/2019 08:13:41
+#Project Location: /home/apurvan/Project/GSoC/data_transfer_gearwork/proj_folder/MachXO2; Project name: data_transfer
+prj_project open "/home/apurvan/Project/GSoC/data_transfer_gearwork/proj_folder/MachXO2/data_transfer.ldf"
+#Stop recording: 8/14/2019 08:59:22
+
+
+
+<A name="pn190814090251"></A><B><U><big>pn190814090251</big></U></B>
+#Start recording tcl command: 8/14/2019 09:01:24
+#Project Location: /home/apurvan/Project/GSoC/data_transfer_gearwork/proj_folder/MachXO2; Project name: data_transfer
+prj_project open "/home/apurvan/Project/GSoC/data_transfer_gearwork/proj_folder/MachXO2/data_transfer.ldf"
+prj_src remove "/home/apurvan/Project/GSoC/data_transfer_gearwork/src/MachXO2/pcileech_ft601.v"
+prj_src enable "/home/apurvan/Project/GSoC/data_transfer_gearwork/src/MachXO2/ft601.vhd"
+prj_src remove "/home/apurvan/Project/GSoC/data_transfer_gearwork/proj_folder/MachXO2/beh_sim/beh_sim.spf"
+prj_src add "/home/apurvan/Project/GSoC/data_transfer_gearwork/proj_folder/MachXO2/beh_sim/beh_sim.spf"
+#Stop recording: 8/14/2019 09:02:51
+
+
+
+<A name="pn190818173338"></A><B><U><big>pn190818173338</big></U></B>
+#Start recording tcl command: 8/18/2019 16:41:44
+#Project Location: /home/apurvan/GSoC/data_transfer_gearwork/MachXO2/proj; Project name: data_transfer
+prj_project open "/home/apurvan/GSoC/data_transfer_gearwork/MachXO2/proj/data_transfer.ldf"
+#Stop recording: 8/18/2019 17:33:38
+
+
+
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+</PRE></FONT>
+</BODY>
+</HTML>

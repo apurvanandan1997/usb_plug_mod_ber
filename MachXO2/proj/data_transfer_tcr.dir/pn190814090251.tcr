@@ -1,0 +1,8 @@
+#Start recording tcl command: 8/14/2019 09:01:24
+#Project Location: /home/apurvan/Project/GSoC/data_transfer_gearwork/proj_folder/MachXO2; Project name: data_transfer
+prj_project open "/home/apurvan/Project/GSoC/data_transfer_gearwork/proj_folder/MachXO2/data_transfer.ldf"
+prj_src remove "/home/apurvan/Project/GSoC/data_transfer_gearwork/src/MachXO2/pcileech_ft601.v"
+prj_src enable "/home/apurvan/Project/GSoC/data_transfer_gearwork/src/MachXO2/ft601.vhd"
+prj_src remove "/home/apurvan/Project/GSoC/data_transfer_gearwork/proj_folder/MachXO2/beh_sim/beh_sim.spf"
+prj_src add "/home/apurvan/Project/GSoC/data_transfer_gearwork/proj_folder/MachXO2/beh_sim/beh_sim.spf"
+#Stop recording: 8/14/2019 09:02:51

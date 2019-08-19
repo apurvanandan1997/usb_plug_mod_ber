@@ -1,0 +1,81 @@
+Release 14.7 Drc P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+Mon Aug 19 11:19:38 2019
+
+drc -z top.ncd top.pcf
+
+WARNING:PhysDesignRules:1350 - Issue with pin connections and/or configuration
+   on block:<serdes_inst_data1/slave_serdes_inst_data0>:<OSERDES_OSERDES>.  The
+   use of INIT_OQ requires the OQ output pin to be connected.
+WARNING:PhysDesignRules:1351 - Issue with pin connections and/or configuration
+   on block:<serdes_inst_data1/slave_serdes_inst_data0>:<OSERDES_OSERDES>.  The
+   use of SRVAL_OQ requires the OQ output pin to be connected.
+WARNING:PhysDesignRules:1362 - Unexpected programming for comp
+   serdes_inst_data1/slave_serdes_inst_data0 with TRISTATE_WIDTH. DATA_RATE_TQ
+   set DDR expects TRISTATE_WIDTH to be set 4. 
+WARNING:PhysDesignRules:1362 - Unexpected programming for comp
+   serdes_inst_clk/master_serdes_inst_data0 with TRISTATE_WIDTH. DATA_RATE_TQ
+   set DDR expects TRISTATE_WIDTH to be set 4. 
+WARNING:PhysDesignRules:1350 - Issue with pin connections and/or configuration
+   on block:<serdes_inst_data3/slave_serdes_inst_data0>:<OSERDES_OSERDES>.  The
+   use of INIT_OQ requires the OQ output pin to be connected.
+WARNING:PhysDesignRules:1351 - Issue with pin connections and/or configuration
+   on block:<serdes_inst_data3/slave_serdes_inst_data0>:<OSERDES_OSERDES>.  The
+   use of SRVAL_OQ requires the OQ output pin to be connected.
+WARNING:PhysDesignRules:1362 - Unexpected programming for comp
+   serdes_inst_data3/slave_serdes_inst_data0 with TRISTATE_WIDTH. DATA_RATE_TQ
+   set DDR expects TRISTATE_WIDTH to be set 4. 
+WARNING:PhysDesignRules:1362 - Unexpected programming for comp
+   serdes_inst_data0/master_serdes_inst_data0 with TRISTATE_WIDTH. DATA_RATE_TQ
+   set DDR expects TRISTATE_WIDTH to be set 4. 
+WARNING:PhysDesignRules:1362 - Unexpected programming for comp
+   serdes_inst_data1/master_serdes_inst_data0 with TRISTATE_WIDTH. DATA_RATE_TQ
+   set DDR expects TRISTATE_WIDTH to be set 4. 
+WARNING:PhysDesignRules:1350 - Issue with pin connections and/or configuration
+   on block:<serdes_inst_data0/slave_serdes_inst_data0>:<OSERDES_OSERDES>.  The
+   use of INIT_OQ requires the OQ output pin to be connected.
+WARNING:PhysDesignRules:1351 - Issue with pin connections and/or configuration
+   on block:<serdes_inst_data0/slave_serdes_inst_data0>:<OSERDES_OSERDES>.  The
+   use of SRVAL_OQ requires the OQ output pin to be connected.
+WARNING:PhysDesignRules:1362 - Unexpected programming for comp
+   serdes_inst_data0/slave_serdes_inst_data0 with TRISTATE_WIDTH. DATA_RATE_TQ
+   set DDR expects TRISTATE_WIDTH to be set 4. 
+WARNING:PhysDesignRules:1362 - Unexpected programming for comp
+   serdes_inst_data2/master_serdes_inst_data0 with TRISTATE_WIDTH. DATA_RATE_TQ
+   set DDR expects TRISTATE_WIDTH to be set 4. 
+WARNING:PhysDesignRules:1350 - Issue with pin connections and/or configuration
+   on block:<serdes_inst_data2/slave_serdes_inst_data0>:<OSERDES_OSERDES>.  The
+   use of INIT_OQ requires the OQ output pin to be connected.
+WARNING:PhysDesignRules:1351 - Issue with pin connections and/or configuration
+   on block:<serdes_inst_data2/slave_serdes_inst_data0>:<OSERDES_OSERDES>.  The
+   use of SRVAL_OQ requires the OQ output pin to be connected.
+WARNING:PhysDesignRules:1362 - Unexpected programming for comp
+   serdes_inst_data2/slave_serdes_inst_data0 with TRISTATE_WIDTH. DATA_RATE_TQ
+   set DDR expects TRISTATE_WIDTH to be set 4. 
+WARNING:PhysDesignRules:1362 - Unexpected programming for comp
+   serdes_inst_data3/master_serdes_inst_data0 with TRISTATE_WIDTH. DATA_RATE_TQ
+   set DDR expects TRISTATE_WIDTH to be set 4. 
+WARNING:PhysDesignRules:1350 - Issue with pin connections and/or configuration
+   on block:<serdes_inst_data4/slave_serdes_inst_data0>:<OSERDES_OSERDES>.  The
+   use of INIT_OQ requires the OQ output pin to be connected.
+WARNING:PhysDesignRules:1351 - Issue with pin connections and/or configuration
+   on block:<serdes_inst_data4/slave_serdes_inst_data0>:<OSERDES_OSERDES>.  The
+   use of SRVAL_OQ requires the OQ output pin to be connected.
+WARNING:PhysDesignRules:1362 - Unexpected programming for comp
+   serdes_inst_data4/slave_serdes_inst_data0 with TRISTATE_WIDTH. DATA_RATE_TQ
+   set DDR expects TRISTATE_WIDTH to be set 4. 
+WARNING:PhysDesignRules:1362 - Unexpected programming for comp
+   serdes_inst_data4/master_serdes_inst_data0 with TRISTATE_WIDTH. DATA_RATE_TQ
+   set DDR expects TRISTATE_WIDTH to be set 4. 
+WARNING:PhysDesignRules:1350 - Issue with pin connections and/or configuration
+   on block:<serdes_inst_clk/slave_serdes_inst_data0>:<OSERDES_OSERDES>.  The
+   use of INIT_OQ requires the OQ output pin to be connected.
+WARNING:PhysDesignRules:1351 - Issue with pin connections and/or configuration
+   on block:<serdes_inst_clk/slave_serdes_inst_data0>:<OSERDES_OSERDES>.  The
+   use of SRVAL_OQ requires the OQ output pin to be connected.
+WARNING:PhysDesignRules:1362 - Unexpected programming for comp
+   serdes_inst_clk/slave_serdes_inst_data0 with TRISTATE_WIDTH. DATA_RATE_TQ set
+   DDR expects TRISTATE_WIDTH to be set 4. 
+DRC detected 0 errors and 24 warnings.  Please see the previously displayed
+individual error or warning messages for more details.

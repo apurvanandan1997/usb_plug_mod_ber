@@ -1,0 +1,5 @@
+-rem
+-distrce
+-log "data_transfer_impl1.log"
+-o "data_transfer_impl1.csv"
+-pr "data_transfer_impl1.prf"

@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=/home/apurvan/GSoC/BER_measurement_5_Lane/Virtex-5/proj/data_transfer/top.ncd
+OUTFILE=/home/apurvan/GSoC/BER_measurement_5_Lane/Virtex-5/proj/data_transfer/top.bit
+FAMILY=Virtex5
+PART=xc5vlx110t-1ff1136
+WORKINGDIR=/home/apurvan/GSoC/BER_measurement_5_Lane/Virtex-5/proj/data_transfer
+LICENSE=ISE
+USER_INFO=__0_0_0
