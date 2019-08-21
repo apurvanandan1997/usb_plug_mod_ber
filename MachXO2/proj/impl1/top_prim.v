@@ -1,5 +1,5 @@
 // Verilog netlist produced by program LSE :  version Diamond (64-bit) 3.10.0.111.2
-// Netlist written on Wed Aug 21 18:52:38 2019
+// Netlist written on Thu Aug 22 00:05:45 2019
 //
 // Verilog Description of module top
 //
@@ -2146,19 +2146,19 @@ module ddrx4 (rbyteclk_N_428, sclk, bit_slip, q40_buf, buf_clk, GND_net,
     defparam Inst3_DQSDLLC.FORCE_MAX_DELAY = "NO";
     DELAYE udel_dataini4 (.A(buf_dataini[4]), .Z(dataini_t[4])) /* synthesis syn_instantiated=1, LSE_LINE_FILE_ID=23, LSE_LCOL=18, LSE_RCOL=23, LSE_LLINE=78, LSE_RLINE=78 */ ;   // /home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/deserializer.vhd(78[18:23])
     defparam udel_dataini4.DEL_MODE = "USER_DEFINED";
-    defparam udel_dataini4.DEL_VALUE = "DELAY6";
+    defparam udel_dataini4.DEL_VALUE = "DELAY8";
     DELAYE udel_dataini3 (.A(buf_dataini[3]), .Z(dataini_t[3])) /* synthesis syn_instantiated=1, LSE_LINE_FILE_ID=23, LSE_LCOL=18, LSE_RCOL=23, LSE_LLINE=78, LSE_RLINE=78 */ ;   // /home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/deserializer.vhd(78[18:23])
     defparam udel_dataini3.DEL_MODE = "USER_DEFINED";
-    defparam udel_dataini3.DEL_VALUE = "DELAY6";
+    defparam udel_dataini3.DEL_VALUE = "DELAY8";
     DELAYE udel_dataini2 (.A(buf_dataini[2]), .Z(dataini_t[2])) /* synthesis syn_instantiated=1, LSE_LINE_FILE_ID=23, LSE_LCOL=18, LSE_RCOL=23, LSE_LLINE=78, LSE_RLINE=78 */ ;   // /home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/deserializer.vhd(78[18:23])
     defparam udel_dataini2.DEL_MODE = "USER_DEFINED";
-    defparam udel_dataini2.DEL_VALUE = "DELAY6";
+    defparam udel_dataini2.DEL_VALUE = "DELAY8";
     DELAYE udel_dataini1 (.A(buf_dataini[1]), .Z(dataini_t[1])) /* synthesis syn_instantiated=1, LSE_LINE_FILE_ID=23, LSE_LCOL=18, LSE_RCOL=23, LSE_LLINE=78, LSE_RLINE=78 */ ;   // /home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/deserializer.vhd(78[18:23])
     defparam udel_dataini1.DEL_MODE = "USER_DEFINED";
-    defparam udel_dataini1.DEL_VALUE = "DELAY6";
+    defparam udel_dataini1.DEL_VALUE = "DELAY8";
     DELAYE udel_dataini0 (.A(buf_dataini[0]), .Z(dataini_t[0])) /* synthesis syn_instantiated=1, LSE_LINE_FILE_ID=23, LSE_LCOL=18, LSE_RCOL=23, LSE_LLINE=78, LSE_RLINE=78 */ ;   // /home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/deserializer.vhd(78[18:23])
     defparam udel_dataini0.DEL_MODE = "USER_DEFINED";
-    defparam udel_dataini0.DEL_VALUE = "DELAY6";
+    defparam udel_dataini0.DEL_VALUE = "DELAY8";
     AND2 AND2_t1 (.A(LED_c), .B(uddcntln_i), .Z(uddcntln_t)) /* synthesis syn_instantiated=1, LSE_LINE_FILE_ID=23, LSE_LCOL=18, LSE_RCOL=23, LSE_LLINE=78, LSE_RLINE=78 */ ;   // /home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/ddrx4.vhd(188[15:19])
     INV INV_0 (.A(GND_net), .Z(reset_inv)) /* synthesis LSE_LINE_FILE_ID=23, LSE_LCOL=18, LSE_RCOL=23, LSE_LLINE=78, LSE_RLINE=78 */ ;   // /home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/deserializer.vhd(78[18:23])
     OR2 OR2_t0 (.A(LED_c), .B(freeze_i), .Z(freeze_t)) /* synthesis syn_instantiated=1, LSE_LINE_FILE_ID=23, LSE_LCOL=18, LSE_RCOL=23, LSE_LLINE=78, LSE_RLINE=78 */ ;   // /home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/ddrx4.vhd(195[14:17])

@@ -7,6 +7,8 @@ static thread measure_thread;
 static thread write_thread;
 static thread read_thread;
 static const int BUFFER_LEN = 32*1024;
+static unsigned int buffer_value;
+static unique_ptr<uint8_t[]> buf(new uint8_t[BUFFER_LEN]);
 
 static char hex_val[16] = { '0', '1', '2', '3', '4', '5','6','7','8','9','A','B', 'C', 'D', 'E', 'F'};
 
@@ -44,9 +46,6 @@ static void write_test(FT_HANDLE handle)
 
 static void read_test(FT_HANDLE handle)
 {
-	unsigned int buffer_value;
-	unique_ptr<uint8_t[]> buf(new uint8_t[BUFFER_LEN]);
-
 	while (!do_exit) {
 		for (uint8_t channel = 0; channel < in_ch_cnt; channel++) {
 			ULONG count = 0;
@@ -56,11 +55,10 @@ static void read_test(FT_HANDLE handle)
 				break;
 			}
 			// Addition
-			else 
-			{	
-			 	for (int k=0; k< BUFFER_LEN; k=k+4) {
+			else{
+				for (int k=0; k< BUFFER_LEN; k=k+4) {
 			 		buffer_value = (unsigned int)buf[k+3]+(unsigned int)buf[k+2]*256+(unsigned int)buf[k+1]*65536+(unsigned int)buf[k]*16777216;
-			 		cout << "\r" << "Bit Error Rate: " << buffer_value/ 42949672960.0 << " (" << hex_val[buf[k]/16] << hex_val[buf[k]%16] << hex_val[buf[k+1]/16] << hex_val[buf[k+1]%16] << hex_val[buf[k+2]/16] << hex_val[buf[k+2]%16] << hex_val[buf[k+3]/16] << hex_val[buf[k+3]%16] << "/9FFFFFFFF)          ";
+			 		//cout << "\r" << "Bit Error Rate: " << buffer_value/ 42949672960.0 << " (" << hex_val[buf[k]/16] << hex_val[buf[k]%16] << hex_val[buf[k+1]/16] << hex_val[buf[k+1]%16] << hex_val[buf[k+2]/16] << hex_val[buf[k+2]%16] << hex_val[buf[k+3]/16] << hex_val[buf[k+3]%16] << "/9FFFFFFFF)        ";
 			 	}
 			 }
 			//Addition
@@ -76,6 +74,23 @@ static void show_help(const char *bin)
 	printf("  channel count: [0, 1] for 245 mode, [0-4] for 600 mode\r\n");
 	printf("  mode: 0 = FT245 mode (default), 1 = FT600 mode\r\n");
 }
+
+static void show_throughput(FT_HANDLE handle)
+{
+        auto next = chrono::steady_clock::now() + chrono::seconds(1);;
+        (void)handle;
+
+        while (!do_exit) {
+                this_thread::sleep_until(next);
+                next += chrono::seconds(1);
+
+                int rx = rx_count.exchange(0);
+
+		cout << "\r" << "Bit Error Rate: " << buffer_value/ 42949672960.0 << " (" << hex_val[buf[0]/16] << hex_val[buf[0]%16] << hex_val[buf[1]/16] << hex_val[buf[1]%16] << hex_val[buf[2]/16] << hex_val[buf[2]%16] << hex_val[buf[3]/16] << hex_val[buf[3]%16] << "/9FFFFFFFF) | Throughput: " << (float)(rx/100000000.0) << " Gbps            ";
+
+        }
+}
+
 
 static void get_queue_status(HANDLE handle)
 {
@@ -161,15 +176,15 @@ int main(int argc, char *argv[])
 		write_thread = thread(write_test, handle);
 	if (in_ch_cnt)
 		read_thread = thread(read_test, handle);
-	// measure_thread = thread(show_throughput, handle);
+        measure_thread = thread(show_throughput, handle);
 	register_signals();
-	printf("Bit Error Rate Testing! Updates in nearly every 20 seconds. \n");
+	printf("Bit Error Rate and Throughput Testing! Updates in nearly every 20 seconds. \n");
 	if (write_thread.joinable())
 		write_thread.join();
 	if (read_thread.joinable())
 		read_thread.join();
-	// if (measure_thread.joinable())
-	// 	measure_thread.join();
+	if (measure_thread.joinable())
+	 	measure_thread.join();
 	get_queue_status(handle);
 	return 0;
 }

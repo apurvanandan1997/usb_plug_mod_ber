@@ -178,15 +178,15 @@ begin
 
     PLL_BASE_inst1 : PLLE2_BASE
         generic map (
-            CLKFBOUT_MULT  => 18,     -- Multiplication factor for all output clocks
+            CLKFBOUT_MULT  => 30,     -- Multiplication factor for all output clocks
             CLKFBOUT_PHASE => 0.0,    -- Phase shift (degrees) of all output clocks
             CLKIN1_PERIOD  => 20.000, -- Clock period (ns) of input clock on CLKIN
 
-            CLKOUT0_DIVIDE     => 15,  -- Division factor for CLKOUT0 (1 to 128)
+            CLKOUT0_DIVIDE     => 20,  -- Division factor for CLKOUT0 (1 to 128)
             CLKOUT0_DUTY_CYCLE => 0.5, -- Duty cycle for CLKOUT0 (0.01 to 0.99)
             CLKOUT0_PHASE      => 0.0, -- Phase shift (degrees) for CLKOUT0 (0.0 to 360.0)
 
-            CLKOUT1_DIVIDE     => 3,   -- Division factor for CLKOUT1 (1 to 128)
+            CLKOUT1_DIVIDE     => 4,   -- Division factor for CLKOUT1 (1 to 128)
             CLKOUT1_DUTY_CYCLE => 0.5, -- Duty cycle for CLKOUT1 (0.01 to 0.99)
             CLKOUT1_PHASE      => 0.0, -- Phase shift (degrees) for CLKOUT1 (0.0 to 360.0)
 

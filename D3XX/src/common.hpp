@@ -80,7 +80,7 @@ static bool get_device_lists(int timeout_ms)
 	return true;
 }
 
-/* static void show_throughput(FT_HANDLE handle)
+/*static void show_throughput(FT_HANDLE handle)
 {
 	auto next = chrono::steady_clock::now() + chrono::seconds(1);;
 	(void)handle;
@@ -89,12 +89,9 @@ static bool get_device_lists(int timeout_ms)
 		this_thread::sleep_until(next);
 		next += chrono::seconds(1);
 
-		int tx = tx_count.exchange(0);
 		int rx = rx_count.exchange(0);
 
-		printf("TX:%.2fMB/s RX:%.2fMB/s, total:%.2fMB\r\n",
-			(float)tx/1000/1000, (float)rx/1000/1000,
-			(float)(tx+ rx)/1000/1000);
+		printf("Throughput: %.2fMB/s\r\n",(float)rx/1000/1000);
 	}
 }
 */
@@ -209,3 +206,4 @@ static bool set_channel_config(bool is_600_mode, CONFIGURATION_FIFO_CLK clock)
 }
 
 #endif /* end of include guard: COMMON_H_6J30YQFP */
+

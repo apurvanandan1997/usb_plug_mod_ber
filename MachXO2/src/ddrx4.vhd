@@ -325,7 +325,7 @@ begin
     Inst3_DQSDLLC : DQSDLLC
         generic map (
             FORCE_MAX_DELAY  => "NO",
-            FIN => "300.0",
+            FIN => "375.0",
             LOCK_SENSITIVITY => "LOW"
         )
         port map (
