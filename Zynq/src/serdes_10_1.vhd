@@ -44,6 +44,7 @@ architecture str of serdes_10_1 is
     signal data_out   : std_logic := '0';
 
 begin
+
     ----------------------------------------------------------------------------
     -- OSERDES: Output SERDES
     -- Virtex-5

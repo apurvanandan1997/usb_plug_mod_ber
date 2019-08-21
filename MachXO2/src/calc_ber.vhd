@@ -37,8 +37,8 @@ architecture rtl of calc_ber is
 
 begin
     
-
     error_bits <= byte_actual xor byte_recvd;
+    --error_bits(39 downto 32) <= (others => '0');
 
     count_proc : process(error_bits)
 

@@ -339,8 +339,8 @@ begin
 
     udel_dataini4 : DELAYE
         generic map (
-            DEL_VALUE => "DELAY0",
-            DEL_MODE  => "ECLK_ALIGNED"
+            DEL_VALUE => "DELAY8",
+            DEL_MODE  => "USER_DEFINED"
         )
         port map (
             A => buf_dataini(4),
@@ -349,8 +349,8 @@ begin
 
     udel_dataini3 : DELAYE
         generic map (
-            DEL_VALUE => "DELAY0",
-            DEL_MODE  => "ECLK_ALIGNED"
+            DEL_VALUE => "DELAY8",
+            DEL_MODE  => "USER_DEFINED"
         )
         port map (
             A => buf_dataini(3),
@@ -359,8 +359,8 @@ begin
 
     udel_dataini2 : DELAYE
         generic map (
-            DEL_VALUE => "DELAY0",
-            DEL_MODE  => "ECLK_ALIGNED"
+            DEL_VALUE => "DELAY8",
+            DEL_MODE  => "USER_DEFINED"
         )
         port map (
             A => buf_dataini(2),
@@ -369,8 +369,8 @@ begin
 
     udel_dataini1 : DELAYE
         generic map (
-            DEL_VALUE => "DELAY0",
-            DEL_MODE  => "ECLK_ALIGNED"
+            DEL_VALUE => "DELAY8",
+            DEL_MODE  => "USER_DEFINED"
         )
         port map (
             A => buf_dataini(1),
@@ -379,8 +379,8 @@ begin
 
     udel_dataini0 : DELAYE
         generic map (
-            DEL_VALUE => "DELAY0",
-            DEL_MODE  => "ECLK_ALIGNED"
+            DEL_VALUE => "DELAY8",
+            DEL_MODE  => "USER_DEFINED"
         )
         port map (
             A => buf_dataini(0),

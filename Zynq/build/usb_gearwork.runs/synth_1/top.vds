@@ -1,0 +1,771 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:36:41 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Wed Aug 21 18:54:16 2019
+# Process ID: 20968
+# Current directory: /home/apurvan/GSoC/BER_measurement_5_Lane/Zynq/build/usb_gearwork.runs/synth_1
+# Command line: vivado -log top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
+# Log file: /home/apurvan/GSoC/BER_measurement_5_Lane/Zynq/build/usb_gearwork.runs/synth_1/top.vds
+# Journal file: /home/apurvan/GSoC/BER_measurement_5_Lane/Zynq/build/usb_gearwork.runs/synth_1/vivado.jou
+#-----------------------------------------------------------
+source top.tcl -notrace
+Command: synth_design -top top -part xc7z020clg400-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 20982 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1391.105 ; gain = 0.000 ; free physical = 2257 ; free virtual = 12909
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'top' [/home/apurvan/GSoC/BER_measurement_5_Lane/Zynq/src/top.vhd:50]
+INFO: [Synth 8-638] synthesizing module 'ps7_stub' [/home/apurvan/GSoC/BER_measurement_5_Lane/Zynq/src/ps7_stub.vhd:368]
+INFO: [Synth 8-113] binding component instance 'PS7_inst' to cell 'PS7' [/home/apurvan/GSoC/BER_measurement_5_Lane/Zynq/src/ps7_stub.vhd:373]
+INFO: [Synth 8-256] done synthesizing module 'ps7_stub' (1#1) [/home/apurvan/GSoC/BER_measurement_5_Lane/Zynq/src/ps7_stub.vhd:368]
+	Parameter DRIVE bound to: 12 - type: integer 
+	Parameter IBUF_LOW_PWR bound to: 1 - type: bool 
+	Parameter IOSTANDARD bound to: DEFAULT - type: string 
+	Parameter SLEW bound to: SLOW - type: string 
+INFO: [Synth 8-113] binding component instance 'IOBUF_sda_inst' to cell 'IOBUF' [/home/apurvan/GSoC/BER_measurement_5_Lane/Zynq/src/top.vhd:127]
+INFO: [Synth 8-113] binding component instance 'PULLUP_sda_inst' to cell 'PULLUP' [/home/apurvan/GSoC/BER_measurement_5_Lane/Zynq/src/top.vhd:132]
+	Parameter DRIVE bound to: 12 - type: integer 
+	Parameter IBUF_LOW_PWR bound to: 1 - type: bool 
+	Parameter IOSTANDARD bound to: DEFAULT - type: string 
+	Parameter SLEW bound to: SLOW - type: string 
+INFO: [Synth 8-113] binding component instance 'IOBUF_scl_inst' to cell 'IOBUF' [/home/apurvan/GSoC/BER_measurement_5_Lane/Zynq/src/top.vhd:141]
+INFO: [Synth 8-113] binding component instance 'PULLUP_scl_inst' to cell 'PULLUP' [/home/apurvan/GSoC/BER_measurement_5_Lane/Zynq/src/top.vhd:146]
+	Parameter BANDWIDTH bound to: OPTIMIZED - type: string 
+	Parameter CLKFBOUT_MULT bound to: 30 - type: integer 
+	Parameter CLKFBOUT_PHASE bound to: 0.000000 - type: float 
+	Parameter CLKIN1_PERIOD bound to: 20.000000 - type: float 
+	Parameter CLKOUT0_DIVIDE bound to: 20 - type: integer 
+	Parameter CLKOUT0_DUTY_CYCLE bound to: 0.500000 - type: float 
+	Parameter CLKOUT0_PHASE bound to: 0.000000 - type: float 
+	Parameter CLKOUT1_DIVIDE bound to: 4 - type: integer 
+	Parameter CLKOUT1_DUTY_CYCLE bound to: 0.500000 - type: float 
+	Parameter CLKOUT1_PHASE bound to: 0.000000 - type: float 
+	Parameter CLKOUT2_DIVIDE bound to: 1 - type: integer 
+	Parameter CLKOUT2_DUTY_CYCLE bound to: 0.500000 - type: float 
+	Parameter CLKOUT2_PHASE bound to: 0.000000 - type: float 
+	Parameter CLKOUT3_DIVIDE bound to: 1 - type: integer 
+	Parameter CLKOUT3_DUTY_CYCLE bound to: 0.500000 - type: float 
+	Parameter CLKOUT3_PHASE bound to: 0.000000 - type: float 
+	Parameter CLKOUT4_DIVIDE bound to: 1 - type: integer 
+	Parameter CLKOUT4_DUTY_CYCLE bound to: 0.500000 - type: float 
+	Parameter CLKOUT4_PHASE bound to: 0.000000 - type: float 
+	Parameter CLKOUT5_DIVIDE bound to: 1 - type: integer 
+	Parameter CLKOUT5_DUTY_CYCLE bound to: 0.500000 - type: float 
+	Parameter CLKOUT5_PHASE bound to: 0.000000 - type: float 
+	Parameter DIVCLK_DIVIDE bound to: 1 - type: integer 
+	Parameter REF_JITTER1 bound to: 0.010000 - type: float 
+	Parameter STARTUP_WAIT bound to: FALSE - type: string 
+INFO: [Synth 8-113] binding component instance 'PLL_BASE_inst1' to cell 'PLLE2_BASE' [/home/apurvan/GSoC/BER_measurement_5_Lane/Zynq/src/top.vhd:179]
+INFO: [Synth 8-113] binding component instance 'BUFG_inst0' to cell 'BUFG' [/home/apurvan/GSoC/BER_measurement_5_Lane/Zynq/src/top.vhd:215]
+INFO: [Synth 8-113] binding component instance 'BUFG_inst1' to cell 'BUFG' [/home/apurvan/GSoC/BER_measurement_5_Lane/Zynq/src/top.vhd:221]
+INFO: [Synth 8-113] binding component instance 'BUFG_inst2' to cell 'BUFG' [/home/apurvan/GSoC/BER_measurement_5_Lane/Zynq/src/top.vhd:227]
+INFO: [Synth 8-638] synthesizing module 'prng_send' [/home/apurvan/GSoC/BER_measurement_5_Lane/Zynq/src/prng_send.vhd:35]
+	Parameter SEED bound to: 40'b1011110010111100101111001011110010111100 
+INFO: [Synth 8-256] done synthesizing module 'prng_send' (2#1) [/home/apurvan/GSoC/BER_measurement_5_Lane/Zynq/src/prng_send.vhd:35]
+INFO: [Synth 8-638] synthesizing module 'enc_8b10b' [/home/apurvan/GSoC/BER_measurement_5_Lane/Zynq/src/enc_8b10b.vhd:62]
+INFO: [Synth 8-256] done synthesizing module 'enc_8b10b' (3#1) [/home/apurvan/GSoC/BER_measurement_5_Lane/Zynq/src/enc_8b10b.vhd:62]
+INFO: [Synth 8-638] synthesizing module 'enc_8b10b__parameterized0' [/home/apurvan/GSoC/BER_measurement_5_Lane/Zynq/src/enc_8b10b.vhd:62]
+INFO: [Synth 8-256] done synthesizing module 'enc_8b10b__parameterized0' (3#1) [/home/apurvan/GSoC/BER_measurement_5_Lane/Zynq/src/enc_8b10b.vhd:62]
+INFO: [Synth 8-638] synthesizing module 'enc_8b10b__parameterized1' [/home/apurvan/GSoC/BER_measurement_5_Lane/Zynq/src/enc_8b10b.vhd:62]
+INFO: [Synth 8-256] done synthesizing module 'enc_8b10b__parameterized1' (3#1) [/home/apurvan/GSoC/BER_measurement_5_Lane/Zynq/src/enc_8b10b.vhd:62]
+INFO: [Synth 8-638] synthesizing module 'enc_8b10b__parameterized2' [/home/apurvan/GSoC/BER_measurement_5_Lane/Zynq/src/enc_8b10b.vhd:62]
+INFO: [Synth 8-256] done synthesizing module 'enc_8b10b__parameterized2' (3#1) [/home/apurvan/GSoC/BER_measurement_5_Lane/Zynq/src/enc_8b10b.vhd:62]
+INFO: [Synth 8-638] synthesizing module 'enc_8b10b__parameterized3' [/home/apurvan/GSoC/BER_measurement_5_Lane/Zynq/src/enc_8b10b.vhd:62]
+INFO: [Synth 8-256] done synthesizing module 'enc_8b10b__parameterized3' (3#1) [/home/apurvan/GSoC/BER_measurement_5_Lane/Zynq/src/enc_8b10b.vhd:62]
+INFO: [Synth 8-638] synthesizing module 'serdes_10_1' [/home/apurvan/GSoC/BER_measurement_5_Lane/Zynq/src/serdes_10_1.vhd:40]
+	Parameter DATA_RATE_OQ bound to: DDR - type: string 
+	Parameter DATA_RATE_TQ bound to: DDR - type: string 
+	Parameter DATA_WIDTH bound to: 10 - type: integer 
+	Parameter INIT_OQ bound to: 1'b0 
+	Parameter INIT_TQ bound to: 1'b0 
+	Parameter IS_CLKDIV_INVERTED bound to: 1'b0 
+	Parameter IS_CLK_INVERTED bound to: 1'b0 
+	Parameter IS_D1_INVERTED bound to: 1'b0 
+	Parameter IS_D2_INVERTED bound to: 1'b0 
+	Parameter IS_D3_INVERTED bound to: 1'b0 
+	Parameter IS_D4_INVERTED bound to: 1'b0 
+	Parameter IS_D5_INVERTED bound to: 1'b0 
+	Parameter IS_D6_INVERTED bound to: 1'b0 
+	Parameter IS_D7_INVERTED bound to: 1'b0 
+	Parameter IS_D8_INVERTED bound to: 1'b0 
+	Parameter IS_T1_INVERTED bound to: 1'b0 
+	Parameter IS_T2_INVERTED bound to: 1'b0 
+	Parameter IS_T3_INVERTED bound to: 1'b0 
+	Parameter IS_T4_INVERTED bound to: 1'b0 
+	Parameter SERDES_MODE bound to: MASTER - type: string 
+	Parameter SRVAL_OQ bound to: 1'b0 
+	Parameter SRVAL_TQ bound to: 1'b0 
+	Parameter TBYTE_CTL bound to: FALSE - type: string 
+	Parameter TBYTE_SRC bound to: FALSE - type: string 
+	Parameter TRISTATE_WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-113] binding component instance 'master_serdes_inst_data0' to cell 'OSERDESE2' [/home/apurvan/GSoC/BER_measurement_5_Lane/Zynq/src/serdes_10_1.vhd:53]
+	Parameter DATA_RATE_OQ bound to: DDR - type: string 
+	Parameter DATA_RATE_TQ bound to: DDR - type: string 
+	Parameter DATA_WIDTH bound to: 10 - type: integer 
+	Parameter INIT_OQ bound to: 1'b1 
+	Parameter INIT_TQ bound to: 1'b1 
+	Parameter IS_CLKDIV_INVERTED bound to: 1'b0 
+	Parameter IS_CLK_INVERTED bound to: 1'b0 
+	Parameter IS_D1_INVERTED bound to: 1'b0 
+	Parameter IS_D2_INVERTED bound to: 1'b0 
+	Parameter IS_D3_INVERTED bound to: 1'b0 
+	Parameter IS_D4_INVERTED bound to: 1'b0 
+	Parameter IS_D5_INVERTED bound to: 1'b0 
+	Parameter IS_D6_INVERTED bound to: 1'b0 
+	Parameter IS_D7_INVERTED bound to: 1'b0 
+	Parameter IS_D8_INVERTED bound to: 1'b0 
+	Parameter IS_T1_INVERTED bound to: 1'b0 
+	Parameter IS_T2_INVERTED bound to: 1'b0 
+	Parameter IS_T3_INVERTED bound to: 1'b0 
+	Parameter IS_T4_INVERTED bound to: 1'b0 
+	Parameter SERDES_MODE bound to: SLAVE - type: string 
+	Parameter SRVAL_OQ bound to: 1'b0 
+	Parameter SRVAL_TQ bound to: 1'b0 
+	Parameter TBYTE_CTL bound to: FALSE - type: string 
+	Parameter TBYTE_SRC bound to: FALSE - type: string 
+	Parameter TRISTATE_WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-113] binding component instance 'slave_serdes_inst_data0' to cell 'OSERDESE2' [/home/apurvan/GSoC/BER_measurement_5_Lane/Zynq/src/serdes_10_1.vhd:99]
+	Parameter CAPACITANCE bound to: DONT_CARE - type: string 
+	Parameter IOSTANDARD bound to: DEFAULT - type: string 
+	Parameter SLEW bound to: SLOW - type: string 
+INFO: [Synth 8-113] binding component instance 'OBUFDS_inst' to cell 'OBUFDS' [/home/apurvan/GSoC/BER_measurement_5_Lane/Zynq/src/serdes_10_1.vhd:151]
+INFO: [Synth 8-256] done synthesizing module 'serdes_10_1' (4#1) [/home/apurvan/GSoC/BER_measurement_5_Lane/Zynq/src/serdes_10_1.vhd:40]
+INFO: [Synth 8-638] synthesizing module 'serdes_10_1__parameterized0' [/home/apurvan/GSoC/BER_measurement_5_Lane/Zynq/src/serdes_10_1.vhd:40]
+	Parameter DATA_RATE_OQ bound to: DDR - type: string 
+	Parameter DATA_RATE_TQ bound to: DDR - type: string 
+	Parameter DATA_WIDTH bound to: 10 - type: integer 
+	Parameter INIT_OQ bound to: 1'b0 
+	Parameter INIT_TQ bound to: 1'b0 
+	Parameter IS_CLKDIV_INVERTED bound to: 1'b0 
+	Parameter IS_CLK_INVERTED bound to: 1'b0 
+	Parameter IS_D1_INVERTED bound to: 1'b0 
+	Parameter IS_D2_INVERTED bound to: 1'b0 
+	Parameter IS_D3_INVERTED bound to: 1'b0 
+	Parameter IS_D4_INVERTED bound to: 1'b0 
+	Parameter IS_D5_INVERTED bound to: 1'b0 
+	Parameter IS_D6_INVERTED bound to: 1'b0 
+	Parameter IS_D7_INVERTED bound to: 1'b0 
+	Parameter IS_D8_INVERTED bound to: 1'b0 
+	Parameter IS_T1_INVERTED bound to: 1'b0 
+	Parameter IS_T2_INVERTED bound to: 1'b0 
+	Parameter IS_T3_INVERTED bound to: 1'b0 
+	Parameter IS_T4_INVERTED bound to: 1'b0 
+	Parameter SERDES_MODE bound to: MASTER - type: string 
+	Parameter SRVAL_OQ bound to: 1'b0 
+	Parameter SRVAL_TQ bound to: 1'b0 
+	Parameter TBYTE_CTL bound to: FALSE - type: string 
+	Parameter TBYTE_SRC bound to: FALSE - type: string 
+	Parameter TRISTATE_WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-113] binding component instance 'master_serdes_inst_data0' to cell 'OSERDESE2' [/home/apurvan/GSoC/BER_measurement_5_Lane/Zynq/src/serdes_10_1.vhd:53]
+	Parameter DATA_RATE_OQ bound to: DDR - type: string 
+	Parameter DATA_RATE_TQ bound to: DDR - type: string 
+	Parameter DATA_WIDTH bound to: 10 - type: integer 
+	Parameter INIT_OQ bound to: 1'b1 
+	Parameter INIT_TQ bound to: 1'b1 
+	Parameter IS_CLKDIV_INVERTED bound to: 1'b0 
+	Parameter IS_CLK_INVERTED bound to: 1'b0 
+	Parameter IS_D1_INVERTED bound to: 1'b0 
+	Parameter IS_D2_INVERTED bound to: 1'b0 
+	Parameter IS_D3_INVERTED bound to: 1'b0 
+	Parameter IS_D4_INVERTED bound to: 1'b0 
+	Parameter IS_D5_INVERTED bound to: 1'b0 
+	Parameter IS_D6_INVERTED bound to: 1'b0 
+	Parameter IS_D7_INVERTED bound to: 1'b0 
+	Parameter IS_D8_INVERTED bound to: 1'b0 
+	Parameter IS_T1_INVERTED bound to: 1'b0 
+	Parameter IS_T2_INVERTED bound to: 1'b0 
+	Parameter IS_T3_INVERTED bound to: 1'b0 
+	Parameter IS_T4_INVERTED bound to: 1'b0 
+	Parameter SERDES_MODE bound to: SLAVE - type: string 
+	Parameter SRVAL_OQ bound to: 1'b0 
+	Parameter SRVAL_TQ bound to: 1'b0 
+	Parameter TBYTE_CTL bound to: FALSE - type: string 
+	Parameter TBYTE_SRC bound to: FALSE - type: string 
+	Parameter TRISTATE_WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-113] binding component instance 'slave_serdes_inst_data0' to cell 'OSERDESE2' [/home/apurvan/GSoC/BER_measurement_5_Lane/Zynq/src/serdes_10_1.vhd:99]
+	Parameter CAPACITANCE bound to: DONT_CARE - type: string 
+	Parameter IOSTANDARD bound to: DEFAULT - type: string 
+	Parameter SLEW bound to: SLOW - type: string 
+INFO: [Synth 8-113] binding component instance 'OBUFDS_inst' to cell 'OBUFDS' [/home/apurvan/GSoC/BER_measurement_5_Lane/Zynq/src/serdes_10_1.vhd:151]
+INFO: [Synth 8-256] done synthesizing module 'serdes_10_1__parameterized0' (4#1) [/home/apurvan/GSoC/BER_measurement_5_Lane/Zynq/src/serdes_10_1.vhd:40]
+INFO: [Synth 8-638] synthesizing module 'serdes_10_1__parameterized1' [/home/apurvan/GSoC/BER_measurement_5_Lane/Zynq/src/serdes_10_1.vhd:40]
+	Parameter DATA_RATE_OQ bound to: DDR - type: string 
+	Parameter DATA_RATE_TQ bound to: DDR - type: string 
+	Parameter DATA_WIDTH bound to: 10 - type: integer 
+	Parameter INIT_OQ bound to: 1'b0 
+	Parameter INIT_TQ bound to: 1'b0 
+	Parameter IS_CLKDIV_INVERTED bound to: 1'b0 
+	Parameter IS_CLK_INVERTED bound to: 1'b0 
+	Parameter IS_D1_INVERTED bound to: 1'b0 
+	Parameter IS_D2_INVERTED bound to: 1'b0 
+	Parameter IS_D3_INVERTED bound to: 1'b0 
+	Parameter IS_D4_INVERTED bound to: 1'b0 
+	Parameter IS_D5_INVERTED bound to: 1'b0 
+	Parameter IS_D6_INVERTED bound to: 1'b0 
+	Parameter IS_D7_INVERTED bound to: 1'b0 
+	Parameter IS_D8_INVERTED bound to: 1'b0 
+	Parameter IS_T1_INVERTED bound to: 1'b0 
+	Parameter IS_T2_INVERTED bound to: 1'b0 
+	Parameter IS_T3_INVERTED bound to: 1'b0 
+	Parameter IS_T4_INVERTED bound to: 1'b0 
+	Parameter SERDES_MODE bound to: MASTER - type: string 
+	Parameter SRVAL_OQ bound to: 1'b0 
+	Parameter SRVAL_TQ bound to: 1'b0 
+	Parameter TBYTE_CTL bound to: FALSE - type: string 
+	Parameter TBYTE_SRC bound to: FALSE - type: string 
+	Parameter TRISTATE_WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-113] binding component instance 'master_serdes_inst_data0' to cell 'OSERDESE2' [/home/apurvan/GSoC/BER_measurement_5_Lane/Zynq/src/serdes_10_1.vhd:53]
+	Parameter DATA_RATE_OQ bound to: DDR - type: string 
+	Parameter DATA_RATE_TQ bound to: DDR - type: string 
+	Parameter DATA_WIDTH bound to: 10 - type: integer 
+	Parameter INIT_OQ bound to: 1'b1 
+	Parameter INIT_TQ bound to: 1'b1 
+	Parameter IS_CLKDIV_INVERTED bound to: 1'b0 
+	Parameter IS_CLK_INVERTED bound to: 1'b0 
+	Parameter IS_D1_INVERTED bound to: 1'b0 
+	Parameter IS_D2_INVERTED bound to: 1'b0 
+	Parameter IS_D3_INVERTED bound to: 1'b0 
+	Parameter IS_D4_INVERTED bound to: 1'b0 
+	Parameter IS_D5_INVERTED bound to: 1'b0 
+	Parameter IS_D6_INVERTED bound to: 1'b0 
+	Parameter IS_D7_INVERTED bound to: 1'b0 
+	Parameter IS_D8_INVERTED bound to: 1'b0 
+	Parameter IS_T1_INVERTED bound to: 1'b0 
+	Parameter IS_T2_INVERTED bound to: 1'b0 
+	Parameter IS_T3_INVERTED bound to: 1'b0 
+	Parameter IS_T4_INVERTED bound to: 1'b0 
+	Parameter SERDES_MODE bound to: SLAVE - type: string 
+	Parameter SRVAL_OQ bound to: 1'b0 
+	Parameter SRVAL_TQ bound to: 1'b0 
+	Parameter TBYTE_CTL bound to: FALSE - type: string 
+	Parameter TBYTE_SRC bound to: FALSE - type: string 
+	Parameter TRISTATE_WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-113] binding component instance 'slave_serdes_inst_data0' to cell 'OSERDESE2' [/home/apurvan/GSoC/BER_measurement_5_Lane/Zynq/src/serdes_10_1.vhd:99]
+	Parameter CAPACITANCE bound to: DONT_CARE - type: string 
+	Parameter IOSTANDARD bound to: DEFAULT - type: string 
+	Parameter SLEW bound to: SLOW - type: string 
+INFO: [Synth 8-113] binding component instance 'OBUFDS_inst' to cell 'OBUFDS' [/home/apurvan/GSoC/BER_measurement_5_Lane/Zynq/src/serdes_10_1.vhd:151]
+INFO: [Synth 8-256] done synthesizing module 'serdes_10_1__parameterized1' (4#1) [/home/apurvan/GSoC/BER_measurement_5_Lane/Zynq/src/serdes_10_1.vhd:40]
+INFO: [Synth 8-638] synthesizing module 'serdes_10_1__parameterized2' [/home/apurvan/GSoC/BER_measurement_5_Lane/Zynq/src/serdes_10_1.vhd:40]
+	Parameter DATA_RATE_OQ bound to: DDR - type: string 
+	Parameter DATA_RATE_TQ bound to: DDR - type: string 
+	Parameter DATA_WIDTH bound to: 10 - type: integer 
+	Parameter INIT_OQ bound to: 1'b0 
+	Parameter INIT_TQ bound to: 1'b0 
+	Parameter IS_CLKDIV_INVERTED bound to: 1'b0 
+	Parameter IS_CLK_INVERTED bound to: 1'b0 
+	Parameter IS_D1_INVERTED bound to: 1'b0 
+	Parameter IS_D2_INVERTED bound to: 1'b0 
+	Parameter IS_D3_INVERTED bound to: 1'b0 
+	Parameter IS_D4_INVERTED bound to: 1'b0 
+	Parameter IS_D5_INVERTED bound to: 1'b0 
+	Parameter IS_D6_INVERTED bound to: 1'b0 
+	Parameter IS_D7_INVERTED bound to: 1'b0 
+	Parameter IS_D8_INVERTED bound to: 1'b0 
+	Parameter IS_T1_INVERTED bound to: 1'b0 
+	Parameter IS_T2_INVERTED bound to: 1'b0 
+	Parameter IS_T3_INVERTED bound to: 1'b0 
+	Parameter IS_T4_INVERTED bound to: 1'b0 
+	Parameter SERDES_MODE bound to: MASTER - type: string 
+	Parameter SRVAL_OQ bound to: 1'b0 
+	Parameter SRVAL_TQ bound to: 1'b0 
+	Parameter TBYTE_CTL bound to: FALSE - type: string 
+	Parameter TBYTE_SRC bound to: FALSE - type: string 
+	Parameter TRISTATE_WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-113] binding component instance 'master_serdes_inst_data0' to cell 'OSERDESE2' [/home/apurvan/GSoC/BER_measurement_5_Lane/Zynq/src/serdes_10_1.vhd:53]
+	Parameter DATA_RATE_OQ bound to: DDR - type: string 
+	Parameter DATA_RATE_TQ bound to: DDR - type: string 
+	Parameter DATA_WIDTH bound to: 10 - type: integer 
+	Parameter INIT_OQ bound to: 1'b1 
+	Parameter INIT_TQ bound to: 1'b1 
+	Parameter IS_CLKDIV_INVERTED bound to: 1'b0 
+	Parameter IS_CLK_INVERTED bound to: 1'b0 
+	Parameter IS_D1_INVERTED bound to: 1'b0 
+	Parameter IS_D2_INVERTED bound to: 1'b0 
+	Parameter IS_D3_INVERTED bound to: 1'b0 
+	Parameter IS_D4_INVERTED bound to: 1'b0 
+	Parameter IS_D5_INVERTED bound to: 1'b0 
+	Parameter IS_D6_INVERTED bound to: 1'b0 
+	Parameter IS_D7_INVERTED bound to: 1'b0 
+	Parameter IS_D8_INVERTED bound to: 1'b0 
+	Parameter IS_T1_INVERTED bound to: 1'b0 
+	Parameter IS_T2_INVERTED bound to: 1'b0 
+	Parameter IS_T3_INVERTED bound to: 1'b0 
+	Parameter IS_T4_INVERTED bound to: 1'b0 
+	Parameter SERDES_MODE bound to: SLAVE - type: string 
+	Parameter SRVAL_OQ bound to: 1'b0 
+	Parameter SRVAL_TQ bound to: 1'b0 
+	Parameter TBYTE_CTL bound to: FALSE - type: string 
+	Parameter TBYTE_SRC bound to: FALSE - type: string 
+	Parameter TRISTATE_WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-113] binding component instance 'slave_serdes_inst_data0' to cell 'OSERDESE2' [/home/apurvan/GSoC/BER_measurement_5_Lane/Zynq/src/serdes_10_1.vhd:99]
+	Parameter CAPACITANCE bound to: DONT_CARE - type: string 
+	Parameter IOSTANDARD bound to: DEFAULT - type: string 
+	Parameter SLEW bound to: SLOW - type: string 
+INFO: [Synth 8-113] binding component instance 'OBUFDS_inst' to cell 'OBUFDS' [/home/apurvan/GSoC/BER_measurement_5_Lane/Zynq/src/serdes_10_1.vhd:151]
+INFO: [Synth 8-256] done synthesizing module 'serdes_10_1__parameterized2' (4#1) [/home/apurvan/GSoC/BER_measurement_5_Lane/Zynq/src/serdes_10_1.vhd:40]
+INFO: [Synth 8-638] synthesizing module 'serdes_10_1__parameterized3' [/home/apurvan/GSoC/BER_measurement_5_Lane/Zynq/src/serdes_10_1.vhd:40]
+	Parameter DATA_RATE_OQ bound to: DDR - type: string 
+	Parameter DATA_RATE_TQ bound to: DDR - type: string 
+	Parameter DATA_WIDTH bound to: 10 - type: integer 
+	Parameter INIT_OQ bound to: 1'b0 
+	Parameter INIT_TQ bound to: 1'b0 
+	Parameter IS_CLKDIV_INVERTED bound to: 1'b0 
+	Parameter IS_CLK_INVERTED bound to: 1'b0 
+	Parameter IS_D1_INVERTED bound to: 1'b0 
+	Parameter IS_D2_INVERTED bound to: 1'b0 
+	Parameter IS_D3_INVERTED bound to: 1'b0 
+	Parameter IS_D4_INVERTED bound to: 1'b0 
+	Parameter IS_D5_INVERTED bound to: 1'b0 
+	Parameter IS_D6_INVERTED bound to: 1'b0 
+	Parameter IS_D7_INVERTED bound to: 1'b0 
+	Parameter IS_D8_INVERTED bound to: 1'b0 
+	Parameter IS_T1_INVERTED bound to: 1'b0 
+	Parameter IS_T2_INVERTED bound to: 1'b0 
+	Parameter IS_T3_INVERTED bound to: 1'b0 
+	Parameter IS_T4_INVERTED bound to: 1'b0 
+	Parameter SERDES_MODE bound to: MASTER - type: string 
+	Parameter SRVAL_OQ bound to: 1'b0 
+	Parameter SRVAL_TQ bound to: 1'b0 
+	Parameter TBYTE_CTL bound to: FALSE - type: string 
+	Parameter TBYTE_SRC bound to: FALSE - type: string 
+	Parameter TRISTATE_WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-113] binding component instance 'master_serdes_inst_data0' to cell 'OSERDESE2' [/home/apurvan/GSoC/BER_measurement_5_Lane/Zynq/src/serdes_10_1.vhd:53]
+	Parameter DATA_RATE_OQ bound to: DDR - type: string 
+	Parameter DATA_RATE_TQ bound to: DDR - type: string 
+	Parameter DATA_WIDTH bound to: 10 - type: integer 
+	Parameter INIT_OQ bound to: 1'b1 
+	Parameter INIT_TQ bound to: 1'b1 
+	Parameter IS_CLKDIV_INVERTED bound to: 1'b0 
+	Parameter IS_CLK_INVERTED bound to: 1'b0 
+	Parameter IS_D1_INVERTED bound to: 1'b0 
+	Parameter IS_D2_INVERTED bound to: 1'b0 
+	Parameter IS_D3_INVERTED bound to: 1'b0 
+	Parameter IS_D4_INVERTED bound to: 1'b0 
+	Parameter IS_D5_INVERTED bound to: 1'b0 
+	Parameter IS_D6_INVERTED bound to: 1'b0 
+	Parameter IS_D7_INVERTED bound to: 1'b0 
+	Parameter IS_D8_INVERTED bound to: 1'b0 
+	Parameter IS_T1_INVERTED bound to: 1'b0 
+	Parameter IS_T2_INVERTED bound to: 1'b0 
+	Parameter IS_T3_INVERTED bound to: 1'b0 
+	Parameter IS_T4_INVERTED bound to: 1'b0 
+	Parameter SERDES_MODE bound to: SLAVE - type: string 
+	Parameter SRVAL_OQ bound to: 1'b0 
+	Parameter SRVAL_TQ bound to: 1'b0 
+	Parameter TBYTE_CTL bound to: FALSE - type: string 
+	Parameter TBYTE_SRC bound to: FALSE - type: string 
+	Parameter TRISTATE_WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-113] binding component instance 'slave_serdes_inst_data0' to cell 'OSERDESE2' [/home/apurvan/GSoC/BER_measurement_5_Lane/Zynq/src/serdes_10_1.vhd:99]
+	Parameter CAPACITANCE bound to: DONT_CARE - type: string 
+	Parameter IOSTANDARD bound to: DEFAULT - type: string 
+	Parameter SLEW bound to: SLOW - type: string 
+INFO: [Synth 8-113] binding component instance 'OBUFDS_inst' to cell 'OBUFDS' [/home/apurvan/GSoC/BER_measurement_5_Lane/Zynq/src/serdes_10_1.vhd:151]
+INFO: [Synth 8-256] done synthesizing module 'serdes_10_1__parameterized3' (4#1) [/home/apurvan/GSoC/BER_measurement_5_Lane/Zynq/src/serdes_10_1.vhd:40]
+INFO: [Synth 8-638] synthesizing module 'serdes_10_1__parameterized4' [/home/apurvan/GSoC/BER_measurement_5_Lane/Zynq/src/serdes_10_1.vhd:40]
+	Parameter DATA_RATE_OQ bound to: DDR - type: string 
+	Parameter DATA_RATE_TQ bound to: DDR - type: string 
+	Parameter DATA_WIDTH bound to: 10 - type: integer 
+	Parameter INIT_OQ bound to: 1'b0 
+	Parameter INIT_TQ bound to: 1'b0 
+	Parameter IS_CLKDIV_INVERTED bound to: 1'b0 
+	Parameter IS_CLK_INVERTED bound to: 1'b0 
+	Parameter IS_D1_INVERTED bound to: 1'b0 
+	Parameter IS_D2_INVERTED bound to: 1'b0 
+	Parameter IS_D3_INVERTED bound to: 1'b0 
+	Parameter IS_D4_INVERTED bound to: 1'b0 
+	Parameter IS_D5_INVERTED bound to: 1'b0 
+	Parameter IS_D6_INVERTED bound to: 1'b0 
+	Parameter IS_D7_INVERTED bound to: 1'b0 
+	Parameter IS_D8_INVERTED bound to: 1'b0 
+	Parameter IS_T1_INVERTED bound to: 1'b0 
+	Parameter IS_T2_INVERTED bound to: 1'b0 
+	Parameter IS_T3_INVERTED bound to: 1'b0 
+	Parameter IS_T4_INVERTED bound to: 1'b0 
+	Parameter SERDES_MODE bound to: MASTER - type: string 
+	Parameter SRVAL_OQ bound to: 1'b0 
+	Parameter SRVAL_TQ bound to: 1'b0 
+	Parameter TBYTE_CTL bound to: FALSE - type: string 
+	Parameter TBYTE_SRC bound to: FALSE - type: string 
+	Parameter TRISTATE_WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-113] binding component instance 'master_serdes_inst_data0' to cell 'OSERDESE2' [/home/apurvan/GSoC/BER_measurement_5_Lane/Zynq/src/serdes_10_1.vhd:53]
+	Parameter DATA_RATE_OQ bound to: DDR - type: string 
+	Parameter DATA_RATE_TQ bound to: DDR - type: string 
+	Parameter DATA_WIDTH bound to: 10 - type: integer 
+	Parameter INIT_OQ bound to: 1'b1 
+	Parameter INIT_TQ bound to: 1'b1 
+	Parameter IS_CLKDIV_INVERTED bound to: 1'b0 
+	Parameter IS_CLK_INVERTED bound to: 1'b0 
+	Parameter IS_D1_INVERTED bound to: 1'b0 
+	Parameter IS_D2_INVERTED bound to: 1'b0 
+	Parameter IS_D3_INVERTED bound to: 1'b0 
+	Parameter IS_D4_INVERTED bound to: 1'b0 
+	Parameter IS_D5_INVERTED bound to: 1'b0 
+	Parameter IS_D6_INVERTED bound to: 1'b0 
+	Parameter IS_D7_INVERTED bound to: 1'b0 
+	Parameter IS_D8_INVERTED bound to: 1'b0 
+	Parameter IS_T1_INVERTED bound to: 1'b0 
+	Parameter IS_T2_INVERTED bound to: 1'b0 
+	Parameter IS_T3_INVERTED bound to: 1'b0 
+	Parameter IS_T4_INVERTED bound to: 1'b0 
+	Parameter SERDES_MODE bound to: SLAVE - type: string 
+	Parameter SRVAL_OQ bound to: 1'b0 
+	Parameter SRVAL_TQ bound to: 1'b0 
+	Parameter TBYTE_CTL bound to: FALSE - type: string 
+	Parameter TBYTE_SRC bound to: FALSE - type: string 
+	Parameter TRISTATE_WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-113] binding component instance 'slave_serdes_inst_data0' to cell 'OSERDESE2' [/home/apurvan/GSoC/BER_measurement_5_Lane/Zynq/src/serdes_10_1.vhd:99]
+	Parameter CAPACITANCE bound to: DONT_CARE - type: string 
+	Parameter IOSTANDARD bound to: DEFAULT - type: string 
+	Parameter SLEW bound to: SLOW - type: string 
+INFO: [Synth 8-113] binding component instance 'OBUFDS_inst' to cell 'OBUFDS' [/home/apurvan/GSoC/BER_measurement_5_Lane/Zynq/src/serdes_10_1.vhd:151]
+INFO: [Synth 8-256] done synthesizing module 'serdes_10_1__parameterized4' (4#1) [/home/apurvan/GSoC/BER_measurement_5_Lane/Zynq/src/serdes_10_1.vhd:40]
+INFO: [Synth 8-256] done synthesizing module 'top' (5#1) [/home/apurvan/GSoC/BER_measurement_5_Lane/Zynq/src/top.vhd:50]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1418.500 ; gain = 27.395 ; free physical = 2261 ; free virtual = 12914
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1418.500 ; gain = 27.395 ; free physical = 2263 ; free virtual = 12916
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1418.500 ; gain = 27.395 ; free physical = 2263 ; free virtual = 12916
+---------------------------------------------------------------------------------
+INFO: [Netlist 29-17] Analyzing 9 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Device 21-403] Loading part xc7z020clg400-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/apurvan/GSoC/BER_measurement_5_Lane/Zynq/src/top.xdc]
+Finished Parsing XDC File [/home/apurvan/GSoC/BER_measurement_5_Lane/Zynq/src/top.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/apurvan/GSoC/BER_measurement_5_Lane/Zynq/src/top.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+INFO: [Timing 38-2] Deriving generated clocks
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1766.570 ; gain = 0.000 ; free physical = 2005 ; free virtual = 12636
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1766.570 ; gain = 0.000 ; free physical = 2006 ; free virtual = 12637
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 9 instances were transformed.
+  IOBUF => IOBUF (IBUF, OBUFT): 2 instances
+  OBUFDS => OBUFDS: 6 instances
+  PLLE2_BASE => PLLE2_ADV: 1 instances
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1766.570 ; gain = 0.000 ; free physical = 2006 ; free virtual = 12637
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1766.570 ; gain = 0.000 ; free physical = 2006 ; free virtual = 12637
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1766.570 ; gain = 375.465 ; free physical = 2087 ; free virtual = 12718
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1766.570 ; gain = 375.465 ; free physical = 2087 ; free virtual = 12718
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 1766.570 ; gain = 375.465 ; free physical = 2089 ; free virtual = 12720
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1766.570 ; gain = 375.465 ; free physical = 2062 ; free virtual = 12722
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---XORs : 
+	   5 Input      1 Bit         XORs := 1     
+	   2 Input      1 Bit         XORs := 65    
++---Registers : 
+	               40 Bit    Registers := 1     
+	               10 Bit    Registers := 5     
+	                1 Bit    Registers := 96    
++---Muxes : 
+	   2 Input     40 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 5     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module prng_send 
+Detailed RTL Component Info : 
++---XORs : 
+	   5 Input      1 Bit         XORs := 1     
++---Registers : 
+	               40 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     40 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 5     
+Module enc_8b10b 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input      1 Bit         XORs := 13    
++---Registers : 
+	               10 Bit    Registers := 1     
+	                1 Bit    Registers := 19    
+Module enc_8b10b__parameterized0 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input      1 Bit         XORs := 13    
++---Registers : 
+	               10 Bit    Registers := 1     
+	                1 Bit    Registers := 19    
+Module enc_8b10b__parameterized1 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input      1 Bit         XORs := 13    
++---Registers : 
+	               10 Bit    Registers := 1     
+	                1 Bit    Registers := 19    
+Module enc_8b10b__parameterized2 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input      1 Bit         XORs := 13    
++---Registers : 
+	               10 Bit    Registers := 1     
+	                1 Bit    Registers := 19    
+Module enc_8b10b__parameterized3 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input      1 Bit         XORs := 13    
++---Registers : 
+	               10 Bit    Registers := 1     
+	                1 Bit    Registers := 19    
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-4471] merging register 'enc_inst1/xlreset_reg' into 'enc_inst0/xlreset_reg' [/home/apurvan/GSoC/BER_measurement_5_Lane/Zynq/src/enc_8b10b.vhd:96]
+INFO: [Synth 8-4471] merging register 'enc_inst1/lreset_reg' into 'enc_inst0/lreset_reg' [/home/apurvan/GSoC/BER_measurement_5_Lane/Zynq/src/enc_8b10b.vhd:100]
+INFO: [Synth 8-4471] merging register 'enc_inst1/k4_reg' into 'enc_inst0/k4_reg' [/home/apurvan/GSoC/BER_measurement_5_Lane/Zynq/src/enc_8b10b.vhd:144]
+INFO: [Synth 8-4471] merging register 'enc_inst2/xlreset_reg' into 'enc_inst0/xlreset_reg' [/home/apurvan/GSoC/BER_measurement_5_Lane/Zynq/src/enc_8b10b.vhd:96]
+INFO: [Synth 8-4471] merging register 'enc_inst2/lreset_reg' into 'enc_inst0/lreset_reg' [/home/apurvan/GSoC/BER_measurement_5_Lane/Zynq/src/enc_8b10b.vhd:100]
+INFO: [Synth 8-4471] merging register 'enc_inst2/k4_reg' into 'enc_inst0/k4_reg' [/home/apurvan/GSoC/BER_measurement_5_Lane/Zynq/src/enc_8b10b.vhd:144]
+INFO: [Synth 8-4471] merging register 'enc_inst3/xlreset_reg' into 'enc_inst0/xlreset_reg' [/home/apurvan/GSoC/BER_measurement_5_Lane/Zynq/src/enc_8b10b.vhd:96]
+INFO: [Synth 8-4471] merging register 'enc_inst3/lreset_reg' into 'enc_inst0/lreset_reg' [/home/apurvan/GSoC/BER_measurement_5_Lane/Zynq/src/enc_8b10b.vhd:100]
+INFO: [Synth 8-4471] merging register 'enc_inst3/k4_reg' into 'enc_inst0/k4_reg' [/home/apurvan/GSoC/BER_measurement_5_Lane/Zynq/src/enc_8b10b.vhd:144]
+INFO: [Synth 8-4471] merging register 'enc_inst4/xlreset_reg' into 'enc_inst0/xlreset_reg' [/home/apurvan/GSoC/BER_measurement_5_Lane/Zynq/src/enc_8b10b.vhd:96]
+INFO: [Synth 8-4471] merging register 'enc_inst4/lreset_reg' into 'enc_inst0/lreset_reg' [/home/apurvan/GSoC/BER_measurement_5_Lane/Zynq/src/enc_8b10b.vhd:100]
+INFO: [Synth 8-4471] merging register 'enc_inst4/k4_reg' into 'enc_inst0/k4_reg' [/home/apurvan/GSoC/BER_measurement_5_Lane/Zynq/src/enc_8b10b.vhd:144]
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1766.570 ; gain = 375.465 ; free physical = 2034 ; free virtual = 12697
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 1902.555 ; gain = 511.449 ; free physical = 1731 ; free virtual = 12418
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 1947.586 ; gain = 556.480 ; free physical = 1697 ; free virtual = 12384
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 1958.609 ; gain = 567.504 ; free physical = 1714 ; free virtual = 12378
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:19 ; elapsed = 00:00:22 . Memory (MB): peak = 1958.609 ; gain = 567.504 ; free physical = 1714 ; free virtual = 12378
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:19 ; elapsed = 00:00:22 . Memory (MB): peak = 1958.609 ; gain = 567.504 ; free physical = 1714 ; free virtual = 12378
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 1958.609 ; gain = 567.504 ; free physical = 1714 ; free virtual = 12378
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 1958.609 ; gain = 567.504 ; free physical = 1714 ; free virtual = 12378
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 1958.609 ; gain = 567.504 ; free physical = 1714 ; free virtual = 12378
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 1958.609 ; gain = 567.504 ; free physical = 1714 ; free virtual = 12378
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+------------+------+
+|      |Cell        |Count |
++------+------------+------+
+|1     |BUFG        |     3|
+|2     |CARRY4      |     8|
+|3     |LUT1        |    35|
+|4     |LUT2        |     1|
+|5     |LUT3        |     4|
+|6     |LUT4        |    22|
+|7     |LUT5        |    35|
+|8     |LUT6        |   108|
+|9     |OSERDESE2   |     6|
+|10    |OSERDESE2_1 |     6|
+|11    |PLLE2_BASE  |     1|
+|12    |PS7         |     1|
+|13    |PULLUP      |     2|
+|14    |FDCE        |    65|
+|15    |FDRE        |   114|
+|16    |FDSE        |    25|
+|17    |IOBUF       |     2|
+|18    |OBUFDS      |     6|
++------+------------+------+
+
+Report Instance Areas: 
++------+--------------------+----------------------------+------+
+|      |Instance            |Module                      |Cells |
++------+--------------------+----------------------------+------+
+|1     |top                 |                            |   444|
+|2     |  PS7_stub_inst     |ps7_stub                    |     3|
+|3     |  data_gen_inst     |prng_send                   |   227|
+|4     |  enc_inst0         |enc_8b10b                   |    44|
+|5     |  enc_inst1         |enc_8b10b__parameterized0   |    41|
+|6     |  enc_inst2         |enc_8b10b__parameterized1   |    31|
+|7     |  enc_inst3         |enc_8b10b__parameterized2   |    31|
+|8     |  enc_inst4         |enc_8b10b__parameterized3   |    41|
+|9     |  serdes_inst_clk   |serdes_10_1__parameterized4 |     3|
+|10    |  serdes_inst_data0 |serdes_10_1                 |     3|
+|11    |  serdes_inst_data1 |serdes_10_1__parameterized0 |     3|
+|12    |  serdes_inst_data2 |serdes_10_1__parameterized1 |     3|
+|13    |  serdes_inst_data3 |serdes_10_1__parameterized2 |     3|
+|14    |  serdes_inst_data4 |serdes_10_1__parameterized3 |     3|
++------+--------------------+----------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 1958.609 ; gain = 567.504 ; free physical = 1714 ; free virtual = 12378
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 1958.609 ; gain = 219.434 ; free physical = 1771 ; free virtual = 12435
+Synthesis Optimization Complete : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 1958.617 ; gain = 567.504 ; free physical = 1771 ; free virtual = 12435
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 17 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 30 inverter(s) to 30 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1990.625 ; gain = 0.000 ; free physical = 1713 ; free virtual = 12377
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 9 instances were transformed.
+  IOBUF => IOBUF (IBUF, OBUFT): 2 instances
+  OBUFDS => OBUFDS_DUAL_BUF (INV, OBUFDS, OBUFDS): 6 instances
+  PLLE2_BASE => PLLE2_ADV: 1 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+82 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 1990.625 ; gain = 599.625 ; free physical = 1926 ; free virtual = 12590
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1990.625 ; gain = 0.000 ; free physical = 1926 ; free virtual = 12590
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint '/home/apurvan/GSoC/BER_measurement_5_Lane/Zynq/build/usb_gearwork.runs/synth_1/top.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Wed Aug 21 18:54:47 2019...

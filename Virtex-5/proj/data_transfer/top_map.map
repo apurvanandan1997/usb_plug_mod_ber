@@ -1,0 +1,211 @@
+Release 14.7 Map P.20131013 (lin64)
+Xilinx Map Application Log File for Design 'top'
+
+Design Information
+------------------
+Command Line   : map -intstyle ise -p xc5vlx110t-ff1136-1 -w -logic_opt off -ol
+high -t 1 -register_duplication off -global_opt off -mt off -cm area -ir off -pr
+off -lc off -power off -o top_map.ncd top.ngd top.pcf 
+Target Device  : xc5vlx110t
+Target Package : ff1136
+Target Speed   : -1
+Mapper Version : virtex5 -- $Revision: 1.55 $
+Mapped Date    : Tue Aug 20 22:43:02 2019
+
+Mapping design into LUTs...
+Running directed packing...
+Running delay-based LUT packing...
+Updating timing models...
+INFO:Map:215 - The Interim Design Summary has been generated in the MAP Report
+   (.mrp).
+Running timing-driven placement...
+Total REAL time at the beginning of Placer: 8 secs 
+Total CPU  time at the beginning of Placer: 8 secs 
+
+Phase 1.1  Initial Placement Analysis
+Phase 1.1  Initial Placement Analysis (Checksum:423b5930) REAL time: 9 secs 
+
+Phase 2.7  Design Feasibility Check
+Phase 2.7  Design Feasibility Check (Checksum:423b5930) REAL time: 9 secs 
+
+Phase 3.31  Local Placement Optimization
+Phase 3.31  Local Placement Optimization (Checksum:423b5930) REAL time: 9 secs 
+
+Phase 4.37  Local Placement Optimization
+Phase 4.37  Local Placement Optimization (Checksum:423b5930) REAL time: 9 secs 
+
+Phase 5.33  Local Placement Optimization
+Phase 5.33  Local Placement Optimization (Checksum:423b5930) REAL time: 9 secs 
+
+Phase 6.32  Local Placement Optimization
+Phase 6.32  Local Placement Optimization (Checksum:423b5930) REAL time: 9 secs 
+
+Phase 7.2  Initial Clock and IO Placement
+
+Phase 7.2  Initial Clock and IO Placement (Checksum:d78dcdf8) REAL time: 10 secs 
+
+Phase 8.36  Local Placement Optimization
+Phase 8.36  Local Placement Optimization (Checksum:d78dcdf8) REAL time: 10 secs 
+
+Phase 9.30  Global Clock Region Assignment
+Phase 9.30  Global Clock Region Assignment (Checksum:d78dcdf8) REAL time: 10 secs 
+
+Phase 10.3  Local Placement Optimization
+Phase 10.3  Local Placement Optimization (Checksum:d78dcdf8) REAL time: 10 secs 
+
+Phase 11.5  Local Placement Optimization
+Phase 11.5  Local Placement Optimization (Checksum:d78dcdf8) REAL time: 10 secs 
+
+Phase 12.8  Global Placement
+..........
+....................
+Phase 12.8  Global Placement (Checksum:55dd11d6) REAL time: 10 secs 
+
+Phase 13.29  Local Placement Optimization
+Phase 13.29  Local Placement Optimization (Checksum:55dd11d6) REAL time: 10 secs 
+
+Phase 14.5  Local Placement Optimization
+Phase 14.5  Local Placement Optimization (Checksum:55dd11d6) REAL time: 10 secs 
+
+Phase 15.18  Placement Optimization
+Phase 15.18  Placement Optimization (Checksum:a14632a6) REAL time: 19 secs 
+
+Phase 16.5  Local Placement Optimization
+Phase 16.5  Local Placement Optimization (Checksum:a14632a6) REAL time: 19 secs 
+
+Phase 17.34  Placement Validation
+Phase 17.34  Placement Validation (Checksum:a14632a6) REAL time: 19 secs 
+
+Total REAL time to Placer completion: 19 secs 
+Total CPU  time to Placer completion: 19 secs 
+Running post-placement packing...
+Writing output files...
+WARNING:PhysDesignRules:1350 - Issue with pin connections and/or configuration
+   on block:<serdes_inst_data1/slave_serdes_inst_data0>:<OSERDES_OSERDES>.  The
+   use of INIT_OQ requires the OQ output pin to be connected.
+WARNING:PhysDesignRules:1351 - Issue with pin connections and/or configuration
+   on block:<serdes_inst_data1/slave_serdes_inst_data0>:<OSERDES_OSERDES>.  The
+   use of SRVAL_OQ requires the OQ output pin to be connected.
+WARNING:PhysDesignRules:1362 - Unexpected programming for comp
+   serdes_inst_data1/slave_serdes_inst_data0 with TRISTATE_WIDTH. DATA_RATE_TQ
+   set DDR expects TRISTATE_WIDTH to be set 4. 
+WARNING:PhysDesignRules:1362 - Unexpected programming for comp
+   serdes_inst_clk/master_serdes_inst_data0 with TRISTATE_WIDTH. DATA_RATE_TQ
+   set DDR expects TRISTATE_WIDTH to be set 4. 
+WARNING:PhysDesignRules:1350 - Issue with pin connections and/or configuration
+   on block:<serdes_inst_data3/slave_serdes_inst_data0>:<OSERDES_OSERDES>.  The
+   use of INIT_OQ requires the OQ output pin to be connected.
+WARNING:PhysDesignRules:1351 - Issue with pin connections and/or configuration
+   on block:<serdes_inst_data3/slave_serdes_inst_data0>:<OSERDES_OSERDES>.  The
+   use of SRVAL_OQ requires the OQ output pin to be connected.
+WARNING:PhysDesignRules:1362 - Unexpected programming for comp
+   serdes_inst_data3/slave_serdes_inst_data0 with TRISTATE_WIDTH. DATA_RATE_TQ
+   set DDR expects TRISTATE_WIDTH to be set 4. 
+WARNING:PhysDesignRules:1362 - Unexpected programming for comp
+   serdes_inst_data0/master_serdes_inst_data0 with TRISTATE_WIDTH. DATA_RATE_TQ
+   set DDR expects TRISTATE_WIDTH to be set 4. 
+WARNING:PhysDesignRules:1362 - Unexpected programming for comp
+   serdes_inst_data1/master_serdes_inst_data0 with TRISTATE_WIDTH. DATA_RATE_TQ
+   set DDR expects TRISTATE_WIDTH to be set 4. 
+WARNING:PhysDesignRules:1350 - Issue with pin connections and/or configuration
+   on block:<serdes_inst_data0/slave_serdes_inst_data0>:<OSERDES_OSERDES>.  The
+   use of INIT_OQ requires the OQ output pin to be connected.
+WARNING:PhysDesignRules:1351 - Issue with pin connections and/or configuration
+   on block:<serdes_inst_data0/slave_serdes_inst_data0>:<OSERDES_OSERDES>.  The
+   use of SRVAL_OQ requires the OQ output pin to be connected.
+WARNING:PhysDesignRules:1362 - Unexpected programming for comp
+   serdes_inst_data0/slave_serdes_inst_data0 with TRISTATE_WIDTH. DATA_RATE_TQ
+   set DDR expects TRISTATE_WIDTH to be set 4. 
+WARNING:PhysDesignRules:1362 - Unexpected programming for comp
+   serdes_inst_data2/master_serdes_inst_data0 with TRISTATE_WIDTH. DATA_RATE_TQ
+   set DDR expects TRISTATE_WIDTH to be set 4. 
+WARNING:PhysDesignRules:1350 - Issue with pin connections and/or configuration
+   on block:<serdes_inst_data2/slave_serdes_inst_data0>:<OSERDES_OSERDES>.  The
+   use of INIT_OQ requires the OQ output pin to be connected.
+WARNING:PhysDesignRules:1351 - Issue with pin connections and/or configuration
+   on block:<serdes_inst_data2/slave_serdes_inst_data0>:<OSERDES_OSERDES>.  The
+   use of SRVAL_OQ requires the OQ output pin to be connected.
+WARNING:PhysDesignRules:1362 - Unexpected programming for comp
+   serdes_inst_data2/slave_serdes_inst_data0 with TRISTATE_WIDTH. DATA_RATE_TQ
+   set DDR expects TRISTATE_WIDTH to be set 4. 
+WARNING:PhysDesignRules:1362 - Unexpected programming for comp
+   serdes_inst_data3/master_serdes_inst_data0 with TRISTATE_WIDTH. DATA_RATE_TQ
+   set DDR expects TRISTATE_WIDTH to be set 4. 
+WARNING:PhysDesignRules:1350 - Issue with pin connections and/or configuration
+   on block:<serdes_inst_data4/slave_serdes_inst_data0>:<OSERDES_OSERDES>.  The
+   use of INIT_OQ requires the OQ output pin to be connected.
+WARNING:PhysDesignRules:1351 - Issue with pin connections and/or configuration
+   on block:<serdes_inst_data4/slave_serdes_inst_data0>:<OSERDES_OSERDES>.  The
+   use of SRVAL_OQ requires the OQ output pin to be connected.
+WARNING:PhysDesignRules:1362 - Unexpected programming for comp
+   serdes_inst_data4/slave_serdes_inst_data0 with TRISTATE_WIDTH. DATA_RATE_TQ
+   set DDR expects TRISTATE_WIDTH to be set 4. 
+WARNING:PhysDesignRules:1362 - Unexpected programming for comp
+   serdes_inst_data4/master_serdes_inst_data0 with TRISTATE_WIDTH. DATA_RATE_TQ
+   set DDR expects TRISTATE_WIDTH to be set 4. 
+WARNING:PhysDesignRules:1350 - Issue with pin connections and/or configuration
+   on block:<serdes_inst_clk/slave_serdes_inst_data0>:<OSERDES_OSERDES>.  The
+   use of INIT_OQ requires the OQ output pin to be connected.
+WARNING:PhysDesignRules:1351 - Issue with pin connections and/or configuration
+   on block:<serdes_inst_clk/slave_serdes_inst_data0>:<OSERDES_OSERDES>.  The
+   use of SRVAL_OQ requires the OQ output pin to be connected.
+WARNING:PhysDesignRules:1362 - Unexpected programming for comp
+   serdes_inst_clk/slave_serdes_inst_data0 with TRISTATE_WIDTH. DATA_RATE_TQ set
+   DDR expects TRISTATE_WIDTH to be set 4. 
+
+Design Summary
+--------------
+
+Design Summary:
+Number of errors:      0
+Number of warnings:   24
+Slice Logic Utilization:
+  Number of Slice Registers:                   203 out of  69,120    1%
+    Number used as Flip Flops:                 203
+  Number of Slice LUTs:                        232 out of  69,120    1%
+    Number used as logic:                      231 out of  69,120    1%
+      Number using O6 output only:             201
+      Number using O5 output only:              27
+      Number using O5 and O6:                    3
+    Number used as exclusive route-thru:         1
+  Number of route-thrus:                        28
+    Number using O6 output only:                28
+
+Slice Logic Distribution:
+  Number of occupied Slices:                   114 out of  17,280    1%
+  Number of LUT Flip Flop pairs used:          284
+    Number with an unused Flip Flop:            81 out of     284   28%
+    Number with an unused LUT:                  52 out of     284   18%
+    Number of fully used LUT-FF pairs:         151 out of     284   53%
+    Number of unique control sets:               6
+    Number of slice register sites lost
+      to control set restrictions:               9 out of  69,120    1%
+
+  A LUT Flip Flop pair for this architecture represents one LUT paired with
+  one Flip Flop within a slice.  A control set is a unique combination of
+  clock, reset, set, and enable signals for a registered element.
+  The Slice Logic Distribution report is not meaningful if the design is
+  over-mapped for a non-slice resource or if Placement fails.
+  OVERMAPPING of BRAM resources should be ignored if the design is
+  over-mapped for a non-BRAM resource or if placement fails.
+
+IO Utilization:
+  Number of bonded IOBs:                        16 out of     640    2%
+    Number of LOCed IOBs:                       16 out of      16  100%
+    IOB Master Pads:                             6
+    IOB Slave Pads:                              6
+
+Specific Feature Utilization:
+  Number of BUFG/BUFGCTRLs:                      2 out of      32    6%
+    Number used as BUFGs:                        2
+  Number of OSERDESs:                           12
+  Number of PLL_ADVs:                            1 out of       6   16%
+
+Average Fanout of Non-Clock Nets:                4.13
+
+Peak Memory Usage:  966 MB
+Total REAL time to MAP completion:  19 secs 
+Total CPU time to MAP completion:   19 secs 
+
+Mapping completed.
+See MAP report file "top_map.mrp" for details.

@@ -1,0 +1,600 @@
+Release 14.7 - xst P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.05 secs
+ 
+--> 
+Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.05 secs
+ 
+--> 
+Reading design: top.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "top.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "top"
+Output Format                      : NGC
+Target Device                      : xc5vlx110t-1-ff1136
+
+---- Source Options
+Top Module Name                    : top
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 32
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "/home/apurvan/GSoC/BER_measurement_5_Lane/Virtex-5/src/prng_send.vhd" in Library work.
+Entity <prng_send> compiled.
+Entity <prng_send> (Architecture <rtl>) compiled.
+Compiling vhdl file "/home/apurvan/GSoC/BER_measurement_5_Lane/Virtex-5/src/enc_8b10b.vhd" in Library work.
+Entity <enc_8b10b> compiled.
+Entity <enc_8b10b> (Architecture <rtl>) compiled.
+Compiling vhdl file "/home/apurvan/GSoC/BER_measurement_5_Lane/Virtex-5/src/serdes_10_1.vhd" in Library work.
+Entity <serdes_10_1> compiled.
+Entity <serdes_10_1> (Architecture <str>) compiled.
+Compiling vhdl file "/home/apurvan/GSoC/BER_measurement_5_Lane/Virtex-5/src/top.vhd" in Library work.
+Entity <top> compiled.
+Entity <top> (Architecture <rtl>) compiled.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for entity <top> in library <work> (architecture <rtl>).
+
+Analyzing hierarchy for entity <prng_send> in library <work> (architecture <rtl>) with generics.
+	SEED = "1011110010111100101111001011110010111100"
+
+Analyzing hierarchy for entity <enc_8b10b> in library <work> (architecture <rtl>).
+
+Analyzing hierarchy for entity <serdes_10_1> in library <work> (architecture <str>).
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing Entity <top> in library <work> (Architecture <rtl>).
+    Set user-defined property "BANDWIDTH =  OPTIMIZED" for instance <PLL_BASE_inst1> in unit <top>.
+    Set user-defined property "CLKFBOUT_MULT =  6" for instance <PLL_BASE_inst1> in unit <top>.
+    Set user-defined property "CLKFBOUT_PHASE =  0.0000000000000000" for instance <PLL_BASE_inst1> in unit <top>.
+    Set user-defined property "CLKIN_PERIOD =  10.0000000000000000" for instance <PLL_BASE_inst1> in unit <top>.
+    Set user-defined property "CLKOUT0_DIVIDE =  10" for instance <PLL_BASE_inst1> in unit <top>.
+    Set user-defined property "CLKOUT0_DUTY_CYCLE =  0.5000000000000000" for instance <PLL_BASE_inst1> in unit <top>.
+    Set user-defined property "CLKOUT0_PHASE =  0.0000000000000000" for instance <PLL_BASE_inst1> in unit <top>.
+    Set user-defined property "CLKOUT1_DIVIDE =  2" for instance <PLL_BASE_inst1> in unit <top>.
+    Set user-defined property "CLKOUT1_DUTY_CYCLE =  0.5000000000000000" for instance <PLL_BASE_inst1> in unit <top>.
+    Set user-defined property "CLKOUT1_PHASE =  0.0000000000000000" for instance <PLL_BASE_inst1> in unit <top>.
+    Set user-defined property "CLKOUT2_DIVIDE =  1" for instance <PLL_BASE_inst1> in unit <top>.
+    Set user-defined property "CLKOUT2_DUTY_CYCLE =  0.5000000000000000" for instance <PLL_BASE_inst1> in unit <top>.
+    Set user-defined property "CLKOUT2_PHASE =  0.0000000000000000" for instance <PLL_BASE_inst1> in unit <top>.
+    Set user-defined property "CLKOUT3_DIVIDE =  1" for instance <PLL_BASE_inst1> in unit <top>.
+    Set user-defined property "CLKOUT3_DUTY_CYCLE =  0.5000000000000000" for instance <PLL_BASE_inst1> in unit <top>.
+    Set user-defined property "CLKOUT3_PHASE =  0.0000000000000000" for instance <PLL_BASE_inst1> in unit <top>.
+    Set user-defined property "CLKOUT4_DIVIDE =  1" for instance <PLL_BASE_inst1> in unit <top>.
+    Set user-defined property "CLKOUT4_DUTY_CYCLE =  0.5000000000000000" for instance <PLL_BASE_inst1> in unit <top>.
+    Set user-defined property "CLKOUT4_PHASE =  0.0000000000000000" for instance <PLL_BASE_inst1> in unit <top>.
+    Set user-defined property "CLKOUT5_DIVIDE =  1" for instance <PLL_BASE_inst1> in unit <top>.
+    Set user-defined property "CLKOUT5_DUTY_CYCLE =  0.5000000000000000" for instance <PLL_BASE_inst1> in unit <top>.
+    Set user-defined property "CLKOUT5_PHASE =  0.0000000000000000" for instance <PLL_BASE_inst1> in unit <top>.
+    Set user-defined property "CLK_FEEDBACK =  CLKFBOUT" for instance <PLL_BASE_inst1> in unit <top>.
+    Set user-defined property "COMPENSATION =  SYSTEM_SYNCHRONOUS" for instance <PLL_BASE_inst1> in unit <top>.
+    Set user-defined property "DIVCLK_DIVIDE =  1" for instance <PLL_BASE_inst1> in unit <top>.
+    Set user-defined property "REF_JITTER =  0.1000000000000000" for instance <PLL_BASE_inst1> in unit <top>.
+    Set user-defined property "RESET_ON_LOSS_OF_LOCK =  FALSE" for instance <PLL_BASE_inst1> in unit <top>.
+Entity <top> analyzed. Unit <top> generated.
+
+Analyzing generic Entity <prng_send> in library <work> (Architecture <rtl>).
+	SEED = "1011110010111100101111001011110010111100"
+Entity <prng_send> analyzed. Unit <prng_send> generated.
+
+Analyzing Entity <enc_8b10b> in library <work> (Architecture <rtl>).
+Entity <enc_8b10b> analyzed. Unit <enc_8b10b> generated.
+
+Analyzing Entity <serdes_10_1> in library <work> (Architecture <str>).
+    Set user-defined property "DATA_RATE_OQ =  DDR" for instance <master_serdes_inst_data0> in unit <serdes_10_1>.
+    Set user-defined property "DATA_RATE_TQ =  DDR" for instance <master_serdes_inst_data0> in unit <serdes_10_1>.
+    Set user-defined property "DATA_WIDTH =  10" for instance <master_serdes_inst_data0> in unit <serdes_10_1>.
+    Set user-defined property "INIT_OQ =  0" for instance <master_serdes_inst_data0> in unit <serdes_10_1>.
+    Set user-defined property "INIT_TQ =  0" for instance <master_serdes_inst_data0> in unit <serdes_10_1>.
+    Set user-defined property "SERDES_MODE =  MASTER" for instance <master_serdes_inst_data0> in unit <serdes_10_1>.
+    Set user-defined property "SRVAL_OQ =  0" for instance <master_serdes_inst_data0> in unit <serdes_10_1>.
+    Set user-defined property "SRVAL_TQ =  0" for instance <master_serdes_inst_data0> in unit <serdes_10_1>.
+    Set user-defined property "TRISTATE_WIDTH =  1" for instance <master_serdes_inst_data0> in unit <serdes_10_1>.
+    Set user-defined property "DATA_RATE_OQ =  DDR" for instance <slave_serdes_inst_data0> in unit <serdes_10_1>.
+    Set user-defined property "DATA_RATE_TQ =  DDR" for instance <slave_serdes_inst_data0> in unit <serdes_10_1>.
+    Set user-defined property "DATA_WIDTH =  10" for instance <slave_serdes_inst_data0> in unit <serdes_10_1>.
+    Set user-defined property "INIT_OQ =  1" for instance <slave_serdes_inst_data0> in unit <serdes_10_1>.
+    Set user-defined property "INIT_TQ =  1" for instance <slave_serdes_inst_data0> in unit <serdes_10_1>.
+    Set user-defined property "SERDES_MODE =  SLAVE" for instance <slave_serdes_inst_data0> in unit <serdes_10_1>.
+    Set user-defined property "SRVAL_OQ =  0" for instance <slave_serdes_inst_data0> in unit <serdes_10_1>.
+    Set user-defined property "SRVAL_TQ =  0" for instance <slave_serdes_inst_data0> in unit <serdes_10_1>.
+    Set user-defined property "TRISTATE_WIDTH =  1" for instance <slave_serdes_inst_data0> in unit <serdes_10_1>.
+    Set user-defined property "CAPACITANCE =  DONT_CARE" for instance <OBUFDS_inst> in unit <serdes_10_1>.
+    Set user-defined property "IOSTANDARD =  DEFAULT" for instance <OBUFDS_inst> in unit <serdes_10_1>.
+    Set user-defined property "SLEW =  SLOW" for instance <OBUFDS_inst> in unit <serdes_10_1>.
+Entity <serdes_10_1> analyzed. Unit <serdes_10_1> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <prng_send>.
+    Related source file is "/home/apurvan/GSoC/BER_measurement_5_Lane/Virtex-5/src/prng_send.vhd".
+    Found 1-bit xor5 for signal <fb>.
+    Found 29-bit up counter for signal <hold_prng>.
+    Found 1-bit register for signal <mode_i>.
+    Found 40-bit register for signal <sr>.
+    Summary:
+	inferred   1 Counter(s).
+	inferred  41 D-type flip-flop(s).
+	inferred   1 Xor(s).
+Unit <prng_send> synthesized.
+
+
+Synthesizing Unit <enc_8b10b>.
+    Related source file is "/home/apurvan/GSoC/BER_measurement_5_Lane/Virtex-5/src/enc_8b10b.vhd".
+    Found 10-bit register for signal <enc_data>.
+    Found 1-bit register for signal <ao>.
+    Found 1-bit xor2 for signal <ao$xor0000> created at line 277.
+    Found 1-bit register for signal <bo>.
+    Found 1-bit xor2 for signal <bo$xor0000> created at line 278.
+    Found 1-bit register for signal <co>.
+    Found 1-bit xor2 for signal <co$xor0000> created at line 279.
+    Found 1-bit xor2 for signal <compls4>.
+    Found 1-bit xor2 for signal <compls6>.
+    Found 1-bit register for signal <do>.
+    Found 1-bit xor2 for signal <do$xor0000> created at line 280.
+    Found 1-bit register for signal <eo>.
+    Found 1-bit xor2 for signal <eo$xor0000> created at line 281.
+    Found 1-bit register for signal <f4>.
+    Found 1-bit xor2 for signal <fneg>.
+    Found 1-bit register for signal <fo>.
+    Found 1-bit xor2 for signal <fo$xor0000> created at line 313.
+    Found 1-bit register for signal <g4>.
+    Found 1-bit register for signal <go>.
+    Found 1-bit xor2 for signal <go$xor0000> created at line 314.
+    Found 1-bit register for signal <h4>.
+    Found 1-bit register for signal <ho>.
+    Found 1-bit xor2 for signal <ho$xor0000> created at line 315.
+    Found 1-bit register for signal <io>.
+    Found 1-bit xor2 for signal <io$xor0000> created at line 282.
+    Found 1-bit register for signal <jo>.
+    Found 1-bit xor2 for signal <jo$xor0000> created at line 316.
+    Found 1-bit register for signal <k4>.
+    Found 1-bit register for signal <lpdl4>.
+    Found 1-bit register for signal <lpdl6>.
+    Found 1-bit register for signal <lreset>.
+    Found 1-bit register for signal <s>.
+    Found 1-bit register for signal <xlreset>.
+    Summary:
+	inferred  29 D-type flip-flop(s).
+Unit <enc_8b10b> synthesized.
+
+
+Synthesizing Unit <serdes_10_1>.
+    Related source file is "/home/apurvan/GSoC/BER_measurement_5_Lane/Virtex-5/src/serdes_10_1.vhd".
+Unit <serdes_10_1> synthesized.
+
+
+Synthesizing Unit <top>.
+    Related source file is "/home/apurvan/GSoC/BER_measurement_5_Lane/Virtex-5/src/top.vhd".
+WARNING:Xst:646 - Signal <pll1_rst> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <pll0_clk> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:653 - Signal <pll0_bufg> is used but never assigned. This sourceless signal will be automatically connected to value 0.
+WARNING:Xst:653 - Signal <locked0> is used but never assigned. This sourceless signal will be automatically connected to value 0.
+WARNING:Xst:1780 - Signal <clkfbout0> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+Unit <top> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Counters                                             : 1
+ 29-bit up counter                                     : 1
+# Registers                                            : 102
+ 1-bit register                                        : 96
+ 10-bit register                                       : 5
+ 40-bit register                                       : 1
+# Xors                                                 : 66
+ 1-bit xor2                                            : 65
+ 1-bit xor5                                            : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Counters                                             : 1
+ 29-bit up counter                                     : 1
+# Registers                                            : 186
+ Flip-Flops                                            : 186
+# Xors                                                 : 66
+ 1-bit xor2                                            : 65
+ 1-bit xor5                                            : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+INFO:Xst:1901 - Instance PLL_BASE_inst1 in unit top of type PLL_BASE has been replaced by PLL_ADV
+
+Optimizing unit <top> ...
+
+Optimizing unit <prng_send> ...
+
+Optimizing unit <enc_8b10b> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+INFO:Xst:2261 - The FF/Latch <enc_inst4/xlreset> in Unit <top> is equivalent to the following 4 FFs/Latches, which will be removed : <enc_inst3/xlreset> <enc_inst2/xlreset> <enc_inst1/xlreset> <enc_inst0/xlreset> 
+INFO:Xst:2261 - The FF/Latch <enc_inst4/k4> in Unit <top> is equivalent to the following 4 FFs/Latches, which will be removed : <enc_inst3/k4> <enc_inst2/k4> <enc_inst1/k4> <enc_inst0/k4> 
+INFO:Xst:2261 - The FF/Latch <enc_inst4/lreset> in Unit <top> is equivalent to the following 4 FFs/Latches, which will be removed : <enc_inst3/lreset> <enc_inst2/lreset> <enc_inst1/lreset> <enc_inst0/lreset> 
+Found area constraint ratio of 100 (+ 5) on block top, actual ratio is 0.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 203
+ Flip-Flops                                            : 203
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : top.ngr
+Top Level Output File Name         : top
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 16
+
+Cell Usage :
+# BELS                             : 304
+#      GND                         : 1
+#      INV                         : 2
+#      LUT1                        : 28
+#      LUT2                        : 7
+#      LUT3                        : 42
+#      LUT4                        : 50
+#      LUT5                        : 26
+#      LUT6                        : 80
+#      MUXCY                       : 28
+#      MUXF7                       : 10
+#      VCC                         : 1
+#      XORCY                       : 29
+# FlipFlops/Latches                : 203
+#      FD                          : 52
+#      FD_1                        : 17
+#      FDC                         : 40
+#      FDC_1                       : 25
+#      FDRE                        : 44
+#      FDSE                        : 25
+# Clock Buffers                    : 3
+#      BUFG                        : 3
+# IO Buffers                       : 10
+#      IBUF                        : 3
+#      OBUF                        : 1
+#      OBUFDS                      : 6
+# Others                           : 13
+#      OSERDES                     : 12
+#      PLL_ADV                     : 1
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 5vlx110tff1136-1 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:             203  out of  69120     0%  
+ Number of Slice LUTs:                  235  out of  69120     0%  
+    Number used as Logic:               235  out of  69120     0%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:    292
+   Number with an unused Flip Flop:      89  out of    292    30%  
+   Number with an unused LUT:            57  out of    292    19%  
+   Number of fully used LUT-FF pairs:   146  out of    292    50%  
+   Number of unique control sets:         4
+
+IO Utilization: 
+ Number of IOs:                          16
+ Number of bonded IOBs:                  16  out of    640     2%  
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                3  out of     32     9%  
+ Number of PLL_ADVs:                      1  out of      6    16%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk_bufg                           | BUFG                   | 215   |
+sclk_bufg                          | BUFG                   | 12    |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+---------------------------------------------------------------------------------+-------------------------------------------------+-------+
+Control Signal                                                                   | Buffer(FF name)                                 | Load  |
+---------------------------------------------------------------------------------+-------------------------------------------------+-------+
+enc_inst4/lreset(enc_inst4/lreset:Q)                                             | NONE(enc_inst0/ao)                              | 65    |
+N0(XST_GND:G)                                                                    | NONE(serdes_inst_clk/slave_serdes_inst_data0)   | 24    |
+serdes_inst_clk/shift1_dat(serdes_inst_clk/slave_serdes_inst_data0:SHIFTOUT1)    | NONE(serdes_inst_clk/master_serdes_inst_data0)  | 2     |
+serdes_inst_clk/shift2_dat(serdes_inst_clk/slave_serdes_inst_data0:SHIFTOUT2)    | NONE(serdes_inst_clk/master_serdes_inst_data0)  | 2     |
+serdes_inst_data0/shift1_dat(serdes_inst_data0/slave_serdes_inst_data0:SHIFTOUT1)| NONE(serdes_inst_data0/master_serdes_inst_data0)| 2     |
+serdes_inst_data0/shift2_dat(serdes_inst_data0/slave_serdes_inst_data0:SHIFTOUT2)| NONE(serdes_inst_data0/master_serdes_inst_data0)| 2     |
+serdes_inst_data1/shift1_dat(serdes_inst_data1/slave_serdes_inst_data0:SHIFTOUT1)| NONE(serdes_inst_data1/master_serdes_inst_data0)| 2     |
+serdes_inst_data1/shift2_dat(serdes_inst_data1/slave_serdes_inst_data0:SHIFTOUT2)| NONE(serdes_inst_data1/master_serdes_inst_data0)| 2     |
+serdes_inst_data2/shift1_dat(serdes_inst_data2/slave_serdes_inst_data0:SHIFTOUT1)| NONE(serdes_inst_data2/master_serdes_inst_data0)| 2     |
+serdes_inst_data2/shift2_dat(serdes_inst_data2/slave_serdes_inst_data0:SHIFTOUT2)| NONE(serdes_inst_data2/master_serdes_inst_data0)| 2     |
+serdes_inst_data3/shift1_dat(serdes_inst_data3/slave_serdes_inst_data0:SHIFTOUT1)| NONE(serdes_inst_data3/master_serdes_inst_data0)| 2     |
+serdes_inst_data3/shift2_dat(serdes_inst_data3/slave_serdes_inst_data0:SHIFTOUT2)| NONE(serdes_inst_data3/master_serdes_inst_data0)| 2     |
+serdes_inst_data4/shift1_dat(serdes_inst_data4/slave_serdes_inst_data0:SHIFTOUT1)| NONE(serdes_inst_data4/master_serdes_inst_data0)| 2     |
+serdes_inst_data4/shift2_dat(serdes_inst_data4/slave_serdes_inst_data0:SHIFTOUT2)| NONE(serdes_inst_data4/master_serdes_inst_data0)| 2     |
+---------------------------------------------------------------------------------+-------------------------------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -1
+
+   Minimum period: 6.390ns (Maximum Frequency: 156.495MHz)
+   Minimum input arrival time before clock: 2.914ns
+   Maximum output required time after clock: 3.877ns
+   Maximum combinational path delay: 1.165ns
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk_bufg'
+  Clock period: 6.390ns (frequency: 156.495MHz)
+  Total number of paths / destination ports: 17896 / 321
+-------------------------------------------------------------------------
+Delay:               3.195ns (Levels of Logic = 3)
+  Source:            data_gen_inst/hold_prng_12 (FF)
+  Destination:       enc_inst4/h4 (FF)
+  Source Clock:      clk_bufg rising
+  Destination Clock: clk_bufg falling
+
+  Data Path: data_gen_inst/hold_prng_12 to enc_inst4/h4
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDRE:C->Q             4   0.471   1.085  data_gen_inst/hold_prng_12 (data_gen_inst/hold_prng_12)
+     LUT6:I0->O            3   0.094   0.800  data_gen_inst/hold_prng_cmp_eq0000115 (data_gen_inst/hold_prng_cmp_eq0000115)
+     LUT5:I1->O           15   0.094   0.557  data_gen_inst/hold_prng_cmp_eq0000183_1 (data_gen_inst/hold_prng_cmp_eq0000183)
+     LUT3:I2->O            1   0.094   0.000  enc_inst0/f4_rstpot (enc_inst0/f4_rstpot)
+     FD_1:D                   -0.018          enc_inst0/f4
+    ----------------------------------------
+    Total                      3.195ns (0.753ns logic, 2.442ns route)
+                                       (23.6% logic, 76.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk_bufg'
+  Total number of paths / destination ports: 276 / 163
+-------------------------------------------------------------------------
+Offset:              2.914ns (Levels of Logic = 3)
+  Source:            SWITCH (PAD)
+  Destination:       data_gen_inst/sr_0 (FF)
+  Destination Clock: clk_bufg rising
+
+  Data Path: SWITCH to data_gen_inst/sr_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            43   0.818   0.839  SWITCH_IBUF (SWITCH_IBUF)
+     LUT3:I0->O            1   0.094   1.069  data_gen_inst/sr_cmp_eq00011 (data_gen_inst/sr_cmp_eq0001)
+     LUT6:I0->O            1   0.094   0.000  data_gen_inst/sr_mux0004<39>1 (data_gen_inst/sr_mux0004<39>)
+     FDRE:D                   -0.018          data_gen_inst/sr_0
+    ----------------------------------------
+    Total                      2.914ns (1.006ns logic, 1.908ns route)
+                                       (34.5% logic, 65.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'sclk_bufg'
+  Total number of paths / destination ports: 12 / 12
+-------------------------------------------------------------------------
+Offset:              3.395ns (Levels of Logic = 1)
+  Source:            serdes_inst_clk/master_serdes_inst_data0 (FF)
+  Destination:       CLK_LANE_P (PAD)
+  Source Clock:      sclk_bufg rising
+
+  Data Path: serdes_inst_clk/master_serdes_inst_data0 to CLK_LANE_P
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     OSERDES:CLK->OQ       1   0.607   0.336  serdes_inst_clk/master_serdes_inst_data0 (serdes_inst_clk/data_out)
+     OBUFDS:I->O               2.452          serdes_inst_clk/OBUFDS_inst (CLK_LANE_P)
+    ----------------------------------------
+    Total                      3.395ns (3.059ns logic, 0.336ns route)
+                                       (90.1% logic, 9.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk_bufg'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              3.877ns (Levels of Logic = 2)
+  Source:            data_gen_inst/mode_i (FF)
+  Destination:       LED (PAD)
+  Source Clock:      clk_bufg rising
+
+  Data Path: data_gen_inst/mode_i to LED
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               9   0.471   0.380  data_gen_inst/mode_i (data_gen_inst/mode_i)
+     INV:I->O              1   0.238   0.336  LED1_INV_0 (LED_OBUF)
+     OBUF:I->O                 2.452          LED_OBUF (LED)
+    ----------------------------------------
+    Total                      3.877ns (3.161ns logic, 0.716ns route)
+                                       (81.5% logic, 18.5% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 3 / 3
+-------------------------------------------------------------------------
+Delay:               1.165ns (Levels of Logic = 1)
+  Source:            RESET (PAD)
+  Destination:       PLL_BASE_inst1:RST (PAD)
+
+  Data Path: RESET to PLL_BASE_inst1:RST
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             3   0.818   0.347  RESET_IBUF (RESET_IBUF)
+    PLL_ADV:RST                0.000          PLL_BASE_inst1
+    ----------------------------------------
+    Total                      1.165ns (0.818ns logic, 0.347ns route)
+                                       (70.2% logic, 29.8% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 7.00 secs
+Total CPU time to Xst completion: 6.58 secs
+ 
+--> 
+
+
+Total memory usage is 576404 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    5 (   0 filtered)
+Number of infos    :    4 (   0 filtered)
+

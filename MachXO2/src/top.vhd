@@ -147,7 +147,7 @@ begin
     fifo_rst <= not link_rdy;
     fifo_wr_en <= link_rdy and data_valid;
 
-    send_data <= ber;--rng_num(31 downto 0) - dec_data(31 downto 0);
+    send_data <= ber;-- rng_num(31 downto 0) - dec_data(31 downto 0);--
 
     sync_prng <= fifo_wr_en when dec_data = "0000000000000000000000000000000000000000" else '0' ;
 

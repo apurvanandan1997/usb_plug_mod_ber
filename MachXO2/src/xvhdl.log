@@ -1,5 +1,2 @@
-INFO: [VRFC 10-163] Analyzing VHDL file "/home/apurvan/GSoC/BER_measurement_5_Lane/Zynq/src/top.vhd" into library work
-INFO: [VRFC 10-3107] analyzing entity 'top'
-ERROR: [VRFC 10-2987] 'ps7_stub' is not compiled in library 'work' [/home/apurvan/GSoC/BER_measurement_5_Lane/Zynq/src/top.vhd:101]
-ERROR: [VRFC 10-3782] unit 'rtl' ignored due to previous errors [/home/apurvan/GSoC/BER_measurement_5_Lane/Zynq/src/top.vhd:50]
-INFO: [VRFC 10-3070] VHDL file '/home/apurvan/GSoC/BER_measurement_5_Lane/Zynq/src/top.vhd' ignored due to errors
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/ddrx4.vhd" into library work
+INFO: [VRFC 10-3107] analyzing entity 'ddrx4'

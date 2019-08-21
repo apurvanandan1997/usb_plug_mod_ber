@@ -55,9 +55,10 @@ architecture rtl of top is
     signal ps_rst_n     : std_logic_vector(3 downto 0);
 
     -- Data Signals
-    signal rng        : std_logic_vector (39 downto 0);
-    signal enc10b_dat : std_logic_vector(49 downto 0);
-    signal mode       : std_logic;
+    signal rng          : std_logic_vector (39 downto 0);
+    signal enc10b_dat   : std_logic_vector(49 downto 0);
+    signal enc10b_dat_n : std_logic_vector(49 downto 0);
+    signal mode         : std_logic;
 
     -- PLL internal signals
     signal rst       : std_logic;
@@ -97,6 +98,7 @@ begin
     rst <= not locked1 ;--or not ps_rst_n(0);
     --LED <= not mode;
     pll1_rst <= '0';--ps_rst_n(0);--not locked0;
+    enc10b_dat_n <= not enc10b_dat;
 
     PS7_stub_inst : entity work.ps7_stub
         port map (
@@ -316,7 +318,7 @@ begin
             sclk       => sclk,
             clk        => clk,
             rst        => rst,
-            data_in    => enc10b_dat(9 downto 0),
+            data_in    => enc10b_dat_n(9 downto 0),
             data_out_p => DATA_LANE_0_P,
             data_out_n => DATA_LANE_0_N
         );
@@ -326,7 +328,7 @@ begin
             sclk       => sclk,
             clk        => clk,
             rst        => rst,
-            data_in    => enc10b_dat(19 downto 10),
+            data_in    => enc10b_dat_n(19 downto 10),
             data_out_p => DATA_LANE_1_P,
             data_out_n => DATA_LANE_1_N
         );
@@ -356,7 +358,7 @@ begin
             sclk       => sclk,
             clk        => clk,
             rst        => rst,
-            data_in    => enc10b_dat(49 downto 40),
+            data_in    => enc10b_dat_n(49 downto 40),
             data_out_p => DATA_LANE_4_P,
             data_out_n => DATA_LANE_4_N
         );
@@ -366,7 +368,7 @@ begin
             sclk       => sclk,
             clk        => clk,
             rst        => rst,
-            data_in    => "0101010101",
+            data_in    => "1010101010",
             data_out_p => CLK_LANE_P,
             data_out_n => CLK_LANE_N
         );

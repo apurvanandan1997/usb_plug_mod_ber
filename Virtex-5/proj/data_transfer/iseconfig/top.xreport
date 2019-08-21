@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2019-08-20T00:46:17</DateModified>
+  <DateModified>2019-08-20T22:42:43</DateModified>
   <ModuleName>top</ModuleName>
   <SummaryTimeStamp>2019-08-20T00:38:39</SummaryTimeStamp>
   <SavedFilePath>/home/apurvan/GSoC/BER_measurement_5_Lane/Virtex-5/proj/data_transfer/iseconfig/top.xreport</SavedFilePath>

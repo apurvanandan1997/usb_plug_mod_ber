@@ -1,5 +1,5 @@
 // Verilog netlist produced by program LSE :  version Diamond (64-bit) 3.10.0.111.2
-// Netlist written on Mon Aug 19 20:18:27 2019
+// Netlist written on Wed Aug 21 18:52:38 2019
 //
 // Verilog Description of module top
 //
@@ -328,28 +328,28 @@ module calc_ber (\rng_num[1] , \dec_data[1] , send_data, sclk, sclk_enable_104,
     wire n6607, n2_adj_846;
     
     LUT4 byte_actual_39__I_0_i2_2_lut_rep_139 (.A(\rng_num[1] ), .B(\dec_data[1] ), 
-         .Z(n6608)) /* synthesis lut_function=(!(A (B)+!A !(B))) */ ;   // /home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/calc_ber.vhd(41[19:30])
+         .Z(n6608)) /* synthesis lut_function=(!(A (B)+!A !(B))) */ ;   // /home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/calc_ber.vhd(40[19:30])
     defparam byte_actual_39__I_0_i2_2_lut_rep_139.init = 16'h6666;
     FD1P3AX ber_i0_i0 (.D(total_err_bits[0]), .SP(sclk_enable_104), .CK(sclk), 
             .Q(send_data[0])) /* synthesis lse_init_val=0, LSE_LINE_FILE_ID=27, LSE_LCOL=16, LSE_RCOL=36, LSE_LLINE=233, LSE_RLINE=233 */ ;   // /home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/calc_ber.vhd(59[9] 83[16])
     defparam ber_i0_i0.GSR = "ENABLED";
     LUT4 byte_actual_39__I_0_i1_2_lut_rep_140 (.A(\rng_num[0] ), .B(\dec_data[0] ), 
-         .Z(n6609)) /* synthesis lut_function=(!(A (B)+!A !(B))) */ ;   // /home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/calc_ber.vhd(41[19:30])
+         .Z(n6609)) /* synthesis lut_function=(!(A (B)+!A !(B))) */ ;   // /home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/calc_ber.vhd(40[19:30])
     defparam byte_actual_39__I_0_i1_2_lut_rep_140.init = 16'h6666;
     LUT4 i310_2_lut_rep_103_3_lut_4_lut (.A(\rng_num[0] ), .B(\dec_data[0] ), 
-         .C(\dec_data[1] ), .D(\rng_num[1] ), .Z(n6572)) /* synthesis lut_function=(!(A (B+(C (D)+!C !(D)))+!A ((C (D)+!C !(D))+!B))) */ ;   // /home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/calc_ber.vhd(41[19:30])
+         .C(\dec_data[1] ), .D(\rng_num[1] ), .Z(n6572)) /* synthesis lut_function=(!(A (B+(C (D)+!C !(D)))+!A ((C (D)+!C !(D))+!B))) */ ;   // /home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/calc_ber.vhd(40[19:30])
     defparam i310_2_lut_rep_103_3_lut_4_lut.init = 16'h0660;
     LUT4 i307_2_lut_rep_101_3_lut_4_lut (.A(\rng_num[0] ), .B(\dec_data[0] ), 
-         .C(\dec_data[1] ), .D(\rng_num[1] ), .Z(n6570)) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))+!A !(B (C (D)+!C !(D))+!B !(C (D)+!C !(D))))) */ ;   // /home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/calc_ber.vhd(41[19:30])
+         .C(\dec_data[1] ), .D(\rng_num[1] ), .Z(n6570)) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))+!A !(B (C (D)+!C !(D))+!B !(C (D)+!C !(D))))) */ ;   // /home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/calc_ber.vhd(40[19:30])
     defparam i307_2_lut_rep_101_3_lut_4_lut.init = 16'h6996;
     LUT4 byte_actual_39__I_0_i4_2_lut_rep_141 (.A(\rng_num[3] ), .B(\dec_data[3] ), 
-         .Z(n6610)) /* synthesis lut_function=(!(A (B)+!A !(B))) */ ;   // /home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/calc_ber.vhd(41[19:30])
+         .Z(n6610)) /* synthesis lut_function=(!(A (B)+!A !(B))) */ ;   // /home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/calc_ber.vhd(40[19:30])
     defparam byte_actual_39__I_0_i4_2_lut_rep_141.init = 16'h6666;
     LUT4 i248_4_lut_3_lut_rep_102_4_lut (.A(\rng_num[3] ), .B(\dec_data[3] ), 
-         .C(n6570), .D(n6611), .Z(n6571)) /* synthesis lut_function=(A (B (C (D))+!B (C+(D)))+!A (B (C+(D))+!B (C (D)))) */ ;   // /home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/calc_ber.vhd(41[19:30])
+         .C(n6570), .D(n6611), .Z(n6571)) /* synthesis lut_function=(A (B (C (D))+!B (C+(D)))+!A (B (C+(D))+!B (C (D)))) */ ;   // /home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/calc_ber.vhd(40[19:30])
     defparam i248_4_lut_3_lut_rep_102_4_lut.init = 16'hf660;
     LUT4 byte_actual_39__I_0_i3_2_lut_rep_142 (.A(\rng_num[2] ), .B(\dec_data[2] ), 
-         .Z(n6611)) /* synthesis lut_function=(!(A (B)+!A !(B))) */ ;   // /home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/calc_ber.vhd(41[19:30])
+         .Z(n6611)) /* synthesis lut_function=(!(A (B)+!A !(B))) */ ;   // /home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/calc_ber.vhd(40[19:30])
     defparam byte_actual_39__I_0_i3_2_lut_rep_142.init = 16'h6666;
     CCU2D add_15_7 (.A0(count_bytes[5]), .B0(GND_net), .C0(GND_net), .D0(GND_net), 
           .A1(count_bytes[6]), .B1(GND_net), .C1(GND_net), .D1(GND_net), 
@@ -939,7 +939,7 @@ module calc_ber (\rng_num[1] , \dec_data[1] , send_data, sclk, sclk_enable_104,
     defparam add_17_13.INJECT1_0 = "NO";
     defparam add_17_13.INJECT1_1 = "NO";
     LUT4 byte_actual_39__I_0_i8_2_lut_rep_135 (.A(\rng_num[7] ), .B(\dec_data[7] ), 
-         .Z(n6604)) /* synthesis lut_function=(!(A (B)+!A !(B))) */ ;   // /home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/calc_ber.vhd(41[19:30])
+         .Z(n6604)) /* synthesis lut_function=(!(A (B)+!A !(B))) */ ;   // /home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/calc_ber.vhd(40[19:30])
     defparam byte_actual_39__I_0_i8_2_lut_rep_135.init = 16'h6666;
     LUT4 i2361_2_lut (.A(n144[0]), .B(n5196), .Z(n210[0])) /* synthesis lut_function=(!((B)+!A)) */ ;   // /home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/calc_ber.vhd(68[21] 76[28])
     defparam i2361_2_lut.init = 16'h2222;
@@ -951,25 +951,25 @@ module calc_ber (\rng_num[1] , \dec_data[1] , send_data, sclk, sclk_enable_104,
     defparam add_15_9.INJECT1_0 = "NO";
     defparam add_15_9.INJECT1_1 = "NO";
     LUT4 i284_4_lut_3_lut_4_lut (.A(\rng_num[7] ), .B(\dec_data[7] ), .C(n6560), 
-         .D(n6605), .Z(n2)) /* synthesis lut_function=(A (B (C (D))+!B (C+(D)))+!A (B (C+(D))+!B (C (D)))) */ ;   // /home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/calc_ber.vhd(41[19:30])
+         .D(n6605), .Z(n2)) /* synthesis lut_function=(A (B (C (D))+!B (C+(D)))+!A (B (C+(D))+!B (C (D)))) */ ;   // /home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/calc_ber.vhd(40[19:30])
     defparam i284_4_lut_3_lut_4_lut.init = 16'hf660;
     LUT4 byte_actual_39__I_0_i7_2_lut_rep_136 (.A(\rng_num[6] ), .B(\dec_data[6] ), 
-         .Z(n6605)) /* synthesis lut_function=(!(A (B)+!A !(B))) */ ;   // /home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/calc_ber.vhd(41[19:30])
+         .Z(n6605)) /* synthesis lut_function=(!(A (B)+!A !(B))) */ ;   // /home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/calc_ber.vhd(40[19:30])
     defparam byte_actual_39__I_0_i7_2_lut_rep_136.init = 16'h6666;
     LUT4 byte_actual_39__I_0_i6_2_lut_rep_137 (.A(\rng_num[5] ), .B(\dec_data[5] ), 
-         .Z(n6606)) /* synthesis lut_function=(!(A (B)+!A !(B))) */ ;   // /home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/calc_ber.vhd(41[19:30])
+         .Z(n6606)) /* synthesis lut_function=(!(A (B)+!A !(B))) */ ;   // /home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/calc_ber.vhd(40[19:30])
     defparam byte_actual_39__I_0_i6_2_lut_rep_137.init = 16'h6666;
     LUT4 i319_4_lut_3_lut_4_lut (.A(\rng_num[5] ), .B(\dec_data[5] ), .C(n1538[0]), 
-         .D(n6607), .Z(n2_adj_846)) /* synthesis lut_function=(A (B (C (D))+!B (C+(D)))+!A (B (C+(D))+!B (C (D)))) */ ;   // /home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/calc_ber.vhd(41[19:30])
+         .D(n6607), .Z(n2_adj_846)) /* synthesis lut_function=(A (B (C (D))+!B (C+(D)))+!A (B (C+(D))+!B (C (D)))) */ ;   // /home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/calc_ber.vhd(40[19:30])
     defparam i319_4_lut_3_lut_4_lut.init = 16'hf660;
     LUT4 i16_4_lut (.A(count_bytes[14]), .B(count_bytes[1]), .C(count_bytes[4]), 
          .D(count_bytes[0]), .Z(n46)) /* synthesis lut_function=(A (B (C (D)))) */ ;
     defparam i16_4_lut.init = 16'h8000;
     LUT4 i2_3_lut_rep_91_4_lut (.A(\rng_num[5] ), .B(\dec_data[5] ), .C(n1538[0]), 
-         .D(n6607), .Z(n6560)) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))+!A !(B (C (D)+!C !(D))+!B !(C (D)+!C !(D))))) */ ;   // /home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/calc_ber.vhd(41[19:30])
+         .D(n6607), .Z(n6560)) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))+!A !(B (C (D)+!C !(D))+!B !(C (D)+!C !(D))))) */ ;   // /home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/calc_ber.vhd(40[19:30])
     defparam i2_3_lut_rep_91_4_lut.init = 16'h6996;
     LUT4 byte_actual_39__I_0_i5_2_lut_rep_138 (.A(\rng_num[4] ), .B(\dec_data[4] ), 
-         .Z(n6607)) /* synthesis lut_function=(!(A (B)+!A !(B))) */ ;   // /home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/calc_ber.vhd(41[19:30])
+         .Z(n6607)) /* synthesis lut_function=(!(A (B)+!A !(B))) */ ;   // /home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/calc_ber.vhd(40[19:30])
     defparam byte_actual_39__I_0_i5_2_lut_rep_138.init = 16'h6666;
     LUT4 i2_3_lut_4_lut (.A(n6609), .B(n6608), .C(n6611), .D(n6610), 
          .Z(n1538[0])) /* synthesis lut_function=(!(A (B (C (D)+!C !(D))+!B !(C (D)+!C !(D)))+!A !(B (C (D)+!C !(D))+!B !(C (D)+!C !(D))))) */ ;   // /home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/calc_ber.vhd(50[22:27])
@@ -2142,23 +2142,23 @@ module ddrx4 (rbyteclk_N_428, sclk, bit_slip, q40_buf, buf_clk, GND_net,
     defparam Inst3_DQSDLLC.DEL_ADJ = "PLUS";
     defparam Inst3_DQSDLLC.DEL_VAL = 0;
     defparam Inst3_DQSDLLC.LOCK_SENSITIVITY = "LOW";
-    defparam Inst3_DQSDLLC.FIN = "300.0";
+    defparam Inst3_DQSDLLC.FIN = "375.0";
     defparam Inst3_DQSDLLC.FORCE_MAX_DELAY = "NO";
     DELAYE udel_dataini4 (.A(buf_dataini[4]), .Z(dataini_t[4])) /* synthesis syn_instantiated=1, LSE_LINE_FILE_ID=23, LSE_LCOL=18, LSE_RCOL=23, LSE_LLINE=78, LSE_RLINE=78 */ ;   // /home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/deserializer.vhd(78[18:23])
-    defparam udel_dataini4.DEL_MODE = "ECLK_ALIGNED";
-    defparam udel_dataini4.DEL_VALUE = "DELAY0";
+    defparam udel_dataini4.DEL_MODE = "USER_DEFINED";
+    defparam udel_dataini4.DEL_VALUE = "DELAY6";
     DELAYE udel_dataini3 (.A(buf_dataini[3]), .Z(dataini_t[3])) /* synthesis syn_instantiated=1, LSE_LINE_FILE_ID=23, LSE_LCOL=18, LSE_RCOL=23, LSE_LLINE=78, LSE_RLINE=78 */ ;   // /home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/deserializer.vhd(78[18:23])
-    defparam udel_dataini3.DEL_MODE = "ECLK_ALIGNED";
-    defparam udel_dataini3.DEL_VALUE = "DELAY0";
+    defparam udel_dataini3.DEL_MODE = "USER_DEFINED";
+    defparam udel_dataini3.DEL_VALUE = "DELAY6";
     DELAYE udel_dataini2 (.A(buf_dataini[2]), .Z(dataini_t[2])) /* synthesis syn_instantiated=1, LSE_LINE_FILE_ID=23, LSE_LCOL=18, LSE_RCOL=23, LSE_LLINE=78, LSE_RLINE=78 */ ;   // /home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/deserializer.vhd(78[18:23])
-    defparam udel_dataini2.DEL_MODE = "ECLK_ALIGNED";
-    defparam udel_dataini2.DEL_VALUE = "DELAY0";
+    defparam udel_dataini2.DEL_MODE = "USER_DEFINED";
+    defparam udel_dataini2.DEL_VALUE = "DELAY6";
     DELAYE udel_dataini1 (.A(buf_dataini[1]), .Z(dataini_t[1])) /* synthesis syn_instantiated=1, LSE_LINE_FILE_ID=23, LSE_LCOL=18, LSE_RCOL=23, LSE_LLINE=78, LSE_RLINE=78 */ ;   // /home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/deserializer.vhd(78[18:23])
-    defparam udel_dataini1.DEL_MODE = "ECLK_ALIGNED";
-    defparam udel_dataini1.DEL_VALUE = "DELAY0";
+    defparam udel_dataini1.DEL_MODE = "USER_DEFINED";
+    defparam udel_dataini1.DEL_VALUE = "DELAY6";
     DELAYE udel_dataini0 (.A(buf_dataini[0]), .Z(dataini_t[0])) /* synthesis syn_instantiated=1, LSE_LINE_FILE_ID=23, LSE_LCOL=18, LSE_RCOL=23, LSE_LLINE=78, LSE_RLINE=78 */ ;   // /home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/deserializer.vhd(78[18:23])
-    defparam udel_dataini0.DEL_MODE = "ECLK_ALIGNED";
-    defparam udel_dataini0.DEL_VALUE = "DELAY0";
+    defparam udel_dataini0.DEL_MODE = "USER_DEFINED";
+    defparam udel_dataini0.DEL_VALUE = "DELAY6";
     AND2 AND2_t1 (.A(LED_c), .B(uddcntln_i), .Z(uddcntln_t)) /* synthesis syn_instantiated=1, LSE_LINE_FILE_ID=23, LSE_LCOL=18, LSE_RCOL=23, LSE_LLINE=78, LSE_RLINE=78 */ ;   // /home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/ddrx4.vhd(188[15:19])
     INV INV_0 (.A(GND_net), .Z(reset_inv)) /* synthesis LSE_LINE_FILE_ID=23, LSE_LCOL=18, LSE_RCOL=23, LSE_LLINE=78, LSE_RLINE=78 */ ;   // /home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/deserializer.vhd(78[18:23])
     OR2 OR2_t0 (.A(LED_c), .B(freeze_i), .Z(freeze_t)) /* synthesis syn_instantiated=1, LSE_LINE_FILE_ID=23, LSE_LCOL=18, LSE_RCOL=23, LSE_LLINE=78, LSE_RLINE=78 */ ;   // /home/apurvan/GSoC/BER_measurement_5_Lane/MachXO2/src/ddrx4.vhd(195[14:17])
