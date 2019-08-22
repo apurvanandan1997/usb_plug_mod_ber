@@ -26,24 +26,6 @@ unsigned long long dec2bin(unsigned int c)
    return bin;
 }
 
-static void write_test(FT_HANDLE handle)
-{
-	unique_ptr<uint8_t[]> buf(new uint8_t[BUFFER_LEN]);
-
-	while (!do_exit) {
-		for (uint8_t channel = 0; channel < out_ch_cnt; channel++) {
-			ULONG count = 0;
-			if (FT_OK != FT_WritePipeEx(handle, channel,
-						buf.get(), BUFFER_LEN, &count, 1000)) {
-				do_exit = true;
-				break;
-			}
-			tx_count += count;
-		}
-	}
-	printf("Write stopped\r\n");
-}
-
 static void read_test(FT_HANDLE handle)
 {
 	while (!do_exit) {
@@ -66,13 +48,6 @@ static void read_test(FT_HANDLE handle)
 		}
 	}
 	printf("Read stopped\r\n");
-}
-
-static void show_help(const char *bin)
-{
-	printf("Usage: %s <out channel count> <in channel count> [mode]\r\n", bin);
-	printf("  channel count: [0, 1] for 245 mode, [0-4] for 600 mode\r\n");
-	printf("  mode: 0 = FT245 mode (default), 1 = FT600 mode\r\n");
 }
 
 static void show_throughput(FT_HANDLE handle)
@@ -123,38 +98,14 @@ static void get_queue_status(HANDLE handle)
 	}
 }
 
-static bool validate_arguments(int argc, char *argv[])
-{
-	if (argc != 3 && argc != 4)
-		return false;
-
-	if (argc == 4) {
-		int val = atoi(argv[3]);
-		if (val != 0 && val != 1)
-			return false;
-		fifo_600mode = (bool)val;
-	}
-
-	out_ch_cnt = atoi(argv[1]);
-	in_ch_cnt = atoi(argv[2]);
-
-	if ((in_ch_cnt == 0 && out_ch_cnt == 0) ||
-			in_ch_cnt > 4 || out_ch_cnt > 4) {
-		show_help(argv[0]);
-		return false;
-	}
-	return true;
-}
-
 int main(int argc, char *argv[])
 {
 
 	get_version();
 
-	if (!validate_arguments(argc, argv)) {
-		show_help(argv[0]);
-		return 1;
-	}
+	fifo_600mode = (bool)0;
+	out_ch_cnt = 0;
+	in_ch_cnt = 1;
 
 	if (!get_device_lists(500))
 		return 1;
@@ -172,15 +123,11 @@ int main(int argc, char *argv[])
 		printf("Failed to create device\r\n");
 		return -1;
 	}
-	if (out_ch_cnt)
-		write_thread = thread(write_test, handle);
-	if (in_ch_cnt)
-		read_thread = thread(read_test, handle);
-        measure_thread = thread(show_throughput, handle);
+	read_thread = thread(read_test, handle);
+    measure_thread = thread(show_throughput, handle);
 	register_signals();
 	printf("Bit Error Rate and Throughput Testing! Updates in nearly every 20 seconds. \n");
-	if (write_thread.joinable())
-		write_thread.join();
+
 	if (read_thread.joinable())
 		read_thread.join();
 	if (measure_thread.joinable())
