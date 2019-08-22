@@ -16,12 +16,12 @@ ifneq ("$(wildcard ftd3xx.dll)","")
 	CXX = $(CROSS_COMPILE)g++-posix
 	OBJDUMP = $(CROSS_COMPILE)objdump
 
-	DEMO0=streamer.exe
+	BUILD_OUT=ber_test.exe
 	CXXLIBS = -static -lstdc++
 	# === End of Windows ===
 	else
 	# === Linux & macOS ===
-	DEMO0=streamer
+	BUILD_OUT=ber_test
 
 	ifneq ("$(wildcard libftd3xx.dylib)","")
 	# == macOS ==
@@ -47,10 +47,10 @@ COMMON_CFLAGS = -g -O3 -Wall -Wextra $(COMMON_FLAGS)
 CFLAGS = -std=c99 $(COMMON_CFLAGS) -D_POSIX_C_SOURCE
 CXXFLAGS = -std=c++11 $(COMMON_CFLAGS)
 
-all: $(DEMO0)
+all: $(BUILD_OUT)
 	
-$(DEMO0): streamer.o
+$(BUILD_OUT): ber_test.o
 	$(CC) $(COMMON_FLAGS) -o $@ $^ $(CXXLIBS) $(LIBS)
 
 clean:
-	rm -rf streamer.o streamer
+	rm -rf ber_test.o ber_test
