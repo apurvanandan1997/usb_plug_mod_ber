@@ -118,13 +118,12 @@ The BER tested on AXIOM Beta tends to be lesser than 10<sup>-12</sup>.
  * __Apurva Nandan__
  
 *Mentored by:* __Herbert Poetzl__
-For more information, go to [Apertus Wiki](wiki).
 
 Licensed under __GNU General Public License v3.0__
 
+For more information, go to [Apertus Wiki](wiki).
 
-
-   [vivado]: <https://www.xilinx.com/products/design-tools/vivado.html>
-   [diamond]: <http://www.latticesemi.com/latticediamond>
-   [ise]: <https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/design-tools/v2012_4---14_7.html>
-   [wiki]: <https://wiki.apertus.org/index.php/USB_3.0_Plugin_Module_Gearwork>
+   [vivado]:<https://www.xilinx.com/products/design-tools/vivado.html>
+   [diamond]:<http://www.latticesemi.com/latticediamond>
+   [ise]:<https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/design-tools/v2012_4---14_7.html>
+   [wiki]:<https://wiki.apertus.org/index.php/USB_3.0_Plugin_Module_Gearwork>
