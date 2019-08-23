@@ -14,17 +14,17 @@ This repository also contains the Transmitter HDLs for Virtex-5 FPGA (optional).
 
 	.
     ├── D3XX
-    │   ├── src	        # C++ Source code for receiving USB packets and printing throughput
-    |   └── lib	        # FTD3XX & STDC++ libraries for installation
+    │   ├── src        # C++ Source code for receiving USB packets and printing throughput
+    |   └── lib        # FTD3XX & STDC++ libraries for installation
     ├── MachXO2
-    │   ├── src          # Source code for Lattice MachXO2 FPGA on USB module
-    │   ├── proj         # Project folder to be opened with Lattice Diamond 3
-    │   └── cfg          # Contains .prj file required by synplinify
+    │   ├── src        # Source code for Lattice MachXO2 FPGA on USB module
+    │   ├── proj       # Project folder to be opened with Lattice Diamond 3
+    │   └── cfg        # Contains .prj file required by synplinify
     ├── Zynq
-    │   └── src          # Source code for Zynq XC7020 FPGA on AXIOM Beta 
-    └── Virtex-5		 # Initial local testing of USB module was done on Virtex-5 FPGA (optional)
-        ├── src			 # Source code for Virtex-5 XC5VLX110T FPGA
-        └── cfg          # Contains configs for Makefile
+    │   └── src        # Source code for Zynq XC7020 FPGA on AXIOM Beta 
+    └── Virtex-5       # Initial local testing of USB module was done on Virtex-5 FPGA (optional)
+        ├── src        # Source code for Virtex-5 XC5VLX110T FPGA
+        └── cfg        # Contains configs for Makefile
 
 Every subdirectory provides a Makefile and is individually compilable. Makefile in root directory compiles all source code and offers option to compile individual folder also.
 
@@ -90,7 +90,7 @@ $ cd /usr/local/diamond/3.10_x64/synpbase/bin && for file in grep -lRsI "/bin/sh
  
 #### Hardware Testing Instructions:
 
-Once the project is built, you will find the programming files ```zynq.bit``` and ```machxo2.bit``` with the executable software ```ber_test``` in ```build/``` directory. 
+Once the project is built, you will find the programming files ```zynq.bit``` and ```machxo2.bit``` alongwith the software executable ```ber_test``` in ```build/``` directory. 
 
 You need to upload the bit files on respective FPGAs while taking care that MachXO2 gets programmed successfully within 10 seconds after Zynq is programmed (Link training feedback from MachXO2 back to Zynq is left to be done. At the momoent, Zynq sends link training pattern for 10 seconds after it gets programmed and in this interval MachXO2 needs to be in word alignment phase.)
 
@@ -121,4 +121,4 @@ The BER tested on AXIOM Beta tends to be lesser than 10<sup>-12</sup>.
 
 Licensed under __GNU General Public License v3.0__
 
-For more information, go to [Apertus Wiki](https://wiki.apertus.org/index.php/USB_3.0_Plugin_Module_Gearwork).
+For more information, please go to [Apertus Wiki](https://wiki.apertus.org/index.php/USB_3.0_Plugin_Module_Gearwork).
