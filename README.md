@@ -12,19 +12,19 @@ The gearwork's source code is divided into following parts:
 
 This repository also contains the Transmitter HDLs for Virtex-5 FPGA (optional).
 
-  .
+	.
     ├── D3XX
-    │ ├── src     # C++ Source code for receiving USB packets and printing throughput
-    |   └── lib     # FTD3XX & STDC++ libraries for installation
+    │	├── src			# C++ Source code for receiving USB packets and printing throughput
+    |   └── lib			# FTD3XX & STDC++ libraries for installation
     ├── MachXO2
     │   ├── src          # Source code for Lattice MachXO2 FPGA on USB module
     │   ├── proj         # Project folder to be opened with Lattice Diamond 3
     │   └── cfg          # Contains .prj file required by synplinify
     ├── Zynq
     │   └── src          # Source code for Zynq XC7020 FPGA on AXIOM Beta 
-    └── Virtex-5     # Initial local testing of USB module was done on Virtex-5 FPGA (optional)
-      ├── src      # Source code for Virtex-5 XC5VLX110T FPGA
-      └── cfg          # Contains configs for Makefile
+    └── Virtex-5		 # Initial local testing of USB module was done on Virtex-5 FPGA (optional)
+    	├── src			 # Source code for Virtex-5 XC5VLX110T FPGA
+  		└── cfg          # Contains configs for Makefile
 
 Every subdirectory provides a Makefile and is individually compilable. Makefile in root directory compiles all source code and offers option to compile individual folder also.
 
