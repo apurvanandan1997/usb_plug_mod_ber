@@ -33,9 +33,9 @@ Every subdirectory provides a Makefile and is individually compilable. Makefile 
 #### Dependencies:
 Following manufacturer's software tools would be required for building this project.
   
-  - [Xilinx Vivado HLx Edition](vivado)
-  - [Lattice Diamond 3](diamond)
-  - [Xilinx ISE Design Suite 14.7](ise) (only for Virtex-5) 
+  - [Xilinx Vivado HLx Edition](https://www.xilinx.com/products/design-tools/vivado.html)
+  - [Lattice Diamond 3](http://www.latticesemi.com/latticediamond)
+  - [Xilinx ISE Design Suite 14.7](https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/design-tools/v2012_4---14_7.html) (only for Virtex-5) 
 
 
 > Makefiles are configured for default installation directories of above software tools. Make sure the environment variables in .bashrc are properly set up (Refer to respective software installation guides). Also the version of Lattice Diamond installed needs to be mentioned in Makefile.
@@ -121,9 +121,4 @@ The BER tested on AXIOM Beta tends to be lesser than 10<sup>-12</sup>.
 
 Licensed under __GNU General Public License v3.0__
 
-For more information, go to [Apertus Wiki](wiki).
-
-   [vivado]:<https://www.xilinx.com/products/design-tools/vivado.html>
-   [diamond]:<http://www.latticesemi.com/latticediamond>
-   [ise]:<https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/design-tools/v2012_4---14_7.html>
-   [wiki]:<https://wiki.apertus.org/index.php/USB_3.0_Plugin_Module_Gearwork>
+For more information, go to [Apertus Wiki](https://wiki.apertus.org/index.php/USB_3.0_Plugin_Module_Gearwork).
