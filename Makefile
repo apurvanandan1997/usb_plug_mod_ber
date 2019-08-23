@@ -1,4 +1,4 @@
-TARGETS=all d3xx machxo2 zynq
+TARGETS=all d3xx machxo2 zynq help
 DIAMOND_VER=3.10_x64
 export DIAMOND_VER
 
@@ -28,6 +28,9 @@ d3xx : D3XX/Makefile
 	$(MAKE) -C D3XX
 	mkdir -p $(BUILDDIR) && cp D3XX/build/ber_test $(BUILDDIR)/	
 
+help :
+	@echo "Usage: make <target> \nPossible Targets: d3xx, machxo2, zynq, clean. Default target: all"
+
 clean:
 	rm -rf build
 	rm -rf D3XX/build
@@ -35,4 +38,4 @@ clean:
 	rm -f  MachXO2/stdout.log MachXO2/synlog.tcl
 	rm -rf Zynq/build
 
-.PHONY := all  d3xx machxo2 zynq clean
+.PHONY := all  d3xx machxo2 zynq clean help
