@@ -3,17 +3,18 @@
 -- Engineer:       Apurva Nandan
 -- 
 -- Create Date:    00:22:57 08/05/2019 
--- Design Name: 
--- Module Name:    ft601_top
--- Project Name: 
--- Target Devices: 
--- Tool versions: 
--- Description:    FT601 Controller in FT245 mode
+-- Design Name:    
+-- Module Name:    deserializer
+-- Project Name:   USB 3.0 Module Gearwork
+-- Target Devices: LCMXO2-2000HC-TQFP100
+-- Tool versions:  Lattice Diamond 3.10 
+-- Description:    Deserializer Module for DDR x10 gearing and word alignment
 --
--- Dependencies: 
---
--- Revision: 
--- Revision 0.01 - File Created
+-- License:        This program is free software: you can redistribute it and/or
+--                 modify it under the terms of the GNU General Public License
+--                 as published by the Free Software Foundation, either version
+--                 3 of the License, or (at your option) any later version.
+-- 
 -- Additional Comments: 
 --
 ----------------------------------------------------------------------------------
@@ -25,13 +26,13 @@ use ieee.std_logic_unsigned.all;
 
 entity deserializer is
     port (
-        eclk     : in std_logic;
-        clk_s    : in std_logic;
+        eclk     : in  std_logic;
+        clk_s    : in  std_logic;
         reset    : in  std_logic;
         sclk     : out std_logic;
-        datain   : in  std_logic_vector(4 downto 0);
-        link_rdy : out std_logic := '0';
+        link_rdy : out std_logic;
         q_valid  : out std_logic := '0';  
+        datain   : in  std_logic_vector(4 downto 0);
         q        : out std_logic_vector(49 downto 0)
     );
 end entity deserializer;
@@ -56,19 +57,16 @@ architecture rtl of deserializer is
     );
     end component;
 
-    --signal q10_buf  : std_logic_vector(9 downto 0) := (others => '0');
-    --signal q8_buf   : std_logic_vector(7 downto 0) := (others => '0');
-    signal q40_buf   : std_logic_vector(39 downto 0) := (others => '0');
-    signal q50_buf   : std_logic_vector(49 downto 0) := (others => '0');
-
-    signal q_tmp    : std_logic_vector(39 downto 0) := (others => '0');
-    signal counter  : std_logic_vector(2 downto 0) := (others => '0');
+    signal q40_buf : std_logic_vector(39 downto 0);
+    signal q50_buf : std_logic_vector(49 downto 0) := (others => '0');
+    signal q_tmp   : std_logic_vector(39 downto 0) := (others => '0');
+    signal counter : std_logic_vector(2 downto 0) := (others => '0');
    
     signal bit_slip : std_logic := '0';
-    signal sclk_buf : std_logic := '0';
-    signal locked   : std_logic := '0';
+    signal sclk_buf : std_logic;
+    signal locked   : std_logic;
     signal lnk_trnd : std_logic := '0';
-    signal rx_rdy   : std_logic := '0';
+    signal rx_rdy   : std_logic;
     
     signal lnk_trnd_buf : std_logic_vector(3 downto 0) := (others => '0');
     signal hold_slip    : std_logic_vector(2 downto 0) := (others => '0');

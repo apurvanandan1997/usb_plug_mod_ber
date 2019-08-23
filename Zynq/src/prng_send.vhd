@@ -20,7 +20,7 @@ use ieee.std_logic_unsigned.all;
 entity prng_send is
     generic(
         SEED : std_logic_vector(39 downto 0) := "1011110010111100101111001011110010111100"
-        -- K28.5 Control Symbol for Word Alignment ( MSB 8 bits)
+        -- Concat of K28.5 Control Symbol for Word Alignment ( MSB 8 bits)
     );
     port(
         clk   : in  std_logic;  -- Clock Input

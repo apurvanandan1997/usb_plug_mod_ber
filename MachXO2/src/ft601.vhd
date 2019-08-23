@@ -29,14 +29,14 @@ entity ft601 is
         led : out std_logic;
 
         -- To FT601 chip
-        ft601_data   : inout std_logic_vector(31 downto 0);
-        ft601_be     : out   std_logic_vector(3 downto 0);
-        ft601_rxf_n  : in    std_logic;
-        ft601_txe_n  : in    std_logic;
-        ft601_wr_n   : out   std_logic;
-        ft601_siwu_n : out   std_logic;
-        ft601_rd_n   : out   std_logic;
-        ft601_oe_n   : out   std_logic;
+        ft601_rxf_n  : in  std_logic;
+        ft601_txe_n  : in  std_logic;
+        ft601_wr_n   : out std_logic;
+        ft601_siwu_n : out std_logic;
+        ft601_rd_n   : out std_logic;
+        ft601_oe_n   : out std_logic;
+        ft601_be     : out std_logic_vector(3 downto 0);
+        ft601_data   : out std_logic_vector(31 downto 0);
 
         -- From Internal FIFOs
         data_in    : in  std_logic_vector(31 downto 0);

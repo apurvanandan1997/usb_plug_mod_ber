@@ -28,7 +28,10 @@ set_property board_part em.avnet.com:microzed_7020:part0:1.2 [current_project]
 set_property TARGET_LANGUAGE VHDL [current_project]
 
 launch_runs synth_1
-
+wait_on_run synth_1
 #launch_runs impl_1
 
 launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+puts "Vivado Build Complete"
+exit

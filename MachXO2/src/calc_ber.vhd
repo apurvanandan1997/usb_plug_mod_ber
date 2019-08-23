@@ -18,9 +18,9 @@ use IEEE.std_logic_unsigned.all;
 
 entity calc_ber is
     port (
-        byte_recvd  : in  std_logic_vector(39 downto 0);
+        word_recvd  : in  std_logic_vector(39 downto 0);
         din_clk     : in  std_logic;
-        byte_actual : in  std_logic_vector(39 downto 0);
+        word_actual : in  std_logic_vector(39 downto 0);
         en          : in  std_logic;
         reset       : in  std_logic;
         ber         : out std_logic_vector(31 downto 0) := (others => '0')
@@ -29,16 +29,15 @@ end calc_ber;
 
 architecture rtl of calc_ber is
 
-    signal error_bits   : std_logic_vector(39 downto 0)  := (others => '0');
-    signal err_per_byte : std_logic_vector(5 downto 0)  := (others => '0');
+    signal error_bits   : std_logic_vector(39 downto 0);
+    signal err_per_byte : std_logic_vector(5 downto 0) ;
     signal count_bytes  : std_logic_vector(29 downto 0) := (others => '0');
-    signal total_err_bits : std_logic_vector(31 downto 0) :=  (others => '0');
+    signal total_error  : std_logic_vector(31 downto 0) :=  (others => '0');
     constant ones32 : std_logic_vector(31 downto 0) := (others => '1');
 
 begin
     
-    error_bits <= byte_actual xor byte_recvd;
-    --error_bits(39 downto 32) <= (others => '0');
+    error_bits <= word_actual xor word_recvd;
 
     count_proc : process(error_bits)
 
@@ -59,24 +58,24 @@ begin
         if rising_edge(din_clk) then
             if reset = '1' then
                 count_bytes    <= (others => '0');
-                total_err_bits <= (others => '0');
+                total_error <= (others => '0');
 
             else
                 if en = '1' then
                     count_bytes <= count_bytes + '1';
 
                     if count_bytes = ones32(29 downto 0) then
-                        ber <= total_err_bits;
-                        total_err_bits <= (others => '0');
+                        ber <= total_error;
+                        total_error <= (others => '0');
                         count_bytes <= (others => '0');
 
                     else
-                        total_err_bits <= total_err_bits + err_per_byte;
+                        total_error <= total_error + err_per_byte;
 
                     end if;
                 else
                     count_bytes    <=  count_bytes;
-                    total_err_bits <=  total_err_bits;
+                    total_error <=  total_error;
 
                 end if;
             end if;

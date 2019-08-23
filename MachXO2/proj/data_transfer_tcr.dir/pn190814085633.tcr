@@ -1,9 +1,0 @@
-#Start recording tcl command: 8/14/2019 08:45:43
-#Project Location: /home/apurvan/Project/GSoC/data_transfer_gearwork/proj_folder/MachXO2; Project name: data_transfer
-prj_project open "/home/apurvan/Project/GSoC/data_transfer_gearwork/proj_folder/MachXO2/data_transfer.ldf"
-prj_src remove "/home/apurvan/Project/GSoC/data_transfer_gearwork/proj_folder/MachXO2/beh_sim/beh_sim.spf"
-prj_src add "/home/apurvan/Project/GSoC/data_transfer_gearwork/proj_folder/MachXO2/beh_sim/beh_sim.spf"
-cmpl_libs -sim_path /usr/local/microsemi/Libero_SoC_v11.9/ModelSim/modeltech/linuxacoem -target_path /home/apurvan/modelsim -lang vhdl -device machxo2
-prj_src remove "/home/apurvan/Project/GSoC/data_transfer_gearwork/proj_folder/MachXO2/beh_sim/beh_sim.spf"
-prj_src add "/home/apurvan/Project/GSoC/data_transfer_gearwork/proj_folder/MachXO2/beh_sim/beh_sim.spf"
-#Stop recording: 8/14/2019 08:56:33

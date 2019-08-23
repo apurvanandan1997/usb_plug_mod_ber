@@ -18,10 +18,11 @@ Following manufacturer's software tools would be required for building this proj
   - [Xilinx ISE Design Suite 14.7] [ise] (only for Virtex-5) 
 
 
-> Note: Makefiles are configured for default installation directories of above software tools
+> Note: Makefiles are configured for default installation directories of above software tools. Make sure the environment variables in .bashrc are properly set up (Refer to respective software installation guides).
 
 Additionally, a proprietary usb driver FTDI D3XX would be required to interface with the FTDI FT601Q chip. These driver libraries have been pushed in this repository itself.
 ```
+$ cd FTD3XX/
 $ sudo rm /usr/lib/libftd3xx.so
 $ sudo cp libftd3xx.so /usr/lib/
 $ sudo cp libftd3xx.so.0.5.21 /usr/lib/
@@ -42,7 +43,25 @@ You need to run make command in the root folder of this project to generate prog
 ```
 $ make
 ```
-
+```
+mkdir ./build/ && cp ./cfg/machxo2.prj ./build/
+synpwrap -prj "./build/machxo2.prj"
+Copyright (C) 1992-2017 Lattice Semiconductor Corporation. All rights reserved.
+Lattice Diamond Version 3.10.0.111.2
+INFO - Synplify synthesis engine is launched.
+/usr/local/diamond/3.10_x64/synpbase/bin/synplify_pro: 137: [: unexpected operator
+/usr/local/diamond/3.10_x64/synpbase/bin/synplify_pro: 151: [: !=: argument expected
+/usr/local/diamond/3.10_x64/synpbase/bin/synplify_pro: 320: /usr/local/diamond/3.10_x64/synpbase/bin/config/execute: Syntax error: "(" unexpected (expecting ";;")
+Child process exit with 2.
+Synthesis exit by 2.
+Makefile:13: recipe for target 'build/machxo2.edi' failed
+make: *** [build/machxo2.edi] Error 2
+```
+ ```
+$ cd /usr/local/diamond/3.10_x64/synpbase/bin && for file in grep -lRsI "/bin/sh" *; do sudo sed -i -e 's/#!\/bin\/sh/#!\/bin\/bash/g' $file; done
+ 
+ ```
+ 
 #### Testing Procedure:
 
 ```
