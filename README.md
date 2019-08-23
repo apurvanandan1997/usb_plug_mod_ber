@@ -1,5 +1,7 @@
 # USB 3.0 Plugin Module Gearwork
 
+> This repository conatins all the source code developed by me in GSoC 2019 under apertus° Association. For detailed project report, please read GSoC19_Report.pdf in this repository.
+
 USB 3.0 Plugin Module is an optional accesssory that can be plugged directly onto the main board of the AXIOM Beta camera thereby adding the capability to allow live stream of RAW 4K video at 20+ FPS through a USB 3.0 port to the connected PC. This repository ,developed in GSoC 2019, provides the source code for testing of Bit Error Rate (BER) of the 6 LVDS pairs being used for data traffic.
 
 ## Overview
@@ -12,7 +14,7 @@ The gearwork's source code is divided into following parts:
 
 This repository also contains the Transmitter HDLs for Virtex-5 FPGA (optional).
 
-	.
+    .
     ├── D3XX
     │   ├── src        # C++ Source code for receiving USB packets and printing throughput
     |   └── lib        # FTD3XX & STDC++ libraries for installation
