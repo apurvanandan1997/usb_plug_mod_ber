@@ -1,6 +1,6 @@
 # TOP, SRC, TEMPLATES are passed in
 SRCS := $(shell find $(SRC) -type f -name '*.vhd')
-UCF := $(wildcard $(SRC)/constraints.ucf)
+UCF := $(wildcard $(SRC)/virtex.ucf)
 
 PART := xc5vlx110t-ff1136-1
 

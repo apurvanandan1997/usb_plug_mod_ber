@@ -18,10 +18,10 @@ read_vhdl -vhdl2008 ../src/prng_send.vhd
 read_vhdl -vhdl2008 ../src/vivado_pkg.vhd
 read_vhdl -vhdl2008 ../src/ps7_stub.vhd
 read_vhdl -vhdl2008 ../src/serdes_10_1.vhd
-read_vhdl -vhdl2008 ../src/top.vhd
+read_vhdl -vhdl2008 ../src/zynq_top.vhd
 
-read_xdc ../src/top.xdc
-set_property target_constrs_file ../src/top.xdc [current_fileset -constrset]
+read_xdc ../src/zynq.xdc
+set_property target_constrs_file ../src/zynq.xdc [current_fileset -constrset]
 
 set_property PART xc7z020clg400-1 [current_project]
 set_property board_part em.avnet.com:microzed_7020:part0:1.2 [current_project]
