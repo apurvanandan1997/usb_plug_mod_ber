@@ -21,8 +21,9 @@ Following manufacturer's software tools would be required for building this proj
 > Note: Makefiles are configured for default installation directories of above software tools. Make sure the environment variables in .bashrc are properly set up (Refer to respective software installation guides).
 
 Additionally, a proprietary usb driver FTDI D3XX would be required to interface with the FTDI FT601Q chip. These driver libraries have been pushed in this repository itself.
+
 ```
-$ cd FTD3XX/
+$ cd D3XX/lib
 $ sudo rm /usr/lib/libftd3xx.so
 $ sudo cp libftd3xx.so /usr/lib/
 $ sudo cp libftd3xx.so.0.5.21 /usr/lib/
@@ -38,11 +39,12 @@ $ sudo LD_LIBRARY_PATH=. ./streamer 0 1 0
 
 #### Compilation:
 
-You need to run make command in the root folder of this project to generate programming files ( *.bit) for MachXO2 and Zynq XC7020.
+You need to run make command in the root folder of this project to generate programming files ( *.bit) for MachXO2 and Zynq XC7020 and the compiled C++ output.
 
 ```
 $ make
 ```
+##### Bugfix
 ```
 mkdir ./build/ && cp ./cfg/machxo2.prj ./build/
 synpwrap -prj "./build/machxo2.prj"
@@ -57,6 +59,7 @@ Synthesis exit by 2.
 Makefile:13: recipe for target 'build/machxo2.edi' failed
 make: *** [build/machxo2.edi] Error 2
 ```
+This happen due to ```!#/bin/sh``` at the starting of scripts in Lattice Diamond 3, it makes Ubuntu's dash run a bash script. To fix the issue run the following command
  ```
 $ cd /usr/local/diamond/3.10_x64/synpbase/bin && for file in grep -lRsI "/bin/sh" *; do sudo sed -i -e 's/#!\/bin\/sh/#!\/bin\/bash/g' $file; done
  
@@ -69,12 +72,11 @@ $ lsusb
 
 Bus ___ Device ___: ID 0403:601f Future Technology Devices International, Ltd 
 ```
-Usage: ./streamer <out channel count> <in channel count> [mode]
-  channel count: [0, 1] for 245 mode, [0-4] for 600 mode
-  mode: 0 = FT245 mode (default), 1 = FT600 mode
-
 ```
-$ ./streamer 0 1 0
+Usage: ./ber_test
+```
+```
+$ ./ber_test
 
 Driver version:0.5.21
 Library version:1.0.21
