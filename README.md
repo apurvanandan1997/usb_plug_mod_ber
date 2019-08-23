@@ -119,6 +119,7 @@ The BER tested on AXIOM Beta tends to be lesser than 10<sup>-12</sup>.
  
 *Mentored by:* __Herbert Poetzl__
 
+Licensed under __GNU General Public License v3.0__
 
 
    [vivado]: <https://www.xilinx.com/products/design-tools/vivado.html>
