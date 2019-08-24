@@ -94,7 +94,16 @@ $ cd /usr/local/diamond/3.10_x64/synpbase/bin && for file in grep -lRsI "/bin/sh
 
 Once the project is built, you will find the programming files ```zynq.bit``` and ```machxo2.bit``` alongwith the software executable ```ber_test``` in ```build/``` directory. 
 
-You need to upload the bit files on respective FPGAs while taking care that MachXO2 gets programmed successfully within 10 seconds after Zynq is programmed (Link training feedback from MachXO2 back to Zynq is left to be done. At the momoent, Zynq sends link training pattern for 10 seconds after it gets programmed and in this interval MachXO2 needs to be in word alignment phase.)
+You need to upload the bit files on respective FPGAs while taking care that MachXO2 gets programmed successfully within 10 seconds after Zynq is programmed (Link training feedback from MachXO2 back to Zynq is left to be done. At the momoent, Zynq sends link training pattern for 10 seconds after it gets programmed and in this interval MachXO2 needs to be in word alignment phase.) 
+
+In order to clock the design uploaded on Zynq PL correctly, you need to provide a clock of 50MHz from the Zynq PS through 
+fclk(0). This can be acheived by running the following commands in the shell of Zynq PS.
+```
+$ [ -e /sys/class/fclk/fclk0 ] || \ echo fclk0 >/sys/devices/soc0/amba/f8007000.devcfg/fclk_export
+$ echo 50000000 >/sys/class/fclk/fclk0/set_rate
+$ echo 1 >/sys/class/fclk/fclk0/enable
+```
+
 
 If the USB plugin module is programmed successfully, you should be able to see following output on ```lsusb```.
 ```
