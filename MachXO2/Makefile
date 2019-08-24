@@ -14,7 +14,7 @@ CFG= ./cfg/
 
 ALL: $(BUILD)machxo2.bit
 
-$(BUILD)%.edi : $(SRC)%_top.vhd 
+$(BUILD)%.edi : $(SRC)%_top.vhd $(SRC)%_tim.fdc
 	@echo "Lattice Diamond Version being used:" $(DIAMOND_VER)
 	@mkdir -p $(BUILD) && cp $(CFG)$*.prj $(BUILD)
 	@ln -sf /usr/local/diamond/$(DIAMOND_VER)/cae_library $(BUILD)/cae_library

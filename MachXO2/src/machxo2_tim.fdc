@@ -1,0 +1,6 @@
+create_clock -name {FT601_CLK} [get_ports {FT601_CLK}] -period 10.00
+
+create_clock -name {sclk} -period 10.667 [get_pins {deser_inst.ddrx4_inst.sclk}]
+
+create_clock -name {clk_int} -period 7.519 [get_nets {n:clk_int}]
+
