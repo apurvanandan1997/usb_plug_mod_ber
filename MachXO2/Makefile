@@ -2,7 +2,11 @@ BOARD="MachXO2"
 DEVICE="LCMXO2-2000HC"
 PKG="TQFP100"
 GRADE=6
-DIAMOND_VER=3.10_x64
+
+ifndef $(DIAMOND_VER)
+	DIAMOND_VER=3.10_x64
+endif
+
 SEARCH="/usr/local/diamond/$(DIAMOND_VER)/ispfpga/vhdl/data/"
 BUILD= ./build/
 SRC= ./src/
@@ -13,7 +17,7 @@ ALL: $(BUILD)machxo2.bit
 $(BUILD)%.edi : $(SRC)%_top.vhd 
 	@echo "Lattice Diamond Version being used:" $(DIAMOND_VER)
 	@mkdir -p $(BUILD) && cp $(CFG)$*.prj $(BUILD)
-	@ln -sf /usr/local/diamond/$(DIAMOND_VER)/cae_library $(BUILD)/diamond_symlink
+	@ln -sf /usr/local/diamond/$(DIAMOND_VER)/cae_library $(BUILD)/cae_library
 	@synpwrap -prj $(BUILD)$*.prj >$(BUILD)$*.synpwrap.out \
 	    || ( $(CFG)/cc.sh srr $(BUILD)$*.srr && false )
 	@echo "--- premap"
