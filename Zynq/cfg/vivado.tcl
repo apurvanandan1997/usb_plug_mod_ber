@@ -2,11 +2,11 @@ set pwd [pwd]
 
 set OS [lindex $tcl_platform(os) 0]
 if { $OS == "Windows" } {
-    exec cmd /c rmdir build
+	exec cmd /c del /f build
     exec cmd /c mkdir build
 } else {
-    exec rm -rf build
-    exec mkdir build
+	exec rm -rf build
+    exec mkdir -p build
 }
 
 cd build
@@ -29,9 +29,7 @@ set_property TARGET_LANGUAGE VHDL [current_project]
 
 launch_runs synth_1
 wait_on_run synth_1
-#launch_runs impl_1
 
 launch_runs impl_1 -to_step write_bitstream -jobs 4
 wait_on_run impl_1
-puts "Vivado Build Complete"
 exit

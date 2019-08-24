@@ -12,8 +12,8 @@ $(TARGETS): $(MAKEFILE)
 	$(MAKE) $@ -C $(BUILDDIR) $(MAKEARGS)
 
 $(MAKEFILE): cfg/Makefile
-	mkdir -p build/$(TOP)
-	cp $< $@
+	@mkdir -p build/$(TOP)
+	@cp $< $@
 
 clean:
 	rm -rf build

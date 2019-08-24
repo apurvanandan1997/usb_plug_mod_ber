@@ -21,12 +21,13 @@ This repository also contains the Transmitter HDLs for Virtex-5 FPGA (optional).
     ├── MachXO2
     │   ├── src        # Source code for Lattice MachXO2 FPGA on USB module
     │   ├── proj       # Project folder to be opened with Lattice Diamond 3
-    │   └── cfg        # Contains .prj file required by synplinify
+    │   └── cfg        # Contains config files required by Makefile
     ├── Zynq
+    │   ├── cfg        # Contains config files required by Makefile
     │   └── src        # Source code for Zynq XC7020 FPGA on AXIOM Beta 
     └── Virtex-5       # Initial local testing of USB module was done on Virtex-5 FPGA (optional)
         ├── src        # Source code for Virtex-5 XC5VLX110T FPGA
-        └── cfg        # Contains configs for Makefile
+        └── cfg        # Contains config files required by Makefile
 
 Every subdirectory provides a Makefile and is individually compilable. Makefile in root directory compiles all source code and offers option to compile individual folder also.
 
@@ -41,6 +42,8 @@ Following manufacturer's software tools would be required for building this proj
 
 
 > Makefiles are configured for default installation directories of above software tools. Make sure the environment variables in .bashrc are properly set up (Refer to respective software installation guides). Also the version of Lattice Diamond installed needs to be mentioned in Makefile.
+
+You need to install the MicroZed 7020 Board Files in your Vivado installation directory in order to build the Zynq project. Please install the ```microzed_7020/1.2``` files from [Avnet/bdf](https://github.com/Avnet/bdf).
 
 Additionally, a proprietary usb driver FTDI D3XX would be required to interface with the FTDI FT601Q chip. These driver libraries have been pushed in this repository itself.
 
@@ -70,7 +73,7 @@ To display usage and available target options, use ```$ make help```
 
 ###### Bugfix
 ```
-mkdir ./build/ && cp ./cfg/machxo2.prj ./build/
+mkdir -p ./build/ && cp ./cfg/machxo2.prj ./build/
 synpwrap -prj "./build/machxo2.prj"
 Copyright (C) 1992-2017 Lattice Semiconductor Corporation. All rights reserved.
 Lattice Diamond Version 3.10.0.111.2
@@ -89,6 +92,10 @@ $ cd /usr/local/diamond/3.10_x64/synpbase/bin && for file in grep -lRsI "/bin/sh
  
  ```
  
+ Alternatively, you can reconfigure your default system shell for ```sh``` from ```dash``` to ```bash``` using:
+ ```
+$ sudo dpkg-reconfigure dash
+ ```
  
 #### Hardware Testing Instructions:
 

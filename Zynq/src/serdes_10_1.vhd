@@ -53,7 +53,7 @@ begin
     master_serdes_inst_data0 : OSERDESE2
         generic map (
             DATA_RATE_OQ => "DDR",      -- Specify data rate to "DDR" or "SDR"
-            DATA_RATE_TQ => "DDR",      -- Specify data rate to "DDR", "SDR", or "BUF"
+            DATA_RATE_TQ => "BUF",      -- Specify data rate to "DDR", "SDR", or "BUF"
             DATA_WIDTH   => 10,         -- Specify data width - For DDR: 4,6,8, or 10
                                         -- For SDR or BUF: 2,3,4,5,6,7, or 8
             INIT_OQ        => '0',      -- INIT for Q1 register - ’1’ or ’0’
@@ -99,7 +99,7 @@ begin
     slave_serdes_inst_data0 : OSERDESE2
         generic map (
             DATA_RATE_OQ => "DDR",     -- Specify data rate to "DDR" or "SDR"
-            DATA_RATE_TQ => "DDR",     -- Specify data rate to "DDR", "SDR", or "BUF"
+            DATA_RATE_TQ => "BUF",     -- Specify data rate to "DDR", "SDR", or "BUF"
             DATA_WIDTH   => 10,        -- Specify data width - For DDR: 4,6,8, or 10
                                        -- For SDR or BUF: 2,3,4,5,6,7, or 8
             INIT_OQ        => '1',     -- INIT for Q1 register - ’1’ or ’0’

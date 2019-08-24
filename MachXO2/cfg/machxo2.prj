@@ -1,5 +1,5 @@
 #project files
-add_file -vhdl -lib work "/usr/local/diamond/3.10_x64/cae_library/synthesis/vhdl/machxo2.vhd"
+add_file -vhdl -lib work "diamond_symlink/synthesis/vhdl/machxo2.vhd"
 add_file -vhdl -lib work "../src/machxo2_top.vhd" "../src/async_fifo.vhd" "../src/ft601.vhd" "../src/calc_ber.vhd" "../src/ddrx4.vhd" "../src/dec_8b10b.vhd" "../src/deserializer.vhd" "../src/prng_recv.vhd" "../src/rx_sync.vhd"
 #implementation "count"
 impl -add count -type fpga
