@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2019-08-23T17:41:48</DateModified>
+  <DateModified>2019-08-25T06:19:02</DateModified>
   <ModuleName>virtex_top</ModuleName>
   <SummaryTimeStamp>Unknown</SummaryTimeStamp>
   <SavedFilePath>/home/apurvan/GSoC/final_Eval/usb_plug_mod_ber/Virtex-5/proj/ber_test/iseconfig/virtex_top.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>/home/apurvan/GSoC/final_Eval/usb_plug_mod_ber/Virtex-5/proj/ber_test</ImplementationReportsDirectory>
+  <ImplementationReportsDirectory>/home/apurvan/GSoC/final_Eval/usb_plug_mod_ber/Virtex-5/proj/ber_test/</ImplementationReportsDirectory>
   <DateInitialized>2019-08-23T17:41:48</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>
