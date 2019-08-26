@@ -127,8 +127,8 @@ Driver version:0.5.21
 Library version:1.0.21
 Total 1 device(s)
 1CH IN FT245 @ 100MHz
-Bit Error Rate and Throughput Testing! Updates in nearly every 20 seconds. 
-Bit Error Rate: 0 (00000000/9FFFFFFD8) | Throughput: 2.956 Gbps            
+Bit Error Rate and Throughput Testing! 
+Bit Error Rate: 0 (00000000/9FFFFFD8) | Throughput: 2.956 Gbps            
 ```
 The BER tested on AXIOM Beta tends to be lesser than 10<sup>-12</sup>. 
 

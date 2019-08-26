@@ -65,10 +65,10 @@ static void show_throughput(FT_HANDLE handle){
         this_thread::sleep_until(next);
         next += chrono::seconds(1);
         int rx = rx_count.exchange(0);
-        cout << "\r" << "Bit Error Rate: " << buffer_value/42949672920.0 << " ("
+        cout << "\r" << "Bit Error Rate: " << buffer_value/2684354560.0 << " ("
              << hex_val[buf[0]/16] << hex_val[buf[0]%16] << hex_val[buf[1]/16]
              << hex_val[buf[1]%16] << hex_val[buf[2]/16] << hex_val[buf[2]%16]
-             << hex_val[buf[3]/16] << hex_val[buf[3]%16] << "/9FFFFFFD8) | Throughput: " 
+             << hex_val[buf[3]/16] << hex_val[buf[3]%16] << "/9FFFFFD8) | Throughput: " 
              << (float)(rx/100000000.0) << " Gbps                        ";
     }
 }
@@ -123,8 +123,7 @@ int main(){
     read_thread = thread(read_test, handle);
     measure_thread = thread(show_throughput, handle);
     register_signals();
-    printf("Bit Error Rate and Throughput Testing! Updates in nearly every 20 "
-           "seconds. \n");
+    printf("Bit Error Rate and Throughput Testing!\n");
 
     if (read_thread.joinable()) read_thread.join();
     if (measure_thread.joinable()) measure_thread.join();
