@@ -1,5 +1,0 @@
-#Start recording tcl command: 8/25/2019 06:43:14
-#Project Location: /home/apurvan/GSoC/final_Eval/usb_plug_mod_ber/MachXO2/proj; Project name: ber_test
-prj_project open "/home/apurvan/GSoC/final_Eval/usb_plug_mod_ber/MachXO2/proj/ber_test.ldf"
-prj_run Synthesis -impl impl1 -task Lattice_Synthesis
-#Stop recording: 8/26/2019 06:11:19

@@ -38,8 +38,9 @@ architecture rtl of calc_ber is
     signal error_bits   : std_logic_vector(39 downto 0);
     signal err_per_byte : std_logic_vector(5 downto 0);
     signal count_bytes  : std_logic_vector(29 downto 0) := (others => '0');
-    signal total_error  : std_logic_vector(31 downto 0) := (others => '0');
-    constant ones32     : std_logic_vector(31 downto 0) := (others => '1');
+    signal total_error  : std_logic_vector(35 downto 0) := (others => '0');
+    constant ones       : std_logic_vector(31 downto 0) := (others => '1');
+    constant zeros      : std_logic_vector(31 downto 0) := (others => '0');
 
 begin
     
@@ -70,10 +71,10 @@ begin
                 if enable = '1' then
                     count_bytes <= count_bytes + '1';
 
-                    if count_bytes = ones32(29 downto 0) then
+                    if count_bytes = ones(29 downto 0) then
                         total_error <= (others => '0');
                         count_bytes <= (others => '0');
-                        ber <= total_error;
+                        ber <= total_error(31 downto 0);
 
                     else
                         total_error <= total_error + err_per_byte;

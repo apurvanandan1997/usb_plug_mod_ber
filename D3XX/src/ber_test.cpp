@@ -65,10 +65,10 @@ static void show_throughput(FT_HANDLE handle){
         this_thread::sleep_until(next);
         next += chrono::seconds(1);
         int rx = rx_count.exchange(0);
-        cout << "\r" << "Bit Error Rate: " << buffer_value/42949672960.0 << " ("
+        cout << "\r" << "Bit Error Rate: " << buffer_value/42949672920.0 << " ("
              << hex_val[buf[0]/16] << hex_val[buf[0]%16] << hex_val[buf[1]/16]
              << hex_val[buf[1]%16] << hex_val[buf[2]/16] << hex_val[buf[2]%16]
-             << hex_val[buf[3]/16] << hex_val[buf[3]%16] << "/9FFFFFFFF) | Throughput: " 
+             << hex_val[buf[3]/16] << hex_val[buf[3]%16] << "/9FFFFFFD8) | Throughput: " 
              << (float)(rx/100000000.0) << " Gbps                        ";
     }
 }

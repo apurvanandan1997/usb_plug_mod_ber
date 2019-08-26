@@ -101,7 +101,7 @@ $ sudo dpkg-reconfigure dash
 
 Once the project is built, you will find the programming files ```zynq.bit``` and ```machxo2.bit``` alongwith the software executable ```ber_test``` in ```build/``` directory. 
 
-You need to upload the bit files on respective FPGAs while taking care that MachXO2 gets programmed successfully within 10 seconds after Zynq is programmed (Link training feedback from MachXO2 back to Zynq is left to be done. At the momoent, Zynq sends link training pattern for 10 seconds after it gets programmed and in this interval MachXO2 needs to be in word alignment phase.) 
+You need to upload the bit files on respective FPGAs while taking care that MachXO2 gets programmed successfully within 10 seconds after Zynq is programmed (Link training feedback from MachXO2 back to Zynq is left to be done). At the momoent, Zynq sends link training pattern for 10 seconds after it gets programmed and in this interval MachXO2 needs to be in word alignment phase. If MachXO2 misses the reception of the linking training pattern, your C++ D3XX code will timeout and show 0 Gbps throughput. 
 
 In order to clock the design uploaded on Zynq PL correctly, you need to provide a clock of 50MHz from the Zynq PS through 
 fclk(0). This can be acheived by running the following commands in the shell of Zynq PS.
@@ -128,7 +128,7 @@ Library version:1.0.21
 Total 1 device(s)
 1CH IN FT245 @ 100MHz
 Bit Error Rate and Throughput Testing! Updates in nearly every 20 seconds. 
-Bit Error Rate: 0 (00000000/9FFFFFFFF) | Throughput: 2.956 Gbps            
+Bit Error Rate: 0 (00000000/9FFFFFFD8) | Throughput: 2.956 Gbps            
 ```
 The BER tested on AXIOM Beta tends to be lesser than 10<sup>-12</sup>. 
 
