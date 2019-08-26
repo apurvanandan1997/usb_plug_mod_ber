@@ -1,0 +1,544 @@
+<HTML>
+<HEAD><TITLE>Project Summary</TITLE>
+<STYLE TYPE="text/css">
+<!--
+ body,pre{    font-family:'Courier New', monospace;    color: #000000;    font-size:88%;    background-color: #ffffff;}h1 {    font-weight: bold;    margin-top: 24px;    margin-bottom: 10px;    border-bottom: 3px solid #000;    font-size: 1em;}h2 {    font-weight: bold;    margin-top: 18px;    margin-bottom: 5px;    font-size: 0.90em;}h3 {    font-weight: bold;    margin-top: 12px;    margin-bottom: 5px;    font-size: 0.80em;}p {    font-size:78%;}P.Table {    margin-top: 4px;    margin-bottom: 4px;    margin-right: 4px;    margin-left: 4px;}table{    border-width: 1px 1px 1px 1px;    border-style: solid solid solid solid;    border-color: black black black black;    border-collapse: collapse;}th {    font-weight:bold;    padding: 4px;    border-width: 1px 1px 1px 1px;    border-style: solid solid solid solid;    border-color: black black black black;    vertical-align:top;    text-align:left;    font-size:78%;}td {    padding: 4px;    border-width: 1px 1px 1px 1px;    border-style: solid solid solid solid;    border-color: black black black black;    vertical-align:top;    font-size:78%;}a {    color:#013C9A;    text-decoration:none;}a:visited {    color:#013C9A;}a:hover, a:active {    text-decoration:underline;    color:#5BAFD4;}.pass{background-color: #00ff00;}.fail{background-color: #ff0000;}.comment{    font-size: 90%;    font-style: italic;}
+-->
+</STYLE>
+</HEAD>
+<PRE><A name="Mrp"></A>
+         Lattice Mapping Report File for Design Module 'machx02_top'
+
+
+
+<A name="mrp_di"></A><B><U><big>Design Information</big></U></B>
+
+Command line:   map -a MachXO2 -p LCMXO2-2000HC -t TQFP100 -s 6 -oc Commercial
+     ber_test_impl1.ngd -o ber_test_impl1_map.ncd -pr ber_test_impl1.prf -mp
+     ber_test_impl1.mrp -lpf /home/apurvan/GSoC/final_Eval/usb_plug_mod_ber/Mach
+     XO2/proj/impl1/ber_test_impl1.lpf -lpf
+     /home/apurvan/GSoC/final_Eval/usb_plug_mod_ber/MachXO2/src/machxo2.lpf -c 0
+     -gui -msgset
+     /home/apurvan/GSoC/final_Eval/usb_plug_mod_ber/MachXO2/proj/promote.xml 
+Target Vendor:  LATTICE
+Target Device:  LCMXO2-2000HCTQFP100
+Target Performance:   6
+Mapper:  xo2c00,  version:  Diamond (64-bit) 3.10.0.111.2
+Mapped on:  08/26/19  07:59:33
+
+
+<A name="mrp_ds"></A><B><U><big>Design Summary</big></U></B>
+   Number of registers:    387 out of  2352 (16%)
+      PFU registers:          387 out of  2112 (18%)
+      PIO registers:            0 out of   240 (0%)
+   Number of SLICEs:       320 out of  1056 (30%)
+      SLICEs as Logic/ROM:    320 out of  1056 (30%)
+      SLICEs as RAM:            0 out of   792 (0%)
+      SLICEs as Carry:         33 out of  1056 (3%)
+   Number of LUT4s:        634 out of  2112 (30%)
+      Number used as logic LUTs:        568
+      Number used as distributed RAM:     0
+      Number used as ripple logic:       66
+      Number used as shift registers:     0
+   Number of PIO sites used: 56 + 4(JTAG) out of 80 (75%)
+      Number of PIO sites used for single ended IOs: 48
+      Number of PIO sites used for differential IOs: 12 (represented by 6 PIO
+     comps in NCD)
+   Number of IDDR/ODDR/TDDR cells used: 5 out of 240 (2%)
+      Number of IDDR cells:   5
+      Number of ODDR cells:   0
+      Number of TDDR cells:   0
+   Number of PIO using at least one IDDR/ODDR/TDDR: 5 (5 differential)
+      Number of PIO using IDDR only:        5 (5 differential)
+      Number of PIO using ODDR only:        0 (0 differential)
+      Number of PIO using TDDR only:        0 (0 differential)
+      Number of PIO using IDDR/ODDR:        0 (0 differential)
+      Number of PIO using IDDR/TDDR:        0 (0 differential)
+      Number of PIO using ODDR/TDDR:        0 (0 differential)
+      Number of PIO using IDDR/ODDR/TDDR:   0 (0 differential)
+   Number of block RAMs:  8 out of 8 (100%)
+   Number of GSRs:  1 out of 1 (100%)
+   EFB used :       No
+   JTAG used :      No
+   Readback used :  No
+   Oscillator used :  Yes
+   Startup used :   No
+   POR :            On
+   Bandgap :        On
+   Number of Power Controller:  0 out of 1 (0%)
+   Number of Dynamic Bank Controller (BCINRD):  0 out of 6 (0%)
+
+   Number of Dynamic Bank Controller (BCLVDSO):  0 out of 1 (0%)
+   Number of DCCA:  0 out of 8 (0%)
+   Number of DCMA:  0 out of 2 (0%)
+   Number of PLLs:  0 out of 1 (0%)
+   Number of DQSDLLs:  1 out of 2 (50%)
+   Number of CLKDIVC:  1 out of 4 (25%)
+   Number of ECLKSYNCA:  1 out of 4 (25%)
+   Number of ECLKBRIDGECS:  0 out of 2 (0%)
+   Notes:-
+      1. Total number of LUT4s = (Number of logic LUT4s) + 2*(Number of
+     distributed RAMs) + 2*(Number of ripple logic)
+      2. Number of logic LUT4s does not include count of distributed RAM and
+     ripple logic.
+   Number of clocks:  6
+     Net clk_int: 12 loads, 12 rising, 0 falling (Driver: oscinst0 )
+     Net sclk: 239 loads, 199 rising, 40 falling (Driver:
+     deser_inst/ddrx4_inst/Inst7_CLKDIVC )
+     Net buf_clk: 1 loads, 1 rising, 0 falling (Driver: PIO CLK_LANE )
+     Net FT601_CLK_c: 9 loads, 9 rising, 0 falling (Driver: PIO FT601_CLK )
+     Net deser_inst/ddrx4_inst/eclko: 7 loads, 7 rising, 0 falling (Driver:
+     deser_inst/ddrx4_inst/Inst6_ECLKSYNCA )
+     Net deser_inst/ddrx4_inst/eclki: 1 loads, 1 rising, 0 falling (Driver:
+     deser_inst/ddrx4_inst/Inst4_DLLDELC )
+   Number of Clock Enables:  12
+     Net sclk_enable_230: 61 loads, 53 LSLICEs
+     Net sclk_enable_104: 16 loads, 16 LSLICEs
+     Net sclk_enable_231: 35 loads, 35 LSLICEs
+     Net n8133: 16 loads, 0 LSLICEs
+     Net deser_inst/sclk_enable_184: 10 loads, 10 LSLICEs
+     Net deser_inst/sclk_enable_224: 3 loads, 3 LSLICEs
+     Net deser_inst/sclk_enable_106: 1 loads, 1 LSLICEs
+     Net deser_inst/sclk_enable_186: 5 loads, 5 LSLICEs
+     Net deser_inst/sclk_enable_188: 5 loads, 5 LSLICEs
+     Net deser_inst/sclk_enable_190: 5 loads, 5 LSLICEs
+     Net deser_inst/sclk_enable_227: 1 loads, 1 LSLICEs
+     Net deser_inst/ddrx4_inst/Inst5_rx_sync/N_161_I: 2 loads, 2 LSLICEs
+   Number of local set/reset loads for net deser_inst/ddrx4_inst/rx_reset merged
+     into GSR:  5
+   Number of LSRs:  13
+     Net sync_prng: 1 loads, 1 LSLICEs
+     Net n8375: 26 loads, 26 LSLICEs
+     Net n8376: 26 loads, 26 LSLICEs
+     Net rx_rdy: 35 loads, 35 LSLICEs
+     Net fifo_emp: 1 loads, 1 LSLICEs
+     Net deser_inst/n526: 1 loads, 1 LSLICEs
+     Net deser_inst/n527: 1 loads, 1 LSLICEs
+     Net deser_inst/bit_slip_N_312: 1 loads, 1 LSLICEs
+     Net deser_inst/n8136: 2 loads, 2 LSLICEs
+     Net deser_inst/n2568: 1 loads, 1 LSLICEs
+     Net deser_inst/n8134: 1 loads, 1 LSLICEs
+     Net deser_inst/n3741: 25 loads, 25 LSLICEs
+     Net deser_inst/ddrx4_inst/rx_reset: 1 loads, 0 LSLICEs
+   Number of nets driven by tri-state buffers:  0
+   Top 10 highest fanout non-clock nets:
+     Net sclk_enable_230: 65 loads
+     Net ber_proc/count_bytes_26: 64 loads
+
+     Net ber_proc/count_bytes_28: 64 loads
+     Net ber_proc/n8_adj_856: 63 loads
+     Net rx_rdy: 51 loads
+     Net deser_inst/n525: 45 loads
+     Net deser_inst/n527: 35 loads
+     Net sclk_enable_231: 35 loads
+     Net deser_inst/bit_slip_N_312: 33 loads
+     Net deser_inst/n526: 26 loads
+
+
+
+
+   Number of warnings:  11
+   Number of errors:    0
+     
+
+
+
+
+<A name="mrp_dwe"></A><B><U><big>Design Errors/Warnings</big></U></B>
+
+WARNING - map: input pad net 'FT601_RXF_N' has no legal load.
+WARNING - map: Using local reset signal 'deser_inst/ddrx4_inst/rx_reset' to
+     infer global GSR net.
+WARNING - map: IO buffer missing for top level port FT601_RXF_N...logic will be
+     discarded.
+WARNING - map: The reset of EBR 'cdc_fifo_inst/async_fifo_0_7' cannot be
+     controlled. The local reset is not connected to any control signal and set
+     to GND. The global reset is disabled via GSR property. To control the EBR
+     reset, either connect the local reset to a control signal or force the GSR
+     property to be enabled.
+WARNING - map: The reset of EBR 'cdc_fifo_inst/async_fifo_1_6' cannot be
+     controlled. The local reset is not connected to any control signal and set
+     to GND. The global reset is disabled via GSR property. To control the EBR
+     reset, either connect the local reset to a control signal or force the GSR
+     property to be enabled.
+WARNING - map: The reset of EBR 'cdc_fifo_inst/async_fifo_2_5' cannot be
+     controlled. The local reset is not connected to any control signal and set
+     to GND. The global reset is disabled via GSR property. To control the EBR
+     reset, either connect the local reset to a control signal or force the GSR
+     property to be enabled.
+WARNING - map: The reset of EBR 'cdc_fifo_inst/async_fifo_3_4' cannot be
+     controlled. The local reset is not connected to any control signal and set
+     to GND. The global reset is disabled via GSR property. To control the EBR
+     reset, either connect the local reset to a control signal or force the GSR
+     property to be enabled.
+WARNING - map: The reset of EBR 'cdc_fifo_inst/async_fifo_4_3' cannot be
+     controlled. The local reset is not connected to any control signal and set
+     to GND. The global reset is disabled via GSR property. To control the EBR
+     reset, either connect the local reset to a control signal or force the GSR
+     property to be enabled.
+WARNING - map: The reset of EBR 'cdc_fifo_inst/async_fifo_5_2' cannot be
+     controlled. The local reset is not connected to any control signal and set
+     to GND. The global reset is disabled via GSR property. To control the EBR
+     reset, either connect the local reset to a control signal or force the GSR
+     property to be enabled.
+WARNING - map: The reset of EBR 'cdc_fifo_inst/async_fifo_6_1' cannot be
+     controlled. The local reset is not connected to any control signal and set
+
+     to GND. The global reset is disabled via GSR property. To control the EBR
+     reset, either connect the local reset to a control signal or force the GSR
+     property to be enabled.
+WARNING - map: The reset of EBR 'cdc_fifo_inst/async_fifo_7_0' cannot be
+     controlled. The local reset is not connected to any control signal and set
+     to GND. The global reset is disabled via GSR property. To control the EBR
+     reset, either connect the local reset to a control signal or force the GSR
+     property to be enabled.
+
+
+
+<A name="mrp_ioa"></A><B><U><big>IO (PIO) Attributes</big></U></B>
+
++---------------------+-----------+-----------+------------+
+| IO Name             | Direction | Levelmode | IO         |
+|                     |           |  IO_TYPE  | Register   |
++---------------------+-----------+-----------+------------+
+| LED                 | OUTPUT    | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| CLK_LANE            | INPUT     | LVDS25    |            |
++---------------------+-----------+-----------+------------+
+| DATA_LANE[4]        | INPUT     | LVDS25    |            |
++---------------------+-----------+-----------+------------+
+| DATA_LANE[3]        | INPUT     | LVDS25    |            |
++---------------------+-----------+-----------+------------+
+| DATA_LANE[2]        | INPUT     | LVDS25    |            |
++---------------------+-----------+-----------+------------+
+| DATA_LANE[1]        | INPUT     | LVDS25    |            |
++---------------------+-----------+-----------+------------+
+| DATA_LANE[0]        | INPUT     | LVDS25    |            |
++---------------------+-----------+-----------+------------+
+| FT601_WR_N          | OUTPUT    | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| FT601_SIWU_N        | OUTPUT    | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| FT601_RD_N          | OUTPUT    | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| FT601_OE_N          | OUTPUT    | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| FT601_RST_N         | OUTPUT    | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| FT601_DATA[31]      | OUTPUT    | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| FT601_DATA[30]      | OUTPUT    | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| FT601_DATA[29]      | OUTPUT    | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| FT601_DATA[28]      | OUTPUT    | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| FT601_DATA[27]      | OUTPUT    | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| FT601_DATA[26]      | OUTPUT    | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| FT601_DATA[25]      | OUTPUT    | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| FT601_DATA[24]      | OUTPUT    | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+
+| FT601_DATA[23]      | OUTPUT    | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| FT601_DATA[22]      | OUTPUT    | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| FT601_DATA[21]      | OUTPUT    | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| FT601_DATA[20]      | OUTPUT    | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| FT601_DATA[19]      | OUTPUT    | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| FT601_DATA[18]      | OUTPUT    | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| FT601_DATA[17]      | OUTPUT    | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| FT601_DATA[16]      | OUTPUT    | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| FT601_DATA[15]      | OUTPUT    | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| FT601_DATA[14]      | OUTPUT    | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| FT601_DATA[13]      | OUTPUT    | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| FT601_DATA[12]      | OUTPUT    | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| FT601_DATA[11]      | OUTPUT    | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| FT601_DATA[10]      | OUTPUT    | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| FT601_DATA[9]       | OUTPUT    | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| FT601_DATA[8]       | OUTPUT    | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| FT601_DATA[7]       | OUTPUT    | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| FT601_DATA[6]       | OUTPUT    | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| FT601_DATA[5]       | OUTPUT    | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| FT601_DATA[4]       | OUTPUT    | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| FT601_DATA[3]       | OUTPUT    | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| FT601_DATA[2]       | OUTPUT    | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| FT601_DATA[1]       | OUTPUT    | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| FT601_DATA[0]       | OUTPUT    | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| FT601_BE[3]         | OUTPUT    | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| FT601_BE[2]         | OUTPUT    | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| FT601_BE[1]         | OUTPUT    | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| FT601_BE[0]         | OUTPUT    | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+
+| FT601_CLK           | INPUT     | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+| FT601_TXE_N         | INPUT     | LVCMOS25  |            |
++---------------------+-----------+-----------+------------+
+
+
+
+<A name="mrp_rm"></A><B><U><big>Removed logic</big></U></B>
+
+Signal rbyteclk_N_428 was merged into signal sclk
+Signal deser_inst/n8183 was merged into signal rx_rdy
+Signal deser_inst/n3742 was merged into signal deser_inst/bit_slip_N_312
+Signal deser_inst/n3743 was merged into signal deser_inst/n527
+Signal deser_inst/n3744 was merged into signal deser_inst/n526
+Signal deser_inst/ddrx4_inst/reset_inv undriven or does not drive anything -
+     clipped.
+Signal deser_inst/ddrx4_inst/Inst5_rx_sync/RSTN_I undriven or does not drive
+     anything - clipped.
+Signal ber_proc/add_47_1/S0 undriven or does not drive anything - clipped.
+Signal ber_proc/add_47_1/CI undriven or does not drive anything - clipped.
+Signal ber_proc/add_47_31/S1 undriven or does not drive anything - clipped.
+Signal ber_proc/add_47_31/CO undriven or does not drive anything - clipped.
+Signal ber_proc/add_49_1/S0 undriven or does not drive anything - clipped.
+Signal ber_proc/add_49_1/CI undriven or does not drive anything - clipped.
+Signal ber_proc/add_49_33/S1 undriven or does not drive anything - clipped.
+Signal ber_proc/add_49_33/CO undriven or does not drive anything - clipped.
+Block deser_inst/ddrx4_inst/i6136 was optimized away.
+Block deser_inst/ddrx4_inst/Inst5_rx_sync/rx_start_I_0_1_lut_rep_137 was
+     optimized away.
+Block deser_inst/i1905_1_lut was optimized away.
+Block deser_inst/i1906_1_lut was optimized away.
+Block deser_inst/i1907_1_lut was optimized away.
+Block deser_inst/ddrx4_inst/INV_0 was optimized away.
+Block deser_inst/ddrx4_inst/Inst5_rx_sync/RSTN_RNIB582 was optimized away.
+
+
+
+<A name="mrp_mem"></A><B><U><big>Memory Usage</big></U></B>
+
+/cdc_fifo_inst:
+    EBRs: 8
+    RAM SLICEs: 0
+    Logic SLICEs: 0
+    PFU Registers: 0
+    -Contains EBR async_fifo_0_7:  TYPE= FIFO8KB,  Width= 4,  REGMODE= NOREG,
+         RESETMODE= ASYNC,  ASYNC_RESET_RELEASE= SYNC,  GSR= DISABLED
+    -Contains EBR async_fifo_1_6:  TYPE= FIFO8KB,  Width= 4,  REGMODE= NOREG,
+         RESETMODE= ASYNC,  ASYNC_RESET_RELEASE= SYNC,  GSR= DISABLED
+    -Contains EBR async_fifo_2_5:  TYPE= FIFO8KB,  Width= 4,  REGMODE= NOREG,
+         RESETMODE= ASYNC,  ASYNC_RESET_RELEASE= SYNC,  GSR= DISABLED
+    -Contains EBR async_fifo_3_4:  TYPE= FIFO8KB,  Width= 4,  REGMODE= NOREG,
+         RESETMODE= ASYNC,  ASYNC_RESET_RELEASE= SYNC,  GSR= DISABLED
+    -Contains EBR async_fifo_4_3:  TYPE= FIFO8KB,  Width= 4,  REGMODE= NOREG,
+         RESETMODE= ASYNC,  ASYNC_RESET_RELEASE= SYNC,  GSR= DISABLED
+    -Contains EBR async_fifo_5_2:  TYPE= FIFO8KB,  Width= 4,  REGMODE= NOREG,
+         RESETMODE= ASYNC,  ASYNC_RESET_RELEASE= SYNC,  GSR= DISABLED
+    -Contains EBR async_fifo_6_1:  TYPE= FIFO8KB,  Width= 4,  REGMODE= NOREG,
+         RESETMODE= ASYNC,  ASYNC_RESET_RELEASE= SYNC,  GSR= DISABLED
+
+    -Contains EBR async_fifo_7_0:  TYPE= FIFO8KB,  Width= 4,  REGMODE= NOREG,
+         RESETMODE= ASYNC,  ASYNC_RESET_RELEASE= SYNC,  GSR= DISABLED
+
+     
+
+CLKDIV Summary
+--------------
+
+CLKDIV 1:                                     Pin/Node Value
+  CLKDIV Instance Name:
+       deser_inst/ddrx4_inst/Inst7_CLKDIVC
+  CLKDIV Type:                                         CLKDIVC
+  GSR:                                              DISABLED
+  CLK DIVIDER:                                      4.0
+
+OSC Summary
+-----------
+
+OSC 1:                                     Pin/Node Value
+  OSC Instance Name:                                oscinst0
+  OSC Type:                                         OSCH
+  STDBY Input:                                      NONE
+  OSC Output:                              NODE     clk_int
+  OSC Nominal Frequency (MHz):                      133.00
+
+ECLKSYNC Summary
+----------------
+
+ECLKSYNC 1:                                     Pin/Node Value
+  ECLKSYNC Instance Name:
+       deser_inst/ddrx4_inst/Inst6_ECLKSYNCA
+  ECLKSYNC Type:                                         ECLKSYNCA
+  ECLKI Input:                             NODE     deser_inst/ddrx4_inst/eclki
+  STOP Input:                              NODE     deser_inst/ddrx4_inst/xstop
+  ECLKO Output:                            NODE     deser_inst/ddrx4_inst/eclko
+
+
+
+<A name="mrp_asic"></A><B><U><big>ASIC Components</big></U></B>
+---------------
+
+Instance Name: oscinst0
+         Type: OSCH
+Instance Name: deser_inst/ddrx4_inst/Inst7_CLKDIVC
+         Type: CLKDIVC
+Instance Name: deser_inst/ddrx4_inst/Inst6_ECLKSYNCA
+         Type: ECLKSYNCA
+Instance Name: deser_inst/ddrx4_inst/Inst4_DLLDELC
+         Type: DLLDELC
+Instance Name: deser_inst/ddrx4_inst/Inst3_DQSDLLC
+         Type: DQSDLLC
+Instance Name: cdc_fifo_inst/async_fifo_0_7
+         Type: FIFO8KB
+Instance Name: cdc_fifo_inst/async_fifo_1_6
+         Type: FIFO8KB
+Instance Name: cdc_fifo_inst/async_fifo_2_5
+         Type: FIFO8KB
+Instance Name: cdc_fifo_inst/async_fifo_3_4
+
+         Type: FIFO8KB
+Instance Name: cdc_fifo_inst/async_fifo_4_3
+         Type: FIFO8KB
+Instance Name: cdc_fifo_inst/async_fifo_5_2
+         Type: FIFO8KB
+Instance Name: cdc_fifo_inst/async_fifo_6_1
+         Type: FIFO8KB
+Instance Name: cdc_fifo_inst/async_fifo_7_0
+         Type: FIFO8KB
+
+
+
+<A name="mrp_gsr"></A><B><U><big>GSR Usage</big></U></B>
+---------
+
+GSR Component:
+   The local reset signal 'deser_inst/ddrx4_inst/rx_reset' of the design has
+        been inferred as Global Set Reset (GSR). The reset signal used for GSR
+        control is 'deser_inst/ddrx4_inst/rx_reset'.
+        
+
+     GSR Property:
+   The design components with GSR property set to ENABLED will respond to global
+        set reset while the components with GSR property set to DISABLED will
+        not.
+        
+
+     Components on inferred reset domain with GSR Property disabled
+--------------------------------------------------------------
+
+     These components have the GSR property set to DISABLED and are on the
+     inferred reset domain. The components will respond to the reset signal
+     'deser_inst/ddrx4_inst/rx_reset' via the local reset on the component and
+     not the GSR component.
+
+     Type and number of components of the type: 
+   CLKDIVC = 1
+
+     Type and instance name of component: 
+   CLKDIVC : deser_inst/ddrx4_inst/Inst7_CLKDIVC
+
+
+
+<A name="mrp_runtime"></A><B><U><big>Run Time and Memory Usage</big></U></B>
+-------------------------
+
+   Total CPU Time: 0 secs  
+   Total REAL Time: 0 secs  
+   Peak Memory Usage: 185 MB
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+Copyright (c) 1991-1994 by NeoCAD Inc. All rights reserved.
+     Copyright (c) 1995 AT&T Corp.   All rights reserved.
+     Copyright (c) 1995-2001 Lucent Technologies Inc.  All rights reserved.
+     Copyright (c) 2001 Agere Systems   All rights reserved.
+     Copyright (c) 2002-2017 Lattice Semiconductor Corporation,  All rights
+     reserved.
+
+
+
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+</PRE></FONT>
+</BODY>
+</HTML>

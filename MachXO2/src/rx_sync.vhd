@@ -15,7 +15,8 @@ entity rx_sync is
         freeze   : out std_logic;
         rx_stop  : out std_logic;
         rx_reset : out std_logic;
-        rx_start : out std_logic);
+        rx_start : out std_logic
+    );
 end rx_sync;
 
 architecture rtl of rx_sync is

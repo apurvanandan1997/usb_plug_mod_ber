@@ -1,3 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<userSetting name="/home/apurvan/GSoC/final_Eval/usb_plug_mod_ber/MachXO2/proj/promote.xml" version="Diamond (64-bit) 3.10.0.111.2" date="Sat Aug 24 14:51:16 2019" vendor="Lattice Semiconductor Corporation" >
+<userSetting name="/home/apurvan/GSoC/final_Eval/usb_plug_mod_ber/MachXO2/proj/promote.xml" version="Diamond (64-bit) 3.10.0.111.2" date="Mon Aug 26 08:11:07 2019" vendor="Lattice Semiconductor Corporation" >
+  <msg mid="35921504" type="Info" />
+  <msg mid="35931002" type="Warning" />
+  <msg mid="35921205" type="Warning" />
 </userSetting>

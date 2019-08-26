@@ -1,17 +1,21 @@
-----------------------------------------------------------------------------
---  prng_cnt.vhd
---  Pseudo Random Generator cum Training Pattern Genrator
---  Version 1.0
+----------------------------------------------------------------------------------
+-- Company:        apertus° Association
+-- Engineer:       Apurva Nandan
+-- 
+-- Design Name:    Pseudo-Random Number Sender
+-- Module Name:    prng_send
+-- Project Name:   USB 3.0 Plugin Module Gearwork
+-- Target Device:  Zynq XC7Z020
+-- Tool Version:   Xilinx Vivado HLx Edition 2018.3
+-- Description:    This module generates pseudo-random number for BER testing,
+--                 link training pattern (K28.5 = BC), the all zeros word for 
+--                 synchronizing the PRNG on receiver with this one.
 --
---  Copyright (C) 2014 H.Poetzl
---
---  Modified by Apurva Nandan
---
---  This program is free software: you can redistribute it and/or
---  modify it under the terms of the GNU General Public License
---  as published by the Free Software Foundation, either version
---  2 of the License, or (at your option) any later version.
-----------------------------------------------------------------------------
+-- License:        This program is free software: you can redistribute it and/or
+--                 modify it under the terms of the GNU General Public License
+--                 as published by the Free Software Foundation, either version
+--                 3 of the License, or (at your option) any later version.
+----------------------------------------------------------------------------------
 
 library ieee;
 use ieee.std_logic_1164.all;
@@ -20,66 +24,66 @@ use ieee.std_logic_unsigned.all;
 entity prng_send is
     generic(
         SEED : std_logic_vector(39 downto 0) := "1011110010111100101111001011110010111100"
-        -- Concat of K28.5 Control Symbol for Word Alignment ( MSB 8 bits)
+        -- Concat of K28.5 Control Symbol for Word Alignment (MSB 8 bits)
     );
     port(
-        clk   : in  std_logic;  -- Clock Input
-        enb   : in  std_logic;  -- Enable data generation
-        mode  : out  std_logic;  -- Mode select: '0 for PRNG, '1' for K28.5
-        reset : in  std_logic;  -- Reset signal (To be Asserted for changing mode)
-        rng   : out std_logic_vector (39 downto 0) -- Output Generated Data
+        clk     : in  std_logic;
+        enb     : in  std_logic;
+        mode    : out std_logic;
+        reset   : in  std_logic;
+        rnd_num : out std_logic_vector (39 downto 0)
     );
     
 end prng_send;
 
 architecture rtl of prng_send is
 
-    signal fb : std_logic := '0';
-    signal sr : std_logic_vector (39 downto 0) := SEED;
+    constant ones  : std_logic_vector(29 downto 0) := (others => '1');
+    constant zeros : std_logic_vector(29 downto 0) := (others => '0');
+
+    signal feedback  : std_logic := '0';
+    signal mode_i    : std_logic := '1';
+    signal shift_reg : std_logic_vector(39 downto 0) := SEED;
     signal hold_prng : std_logic_vector(29 downto 0) := (others => '0');
-    signal mode_i : std_logic := '1';
    
 begin
 
     ----------------------------------------------------------------------------
-    --  rng_cnt_proc: LFSR Random Number Generator(Fibonacci) 
-    --  With availabilty of 8-bit counter mode (32,22,2,1,0)
+    --  lfsr_proc: Fibonacci LFSR Random Number Generator (39,31,21,1,0) 
     ----------------------------------------------------------------------------
     lfsr_proc : process (clk)
     begin
         if rising_edge(clk) then
             if reset = '1' then
-                sr <= SEED;
+                shift_reg <= SEED;
 
             else
                 if enb = '1' then
                     if mode_i = '1' then
-                        sr <= sr;
+                        shift_reg <= shift_reg;
 
-                    elsif hold_prng = "111111111111111111111111111110" then
-                        sr <= SEED;
+                    elsif hold_prng = ones(28 downto 0) & '0' then
+                        shift_reg <= SEED;
 
                     else
-                        sr <= sr(38 downto 0) & fb;
-                        --sr(31 downto 24) <= sr( 30 downto 24) & fb;
-                        --case (test_counter(2 downto 0)) is
-                        --    when "000" => sr(31 downto 24) <= "11010011"; --D19.6 = D3 = 0D3
-                        --    when "001" => sr(31 downto 24) <= "10100101"; --D5.5  = A5 = 1A5
-                        --    when "010" => sr(31 downto 24) <= "00101100"; --D12.1 = 2C = 32C
-                        --    when "011" => sr(31 downto 24) <= "01000011"; --D3.2  = 43 = 343
-                        --    when "100" => sr(31 downto 24) <= "11001110"; --D14.6 = CE = 0CE
-                        --    when "101" => sr(31 downto 24) <= "01010010"; --D18.2 = 52 = 352
-                        --    when "110" => sr(31 downto 24) <= "10110100"; --D20.5 = B4 = 1B4
-                        --    when "111" => sr(31 downto 24) <= "00101010"; --D10.1 = 2A = 32A
-                            
-                        --    when others => sr(31 downto 24) <= "00000000";
+                        shift_reg <= shift_reg(38 downto 0) & feedback;
+                        --case () is
+                        --    when "000" => shift_reg(31 downto 24) <= "11010011"; --D19.6 = D3 = 0D3
+                        --    when "001" => shift_reg(31 downto 24) <= "10100101"; --D5.5  = A5 = 1A5
+                        --    when "010" => shift_reg(31 downto 24) <= "00101100"; --D12.1 = 2C = 32C
+                        --    when "011" => shift_reg(31 downto 24) <= "01000011"; --D3.2  = 43 = 343
+                        --    when "100" => shift_reg(31 downto 24) <= "11001110"; --D14.6 = CE = 0CE
+                        --    when "101" => shift_reg(31 downto 24) <= "01010010"; --D18.2 = 52 = 352
+                        --    when "110" => shift_reg(31 downto 24) <= "10110100"; --D20.5 = B4 = 1B4
+                        --    when "111" => shift_reg(31 downto 24) <= "00101010"; --D10.1 = 2A = 32A
+                        --    when others => shift_reg(31 downto 24) <= "00000000";
                         --end case;
-                        --sr <= sr + '1';
+                        --shift_reg <= shift_reg + '1';
 
                     end if;
 
                 else
-                    sr <= SEED;
+                    shift_reg <= SEED;
 
                 end if;
             end if;
@@ -97,7 +101,7 @@ begin
             else
                 if enb = '1' then
                         
-                    if hold_prng = "111111111111111111111111111111" then
+                    if hold_prng = ones(29 downto 0) then
                         hold_prng <= hold_prng;
 
                     else 
@@ -105,10 +109,10 @@ begin
 
                     end if;
 
-                    if hold_prng = "000000000000000000000000000000" then
+                    if hold_prng = zeros then
                         mode_i <= '1';
 
-                    elsif hold_prng = "011111111111111111111111111111" then -- "000000000000000000000011111111" then-- 
+                    elsif hold_prng = '0' & ones(28 downto 0) then
                         mode_i <= '0';
 
                     end if;
@@ -121,8 +125,8 @@ begin
         end if;
     end process;
 
-    fb <= sr(39) xor sr(31) xor sr(21) xor sr(1) xor sr(0);--sr(31) xor sr(21) xor sr(1) xor sr(0);
-    rng <= sr when hold_prng /= "111111111111111111111111111110" else (others =>'0');
+    feedback <= shift_reg(39) xor shift_reg(31) xor shift_reg(21) xor shift_reg(1) xor shift_reg(0);
+    rnd_num <= shift_reg when hold_prng /= ones(28 downto 0) & '0' else (others =>'0');
     mode <= mode_i;
 
 end rtl;

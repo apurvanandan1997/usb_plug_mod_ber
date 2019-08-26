@@ -2,21 +2,20 @@
 -- Company:        apertus° Association
 -- Engineer:       Apurva Nandan
 -- 
--- Create Date:    17:33 June 23,2019 
--- Design Name:    USB 3.0 Plugin BER Calculation 
--- Module Name:    top
--- Project Name:   
--- Target Device:  XC5VLX110T-FF1136-1
--- Tool Version:   Xilinx ISE 14.7
--- Description:    This design is used for calculating the BER of the 6 LVDS
---                 connection from the main board of AXIOM Beta to the USB 3.0
---                 plugin module. This design is meant to run on Virtex-5 FPGA.
+-- Design Name:    Top Module Virtex-5
+-- Module Name:    virtex_top
+-- Project Name:   USB 3.0 Module Gearwork
+-- Target Devices: Virtex-5 XC5VLX110T
+-- Tool versions:  Xilinx ISE Design Suite 14.7
+-- Description:    Top module for transmitter gearwork for Virtex-5. Does the 
+--                 interconnections of submodules.
+--
+-- License:        This program is free software: you can redistribute it and/or
+--                 modify it under the terms of the GNU General Public License
+--                 as published by the Free Software Foundation, either version
+--                 3 of the License, or (at your option) any later version.
 ----------------------------------------------------------------------------------
--- This program is free software: you can redistribute it and/or
--- modify it under the terms of the GNU General Public License
--- as published by the Free Software Foundation, either version
--- 3 of the License, or (at your option) any later version.
-----------------------------------------------------------------------------------
+
 
 library IEEE;
 use IEEE.std_logic_1164.ALL;

@@ -17,7 +17,8 @@ entity ddrx4 is
         sclk         : out std_logic;
         uddcntln     : in  std_logic;
         datain       : in  std_logic_vector(4 downto 0);
-        q            : out std_logic_vector(39 downto 0));
+        q            : out std_logic_vector(39 downto 0)
+    );
 end ddrx4;
 
 architecture Structure of ddrx4 is
@@ -166,15 +167,16 @@ architecture Structure of ddrx4 is
         );
     end component;
 
-    attribute IO_TYPE                   : string;
-    attribute IO_TYPE of Inst2_IB       : label is "LVDS25";
-    attribute IO_TYPE of Inst1_IB4      : label is "LVDS25";
-    attribute IO_TYPE of Inst1_IB3      : label is "LVDS25";
-    attribute IO_TYPE of Inst1_IB2      : label is "LVDS25";
-    attribute IO_TYPE of Inst1_IB1      : label is "LVDS25";
-    attribute IO_TYPE of Inst1_IB0      : label is "LVDS25";
-    attribute syn_keep                  : boolean;
-    attribute NGD_DRC_MASK              : integer;
+    attribute IO_TYPE : string;
+    attribute IO_TYPE of Inst2_IB  : label is "LVDS25";
+    attribute IO_TYPE of Inst1_IB4 : label is "LVDS25";
+    attribute IO_TYPE of Inst1_IB3 : label is "LVDS25";
+    attribute IO_TYPE of Inst1_IB2 : label is "LVDS25";
+    attribute IO_TYPE of Inst1_IB1 : label is "LVDS25";
+    attribute IO_TYPE of Inst1_IB0 : label is "LVDS25";
+
+    attribute syn_keep : boolean;
+    attribute NGD_DRC_MASK : integer;
     attribute NGD_DRC_MASK of Structure : architecture is 1;
 
 begin

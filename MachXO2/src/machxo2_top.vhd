@@ -1,22 +1,19 @@
 ----------------------------------------------------------------------------------
 -- Company:        apertus° Association
 -- Engineer:       Apurva Nandan
--- 
--- Create Date:    00:22:57 08/05/2019 
--- Design Name:    
+--  
+-- Design Name:    MachXO2 Top Module
 -- Module Name:    machxo2_top
 -- Project Name:   USB 3.0 Module Gearwork
 -- Target Devices: LCMXO2-2000HC-TQFP100
 -- Tool versions:  Lattice Diamond 3.10 
 -- Description:    Top module for MachXO2 side of gearwork of USB Plugin Module
+--                 Does the interconnections of all the modules.
 --
 -- License:        This program is free software: you can redistribute it and/or
 --                 modify it under the terms of the GNU General Public License
 --                 as published by the Free Software Foundation, either version
 --                 3 of the License, or (at your option) any later version.
--- 
--- Additional Comments: 
---
 ----------------------------------------------------------------------------------
 
 library ieee;
@@ -53,7 +50,7 @@ architecture rtl of machx02_top is
             stdby : in std_logic;
             osc: out std_logic;
             sedstdby: out std_logic
-            );
+        );
     end component;
 
     constant zeros : std_logic_vector(39 downto 0) := (others => '0'); 
@@ -73,7 +70,7 @@ architecture rtl of machx02_top is
     -- Data busses 
     signal dec_data   : std_logic_vector(39 downto 0);
     signal enc_data   : std_logic_vector(49 downto 0);
-    signal rng_num    : std_logic_vector(39 downto 0);
+    signal rnd_num    : std_logic_vector(39 downto 0);
     signal ber        : std_logic_vector(31 downto 0);
     
     -- Control and Sync signals
@@ -87,6 +84,7 @@ begin
     LED <= link_rdy;
     rst <= '0';
 
+    -- Control Signals
     mode(5)    <= mode(4) and mode(3) and mode(2) and mode(1) and mode(0);
     sync_prng  <= fifo_wr_en when dec_data = zeros else '0' ;
     fifo_wr_en <= link_rdy and data_valid;
@@ -129,18 +127,18 @@ begin
         -- Seed also acts as word alignment pattern also (K28.5) 
     )
     port map (
-        clk   => sclk,
-        ce    => fifo_wr_en,
-        reset => sync_prng,
-        rng   => rng_num
+        clk     => sclk,
+        ce      => fifo_wr_en,
+        reset   => sync_prng,
+        rnd_num => rnd_num
     );
 
     ber_proc : entity work.calc_ber
     port map (
         word_recvd  => dec_data,
+        word_actual => rnd_num,
         din_clk     => sclk,
-        word_actual => rng_num,
-        en          => fifo_wr_en,
+        enable      => fifo_wr_en,
         reset       => sync_prng,
         ber         => ber
     );

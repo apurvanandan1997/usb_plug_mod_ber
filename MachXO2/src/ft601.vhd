@@ -2,20 +2,22 @@
 -- Company:        apertus° Association
 -- Engineer:       Apurva Nandan
 -- 
--- Create Date:    00:22:57 08/05/2019 
--- Design Name: 
+-- Desgin Name:    FT601 Controller
 -- Module Name:    ft601
--- Project Name: 
--- Target Devices: 
--- Tool versions: 
--- Description:    FT601 Controller in FT245 mode
---
--- Dependencies: 
---
--- Revision: 
--- Revision 0.01 - File Created
--- Additional Comments: 
---
+-- Project Name:   USB 3.0 Plugin Module Gearwork
+-- Target Device:  LCMXO2-2000HC-TQFP100
+-- Tool Version:   Lattice Diamond 3.10_x64
+-- Description:    Interfaces between FTDI FT601 chip and the rest of the
+--                 receiver gearwork on this MachXO2 FPGA. This code is very
+--                 minimal and support only 1 IN pipe in FT245 mode only. 
+--                 There are no bus turn around and complex state changes used. 
+--                  
+-- License:        This program is free software: you can redistribute it and/or
+--                 modify it under the terms of the GNU General Public License
+--                 as published by the Free Software Foundation, either version
+--                 3 of the License, or (at your option) any later version.
+-- Additional:     Refer to the documentaion on ftdichips.com for detailed 
+--                 unserstanding of timings and control.
 ----------------------------------------------------------------------------------
 
 library ieee;
@@ -38,14 +40,13 @@ entity ft601 is
         ft601_be     : out std_logic_vector(3 downto 0);
         ft601_data   : out std_logic_vector(31 downto 0);
 
-        -- From Internal FIFOs
+        -- From Asynchronous CDC FIFO
         data_in    : in  std_logic_vector(31 downto 0);
         fifo_rd_en : out std_logic;
         fifo_emp   : in  std_logic
     );
 
 end entity ft601;
-
 
 architecture rtl of ft601 is
 
@@ -54,7 +55,11 @@ architecture rtl of ft601 is
 
 begin
 
-    process(clk)
+    ----------------------------------------------------------------------------
+    -- state_proc: Handles both FIFOs i.e. the CDC FIFO and the FT601 FIFO
+    --             and switches to IDLE state when either of FIFO is empty.
+    ----------------------------------------------------------------------------
+    state_proc: process(clk)
     begin
         if rising_edge(clk) then
             if rst = '1' then

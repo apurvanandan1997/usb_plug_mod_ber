@@ -1,15 +1,18 @@
-----------------------------------------------------------------------------
---  vivado_pkg.vhd
---	Vivado Specific Attributes
---	Version 1.0
+----------------------------------------------------------------------------------
+-- Company:        apertus° Association
+-- Engineer:       Copyright (C) 2013 H.Poetzl
+-- 
+-- Desgin Name:    Vivado Specific Attributes
+-- Module Name:    vivado_pkg
+-- Project Name:   USB 3.0 Plugin Module Gearwork
+-- Target Device:  Zynq XC7Z020
+-- Tool Version:   Xilinx Vivado HLx Edition 2018.3   
 --
---  Copyright (C) 2013 H.Poetzl
---
---	This program is free software: you can redistribute it and/or
---	modify it under the terms of the GNU General Public License
---	as published by the Free Software Foundation, either version
---	2 of the License, or (at your option) any later version.
-----------------------------------------------------------------------------
+-- License:        This program is free software: you can redistribute it and/or
+--                 modify it under the terms of the GNU General Public License
+--                 as published by the Free Software Foundation, either version
+--                 2 of the License, or (at your option) any later version.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 library IEEE;

@@ -2,21 +2,20 @@
 -- Company:        apertus° Association
 -- Engineer:       Apurva Nandan
 -- 
--- Create Date:    00:22:57 08/05/2019 
--- Design Name:    
+-- Desgin Name:    10:1 Deserializer
 -- Module Name:    deserializer
--- Project Name:   USB 3.0 Module Gearwork
--- Target Devices: LCMXO2-2000HC-TQFP100
--- Tool versions:  Lattice Diamond 3.10 
--- Description:    Deserializer Module for DDR x10 gearing and word alignment
---
+-- Project Name:   USB 3.0 Plugin Module Gearwork
+-- Target Device:  LCMXO2-2000HC-TQFP100
+-- Tool Version:   Lattice Diamond 3.10_x64
+-- Description:    Performs the link training using bit slip output to IDDRX4B 
+--                 instance, channel bonding of the 5 LVDS Lanesa and 10:8 gearing
+--                 using barrel shifter. Outputs the payload at 93.75 MHz with 
+--                 4/5 times valid signal.
+-- 
 -- License:        This program is free software: you can redistribute it and/or
 --                 modify it under the terms of the GNU General Public License
 --                 as published by the Free Software Foundation, either version
 --                 3 of the License, or (at your option) any later version.
--- 
--- Additional Comments: 
---
 ----------------------------------------------------------------------------------
 
 
@@ -92,73 +91,76 @@ begin
 
     lnk_trnd <= lnk_trnd_buf(0) and lnk_trnd_buf(1) and lnk_trnd_buf(2) and lnk_trnd_buf(3);
     link_rdy <= lnk_trnd;
-    sclk <= sclk_buf;
+    sclk     <= sclk_buf;
    
     process(sclk_buf)
     begin
         if rising_edge(sclk_buf) then
             if reset = '1' then
-                q50_buf  <= (others => '0');
-                q <= (others => '0');
+                q50_buf <= (others => '0');
                 q_valid <= '0';
+                q <= (others => '0');
             
             else
                 if rx_rdy = '1' then
                     case counter is
-                        when "000"  => q_tmp(39 downto 0)  <= q40_buf(39 downto 0);
+                        when "000"  => 
+                        q_tmp(39 downto 0)  <= q40_buf(39 downto 0);
                         
-                        when "001"  => q_tmp(5  downto 0)  <= q40_buf(7  downto 2);
-                                       q_tmp(13 downto 8)  <= q40_buf(15 downto 10);
-                                       q_tmp(21 downto 16) <= q40_buf(23 downto 18);
-                                       q_tmp(29 downto 24) <= q40_buf(31 downto 26);
-                                       q_tmp(37 downto 32) <= q40_buf(39 downto 34);
-                                       
-                                       q50_buf(9  downto 0)  <= q40_buf(1  downto 0)  & q_tmp(7  downto 0);
-                                       q50_buf(19 downto 10) <= q40_buf(9  downto 8)  & q_tmp(15 downto 8);
-                                       q50_buf(29 downto 20) <= q40_buf(17 downto 16) & q_tmp(23 downto 16);
-                                       q50_buf(39 downto 30) <= q40_buf(25 downto 24) & q_tmp(31 downto 24);
-                                       q50_buf(49 downto 40) <= q40_buf(33 downto 32) & q_tmp(39 downto 32);
+                        when "001"  => 
+                        q_tmp(5  downto 0)  <= q40_buf(7  downto 2);
+                        q_tmp(13 downto 8)  <= q40_buf(15 downto 10);
+                        q_tmp(21 downto 16) <= q40_buf(23 downto 18);
+                        q_tmp(29 downto 24) <= q40_buf(31 downto 26);
+                        q_tmp(37 downto 32) <= q40_buf(39 downto 34);
                         
-                        when "010"  => q_tmp(3  downto 0)  <= q40_buf(7  downto 4);
-                                       q_tmp(11 downto 8)  <= q40_buf(15 downto 12);
-                                       q_tmp(19 downto 16) <= q40_buf(23 downto 20);
-                                       q_tmp(27 downto 24) <= q40_buf(31 downto 28);
-                                       q_tmp(35 downto 32) <= q40_buf(39 downto 36);
+                        q50_buf(9  downto 0)  <= q40_buf(1  downto 0)  & q_tmp(7  downto 0);
+                        q50_buf(19 downto 10) <= q40_buf(9  downto 8)  & q_tmp(15 downto 8);
+                        q50_buf(29 downto 20) <= q40_buf(17 downto 16) & q_tmp(23 downto 16);
+                        q50_buf(39 downto 30) <= q40_buf(25 downto 24) & q_tmp(31 downto 24);
+                        q50_buf(49 downto 40) <= q40_buf(33 downto 32) & q_tmp(39 downto 32);
+                        
+                        when "010"  => 
+                        q_tmp(3  downto 0)  <= q40_buf(7  downto 4);
+                        q_tmp(11 downto 8)  <= q40_buf(15 downto 12);
+                        q_tmp(19 downto 16) <= q40_buf(23 downto 20);
+                        q_tmp(27 downto 24) <= q40_buf(31 downto 28);
+                        q_tmp(35 downto 32) <= q40_buf(39 downto 36);
+                        
+                        q50_buf(9  downto 0)  <= q40_buf(3  downto 0)  & q_tmp(5  downto 0);
+                        q50_buf(19 downto 10) <= q40_buf(11 downto 8)  & q_tmp(13 downto 8);
+                        q50_buf(29 downto 20) <= q40_buf(19 downto 16) & q_tmp(21 downto 16);
+                        q50_buf(39 downto 30) <= q40_buf(27 downto 24) & q_tmp(29 downto 24);
+                        q50_buf(49 downto 40) <= q40_buf(35 downto 32) & q_tmp(37 downto 32);
                                        
-                                       q50_buf(9  downto 0)  <= q40_buf(3  downto 0)  & q_tmp(5  downto 0);
-                                       q50_buf(19 downto 10) <= q40_buf(11 downto 8)  & q_tmp(13 downto 8);
-                                       q50_buf(29 downto 20) <= q40_buf(19 downto 16) & q_tmp(21 downto 16);
-                                       q50_buf(39 downto 30) <= q40_buf(27 downto 24) & q_tmp(29 downto 24);
-                                       q50_buf(49 downto 40) <= q40_buf(35 downto 32) & q_tmp(37 downto 32);
+                        when "011"  => 
+                        q_tmp(1  downto 0)  <= q40_buf(7  downto 6);
+                        q_tmp(9  downto 8)  <= q40_buf(15 downto 14);
+                        q_tmp(17 downto 16) <= q40_buf(23 downto 22);
+                        q_tmp(25 downto 24) <= q40_buf(31 downto 30);
+                        q_tmp(33 downto 32) <= q40_buf(39 downto 38);
+                        
+                        q50_buf(9  downto 0)  <= q40_buf(5  downto 0)  & q_tmp(3  downto 0);
+                        q50_buf(19 downto 10) <= q40_buf(13 downto 8)  & q_tmp(11 downto 8);
+                        q50_buf(29 downto 20) <= q40_buf(21 downto 16) & q_tmp(19 downto 16);
+                        q50_buf(39 downto 30) <= q40_buf(29 downto 24) & q_tmp(27 downto 24);
+                        q50_buf(49 downto 40) <= q40_buf(37 downto 32) & q_tmp(35 downto 32);
                                        
-                        when "011"  => q_tmp(1  downto 0)  <= q40_buf(7  downto 6);
-                                       q_tmp(9  downto 8)  <= q40_buf(15 downto 14);
-                                       q_tmp(17 downto 16) <= q40_buf(23 downto 22);
-                                       q_tmp(25 downto 24) <= q40_buf(31 downto 30);
-                                       q_tmp(33 downto 32) <= q40_buf(39 downto 38);
-                                       
-                                       q50_buf(9  downto 0)  <= q40_buf(5  downto 0)  & q_tmp(3  downto 0);
-                                       q50_buf(19 downto 10) <= q40_buf(13 downto 8)  & q_tmp(11 downto 8);
-                                       q50_buf(29 downto 20) <= q40_buf(21 downto 16) & q_tmp(19 downto 16);
-                                       q50_buf(39 downto 30) <= q40_buf(29 downto 24) & q_tmp(27 downto 24);
-                                       q50_buf(49 downto 40) <= q40_buf(37 downto 32) & q_tmp(35 downto 32);
-                                       
-                        when "100"  => q50_buf(9  downto 0)  <= q40_buf(7  downto 0)  & q_tmp(1  downto 0);
-                                       q50_buf(19 downto 10) <= q40_buf(15 downto 8)  & q_tmp(9  downto 8);
-                                       q50_buf(29 downto 20) <= q40_buf(23 downto 16) & q_tmp(17 downto 16);
-                                       q50_buf(39 downto 30) <= q40_buf(31 downto 24) & q_tmp(25 downto 24);
-                                       q50_buf(49 downto 40) <= q40_buf(39 downto 32) & q_tmp(33 downto 32);
+                        when "100"  => 
+                        q50_buf(9  downto 0)  <= q40_buf(7  downto 0)  & q_tmp(1  downto 0);
+                        q50_buf(19 downto 10) <= q40_buf(15 downto 8)  & q_tmp(9  downto 8);
+                        q50_buf(29 downto 20) <= q40_buf(23 downto 16) & q_tmp(17 downto 16);
+                        q50_buf(39 downto 30) <= q40_buf(31 downto 24) & q_tmp(25 downto 24);
+                        q50_buf(49 downto 40) <= q40_buf(39 downto 32) & q_tmp(33 downto 32);
                         
                         when others => null;
-                    
                     end case;
                     
                     if lnk_trnd = '1' then
                         q <= q50_buf;
 
                     else
-                        q <= (others => '0');
-                        
+                        q <= (others => '0');     
                     end if;
 
                     if counter /= "010" then
@@ -166,15 +168,14 @@ begin
                     
                     else 
                         q_valid <= '0';
-
                     end if;
+
                 else
                     q50_buf  <= (others => '0');
                     q <= (others => '0');
                     q_valid <= '0';
 
                 end if;
-
             end if;
         end if;
     end process;
@@ -219,14 +220,15 @@ begin
                     if counter = "000" then
                         hold_slip <= hold_slip + '1';
                         if hold_slip = "111"  then
-                            if q50_buf(9 downto 0) /= "0110111100" and q50_buf(9 downto 0) /= "1001000011" then
+                            if q50_buf(9 downto 0) /= "0110111100" and 
+                               q50_buf(9 downto 0) /= "1001000011" then
                                 bit_slip <= '1';
                                 lnk_trnd_buf(0) <= '0';
 
                             else
                                 bit_slip <= '0';
                                 lnk_trnd_buf(0) <= '1';
-                            
+                        
                             end if;
                             lnk_trnd_buf(3 downto 1) <= lnk_trnd_buf(2 downto 0);
                         
